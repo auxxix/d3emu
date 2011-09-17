@@ -100,7 +100,6 @@ namespace d3emu
     {
         std::cout << request.GetTypeName() << ":" << std::endl << request.DebugString() << std::endl;
         
-        
         bnet::protocol::toon::external::CreateToonResponse response;
         
         for (int i = 0; i < request.attribute_size(); i++)
@@ -111,15 +110,23 @@ namespace d3emu
             
             std::cout << params.GetTypeName() << ":" << std::endl
                 << params.DebugString() << std::endl;
-            
-            response.mutable_toon()->set_low(234);
-            response.mutable_toon()->set_high(234234);
+
+            response.mutable_toon()->set_low(2L);
+            response.mutable_toon()->set_high(0x300016200004433L);
         }
         
         unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
         std::string built_response = response.SerializeAsString();
         built_response.insert(built_response.begin(), header, header + 5);
         
+		for (int i = 0; i < (int)built_response.size(); ++i)
+		{
+			std::cout << std::hex << std::uppercase << ((uint8_t)built_response[i] & 0xff)
+				<< " ";
+		}
+
+		std::cout << std::endl;
+
         std::cout << response.GetTypeName() << ":" << std::endl << response.DebugString() << std::endl;
         send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
     }
