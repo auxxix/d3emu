@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C3FB6861425498500B296F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB6851425498500B296F4 /* Cocoa.framework */; };
+		6C3FB6901425498500B296F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C3FB68E1425498500B296F4 /* InfoPlist.strings */; };
+		6C3FB6921425498500B296F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6911425498500B296F4 /* main.m */; };
+		6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */; };
+		6C3FB69C1425498600B296F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3FB69A1425498600B296F4 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6C3FB6811425498500B296F4 /* d3emu-cocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "d3emu-cocoa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C3FB6851425498500B296F4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6C3FB6881425498500B296F4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6C3FB6891425498500B296F4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6C3FB68A1425498500B296F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6C3FB68D1425498500B296F4 /* d3emu-cocoa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "d3emu-cocoa-Info.plist"; sourceTree = "<group>"; };
+		6C3FB68F1425498500B296F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C3FB6911425498500B296F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C3FB6931425498500B296F4 /* d3emu-cocoa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "d3emu-cocoa-Prefix.pch"; sourceTree = "<group>"; };
+		6C3FB6971425498500B296F4 /* d3emu_cocoaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = d3emu_cocoaAppDelegate.h; sourceTree = "<group>"; };
+		6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = d3emu_cocoaAppDelegate.m; sourceTree = "<group>"; };
+		6C3FB69B1425498600B296F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C3FB67E1425498500B296F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C3FB6861425498500B296F4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C3FB6761425498500B296F4 = {
+			isa = PBXGroup;
+			children = (
+				6C3FB68B1425498500B296F4 /* d3emu-cocoa */,
+				6C3FB6841425498500B296F4 /* Frameworks */,
+				6C3FB6821425498500B296F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C3FB6821425498500B296F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB6811425498500B296F4 /* d3emu-cocoa.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C3FB6841425498500B296F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB6851425498500B296F4 /* Cocoa.framework */,
+				6C3FB6871425498500B296F4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C3FB6871425498500B296F4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB6881425498500B296F4 /* AppKit.framework */,
+				6C3FB6891425498500B296F4 /* CoreData.framework */,
+				6C3FB68A1425498500B296F4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6C3FB68B1425498500B296F4 /* d3emu-cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB6971425498500B296F4 /* d3emu_cocoaAppDelegate.h */,
+				6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */,
+				6C3FB69A1425498600B296F4 /* MainMenu.xib */,
+				6C3FB68C1425498500B296F4 /* Supporting Files */,
+			);
+			path = "d3emu-cocoa";
+			sourceTree = "<group>";
+		};
+		6C3FB68C1425498500B296F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB68D1425498500B296F4 /* d3emu-cocoa-Info.plist */,
+				6C3FB68E1425498500B296F4 /* InfoPlist.strings */,
+				6C3FB6911425498500B296F4 /* main.m */,
+				6C3FB6931425498500B296F4 /* d3emu-cocoa-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C3FB6801425498500B296F4 /* d3emu-cocoa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C3FB69F1425498600B296F4 /* Build configuration list for PBXNativeTarget "d3emu-cocoa" */;
+			buildPhases = (
+				6C3FB67D1425498500B296F4 /* Sources */,
+				6C3FB67E1425498500B296F4 /* Frameworks */,
+				6C3FB67F1425498500B296F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "d3emu-cocoa";
+			productName = "d3emu-cocoa";
+			productReference = 6C3FB6811425498500B296F4 /* d3emu-cocoa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C3FB6781425498500B296F4 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 6C3FB67B1425498500B296F4 /* Build configuration list for PBXProject "d3emu-cocoa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6C3FB6761425498500B296F4;
+			productRefGroup = 6C3FB6821425498500B296F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C3FB6801425498500B296F4 /* d3emu-cocoa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C3FB67F1425498500B296F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C3FB6901425498500B296F4 /* InfoPlist.strings in Resources */,
+				6C3FB69C1425498600B296F4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C3FB67D1425498500B296F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C3FB6921425498500B296F4 /* main.m in Sources */,
+				6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6C3FB68E1425498500B296F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C3FB68F1425498500B296F4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6C3FB69A1425498600B296F4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C3FB69B1425498600B296F4 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C3FB69D1425498600B296F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6C3FB69E1425498600B296F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6C3FB6A01425498600B296F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "d3emu-cocoa/d3emu-cocoa-Prefix.pch";
+				INFOPLIST_FILE = "d3emu-cocoa/d3emu-cocoa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6C3FB6A11425498600B296F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "d3emu-cocoa/d3emu-cocoa-Prefix.pch";
+				INFOPLIST_FILE = "d3emu-cocoa/d3emu-cocoa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C3FB67B1425498500B296F4 /* Build configuration list for PBXProject "d3emu-cocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C3FB69D1425498600B296F4 /* Debug */,
+				6C3FB69E1425498600B296F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C3FB69F1425498600B296F4 /* Build configuration list for PBXNativeTarget "d3emu-cocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C3FB6A01425498600B296F4 /* Debug */,
+				6C3FB6A11425498600B296F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C3FB6781425498500B296F4 /* Project object */;
+}

@@ -13,7 +13,7 @@ namespace d3emu
     // 0x4124C31B bnet.protocol.toon.external.*
     
     ToonExternalService::ToonExternalService(uint32_t _service_hash, uint8_t _service_id)
-    : Service(_service_hash, _service_id) 
+        : Service(_service_hash, _service_id) 
     {
     }
     

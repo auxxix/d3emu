@@ -77,6 +77,16 @@
 		6C3FB66814253FCC00B296F4 /* ToonExternalService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB66714253FCC00B296F4 /* ToonExternalService.cc */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6C3FB6A61425498700B296F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C3FB6A21425498600B296F4 /* d3emu-cocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C3FB6811425498500B296F4;
+			remoteInfo = "d3emu-cocoa";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		6C3FB51B1424517800B296F4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -226,6 +236,7 @@
 		6C3FB66514253E0100B296F4 /* exchange_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange_base.pb.h; sourceTree = "<group>"; };
 		6C3FB66714253FCC00B296F4 /* ToonExternalService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToonExternalService.cc; sourceTree = "<group>"; };
 		6C3FB6691425402500B296F4 /* ToonExternalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToonExternalService.h; sourceTree = "<group>"; };
+		6C3FB6A21425498600B296F4 /* d3emu-cocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "d3emu-cocoa.xcodeproj"; path = "d3emu-cocoa/d3emu-cocoa.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +256,7 @@
 		6C3FB5121424517800B296F4 = {
 			isa = PBXGroup;
 			children = (
+				6C3FB6A21425498600B296F4 /* d3emu-cocoa.xcodeproj */,
 				6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */,
 				6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */,
 				6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */,
@@ -658,6 +670,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		6C3FB6A31425498600B296F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB6A71425498700B296F4 /* d3emu-cocoa.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -693,12 +713,28 @@
 			mainGroup = 6C3FB5121424517800B296F4;
 			productRefGroup = 6C3FB51E1424517800B296F4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6C3FB6A31425498600B296F4 /* Products */;
+					ProjectRef = 6C3FB6A21425498600B296F4 /* d3emu-cocoa.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6C3FB51C1424517800B296F4 /* d3emu */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6C3FB6A71425498700B296F4 /* d3emu-cocoa.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "d3emu-cocoa.app";
+			remoteRef = 6C3FB6A61425498700B296F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6C3FB5191424517800B296F4 /* Sources */ = {
