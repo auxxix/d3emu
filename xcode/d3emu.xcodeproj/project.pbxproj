@@ -1,0 +1,876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C3FB5FD1424542900B296F4 /* Account.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5301424542900B296F4 /* Account.pb.cc */; };
+		6C3FB5FE1424542900B296F4 /* AttributeSerializer.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5321424542900B296F4 /* AttributeSerializer.pb.cc */; };
+		6C3FB5FF1424542900B296F4 /* GameMessage.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5341424542900B296F4 /* GameMessage.pb.cc */; };
+		6C3FB6001424542900B296F4 /* GBHandle.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5361424542900B296F4 /* GBHandle.pb.cc */; };
+		6C3FB6021424542900B296F4 /* Hero.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5631424542900B296F4 /* Hero.pb.cc */; };
+		6C3FB6031424542900B296F4 /* Hireling.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5651424542900B296F4 /* Hireling.pb.cc */; };
+		6C3FB6041424542900B296F4 /* ItemCrafting.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5671424542900B296F4 /* ItemCrafting.pb.cc */; };
+		6C3FB6051424542900B296F4 /* Items.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5691424542900B296F4 /* Items.pb.cc */; };
+		6C3FB6061424542900B296F4 /* process_config.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB56D1424542900B296F4 /* process_config.pb.cc */; };
+		6C3FB6071424542900B296F4 /* profanity.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5701424542900B296F4 /* profanity.pb.cc */; };
+		6C3FB6081424542900B296F4 /* attribute.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5731424542900B296F4 /* attribute.pb.cc */; };
+		6C3FB6091424542900B296F4 /* content_handle.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5751424542900B296F4 /* content_handle.pb.cc */; };
+		6C3FB60A1424542900B296F4 /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5771424542900B296F4 /* descriptor.pb.cc */; };
+		6C3FB60B1424542900B296F4 /* entity.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5791424542900B296F4 /* entity.pb.cc */; };
+		6C3FB60C1424542900B296F4 /* exchange.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB57B1424542900B296F4 /* exchange.pb.cc */; };
+		6C3FB60D1424542900B296F4 /* exchange_object_provider.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB57D1424542900B296F4 /* exchange_object_provider.pb.cc */; };
+		6C3FB60E1424542900B296F4 /* invitation.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB57F1424542900B296F4 /* invitation.pb.cc */; };
+		6C3FB60F1424542900B296F4 /* resource.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5811424542900B296F4 /* resource.pb.cc */; };
+		6C3FB6101424542900B296F4 /* connection.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5841424542900B296F4 /* connection.pb.cc */; };
+		6C3FB6111424542900B296F4 /* rpc.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5861424542900B296F4 /* rpc.pb.cc */; };
+		6C3FB6121424542900B296F4 /* OnlineService.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5881424542900B296F4 /* OnlineService.pb.cc */; };
+		6C3FB6131424542900B296F4 /* PartyMessage.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB58A1424542900B296F4 /* PartyMessage.pb.cc */; };
+		6C3FB6171424542900B296F4 /* Quest.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5901424542900B296F4 /* Quest.pb.cc */; };
+		6C3FB6181424542900B296F4 /* authentication.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5941424542900B296F4 /* authentication.pb.cc */; };
+		6C3FB6191424542900B296F4 /* channel_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5971424542900B296F4 /* channel_types.pb.cc */; };
+		6C3FB61A1424542900B296F4 /* channel.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB59A1424542900B296F4 /* channel.pb.cc */; };
+		6C3FB61B1424542900B296F4 /* channel_invitation_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB59D1424542900B296F4 /* channel_invitation_types.pb.cc */; };
+		6C3FB61C1424542900B296F4 /* channel_invitation.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5A01424542900B296F4 /* channel_invitation.pb.cc */; };
+		6C3FB61D1424542900B296F4 /* chat.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5A41424542900B296F4 /* chat.pb.cc */; };
+		6C3FB61E1424542900B296F4 /* chat_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5A61424542900B296F4 /* chat_types.pb.cc */; };
+		6C3FB61F1424542900B296F4 /* exchange.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5A91424542900B296F4 /* exchange.pb.cc */; };
+		6C3FB6201424542900B296F4 /* exchange_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5AB1424542900B296F4 /* exchange_types.pb.cc */; };
+		6C3FB6211424542900B296F4 /* followers.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5AF1424542900B296F4 /* followers.pb.cc */; };
+		6C3FB6221424542900B296F4 /* friends.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5B31424542900B296F4 /* friends.pb.cc */; };
+		6C3FB6231424542900B296F4 /* friends_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5B51424542900B296F4 /* friends_types.pb.cc */; };
+		6C3FB6241424542900B296F4 /* game_factory.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5B81424542900B296F4 /* game_factory.pb.cc */; };
+		6C3FB6251424542900B296F4 /* game_master.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5BA1424542900B296F4 /* game_master.pb.cc */; };
+		6C3FB6261424542900B296F4 /* game_master_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5BC1424542900B296F4 /* game_master_types.pb.cc */; };
+		6C3FB6271424542900B296F4 /* game_utilities.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5BF1424542900B296F4 /* game_utilities.pb.cc */; };
+		6C3FB6281424542900B296F4 /* notification.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5C21424542900B296F4 /* notification.pb.cc */; };
+		6C3FB6291424542900B296F4 /* party.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5C61424542900B296F4 /* party.pb.cc */; };
+		6C3FB62A1424542900B296F4 /* presence.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5C91424542900B296F4 /* presence.pb.cc */; };
+		6C3FB62B1424542900B296F4 /* presence_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5CB1424542900B296F4 /* presence_types.pb.cc */; };
+		6C3FB62C1424542900B296F4 /* search.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5CE1424542900B296F4 /* search.pb.cc */; };
+		6C3FB62D1424542900B296F4 /* search_types.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5D01424542900B296F4 /* search_types.pb.cc */; };
+		6C3FB62E1424542900B296F4 /* server_pool.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5D31424542900B296F4 /* server_pool.pb.cc */; };
+		6C3FB62F1424542900B296F4 /* storage.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5D61424542900B296F4 /* storage.pb.cc */; };
+		6C3FB6301424542900B296F4 /* toon.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5D91424542900B296F4 /* toon.pb.cc */; };
+		6C3FB6311424542900B296F4 /* toon_external.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5DB1424542900B296F4 /* toon_external.pb.cc */; };
+		6C3FB6321424542900B296F4 /* user_manager.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5DE1424542900B296F4 /* user_manager.pb.cc */; };
+		6C3FB6331424542900B296F4 /* Settings.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E01424542900B296F4 /* Settings.pb.cc */; };
+		6C3FB6341424542900B296F4 /* Stats.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E21424542900B296F4 /* Stats.pb.cc */; };
+		6C3FB6351424542900B296F4 /* Client.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E51424542900B296F4 /* Client.cc */; };
+		6C3FB6361424542900B296F4 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E71424542900B296F4 /* main.cc */; };
+		6C3FB6371424542900B296F4 /* AuthenticationService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E91424542900B296F4 /* AuthenticationService.cc */; };
+		6C3FB6381424542900B296F4 /* BaseService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5EB1424542900B296F4 /* BaseService.cc */; };
+		6C3FB6391424542900B296F4 /* ChannelInvitationService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5ED1424542900B296F4 /* ChannelInvitationService.cc */; };
+		6C3FB63A1424542900B296F4 /* FollowersService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5EF1424542900B296F4 /* FollowersService.cc */; };
+		6C3FB63B1424542900B296F4 /* FriendsService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F11424542900B296F4 /* FriendsService.cc */; };
+		6C3FB63C1424542900B296F4 /* GameMasterService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F31424542900B296F4 /* GameMasterService.cc */; };
+		6C3FB63D1424542900B296F4 /* PresenceService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F51424542900B296F4 /* PresenceService.cc */; };
+		6C3FB63E1424542900B296F4 /* Service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F71424542900B296F4 /* Service.cc */; };
+		6C3FB63F1424542900B296F4 /* StorageService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F91424542900B296F4 /* StorageService.cc */; };
+		6C3FB6401424542900B296F4 /* UserManagerService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5FB1424542900B296F4 /* UserManagerService.cc */; };
+		6C3FB65C14245ED700B296F4 /* libprotobuf-lite.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */; };
+		6C3FB65D14245ED700B296F4 /* libprotobuf.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */; };
+		6C3FB65E14245ED700B296F4 /* libprotoc.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6C3FB51B1424517800B296F4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6C3FB51D1424517800B296F4 /* d3emu */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = d3emu; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C3FB5301424542900B296F4 /* Account.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Account.pb.cc; sourceTree = "<group>"; };
+		6C3FB5311424542900B296F4 /* Account.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.pb.h; sourceTree = "<group>"; };
+		6C3FB5321424542900B296F4 /* AttributeSerializer.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AttributeSerializer.pb.cc; sourceTree = "<group>"; };
+		6C3FB5331424542900B296F4 /* AttributeSerializer.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeSerializer.pb.h; sourceTree = "<group>"; };
+		6C3FB5341424542900B296F4 /* GameMessage.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMessage.pb.cc; sourceTree = "<group>"; };
+		6C3FB5351424542900B296F4 /* GameMessage.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMessage.pb.h; sourceTree = "<group>"; };
+		6C3FB5361424542900B296F4 /* GBHandle.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GBHandle.pb.cc; sourceTree = "<group>"; };
+		6C3FB5371424542900B296F4 /* GBHandle.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBHandle.pb.h; sourceTree = "<group>"; };
+		6C3FB5631424542900B296F4 /* Hero.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.pb.cc; sourceTree = "<group>"; };
+		6C3FB5641424542900B296F4 /* Hero.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.pb.h; sourceTree = "<group>"; };
+		6C3FB5651424542900B296F4 /* Hireling.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hireling.pb.cc; sourceTree = "<group>"; };
+		6C3FB5661424542900B296F4 /* Hireling.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hireling.pb.h; sourceTree = "<group>"; };
+		6C3FB5671424542900B296F4 /* ItemCrafting.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemCrafting.pb.cc; sourceTree = "<group>"; };
+		6C3FB5681424542900B296F4 /* ItemCrafting.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCrafting.pb.h; sourceTree = "<group>"; };
+		6C3FB5691424542900B296F4 /* Items.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Items.pb.cc; sourceTree = "<group>"; };
+		6C3FB56A1424542900B296F4 /* Items.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Items.pb.h; sourceTree = "<group>"; };
+		6C3FB56D1424542900B296F4 /* process_config.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = process_config.pb.cc; sourceTree = "<group>"; };
+		6C3FB56E1424542900B296F4 /* process_config.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = process_config.pb.h; sourceTree = "<group>"; };
+		6C3FB5701424542900B296F4 /* profanity.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = profanity.pb.cc; sourceTree = "<group>"; };
+		6C3FB5711424542900B296F4 /* profanity.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profanity.pb.h; sourceTree = "<group>"; };
+		6C3FB5731424542900B296F4 /* attribute.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = attribute.pb.cc; sourceTree = "<group>"; };
+		6C3FB5741424542900B296F4 /* attribute.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attribute.pb.h; sourceTree = "<group>"; };
+		6C3FB5751424542900B296F4 /* content_handle.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = content_handle.pb.cc; sourceTree = "<group>"; };
+		6C3FB5761424542900B296F4 /* content_handle.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = content_handle.pb.h; sourceTree = "<group>"; };
+		6C3FB5771424542900B296F4 /* descriptor.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = descriptor.pb.cc; sourceTree = "<group>"; };
+		6C3FB5781424542900B296F4 /* descriptor.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = descriptor.pb.h; sourceTree = "<group>"; };
+		6C3FB5791424542900B296F4 /* entity.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entity.pb.cc; sourceTree = "<group>"; };
+		6C3FB57A1424542900B296F4 /* entity.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entity.pb.h; sourceTree = "<group>"; };
+		6C3FB57B1424542900B296F4 /* exchange.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange.pb.cc; sourceTree = "<group>"; };
+		6C3FB57C1424542900B296F4 /* exchange.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange.pb.h; sourceTree = "<group>"; };
+		6C3FB57D1424542900B296F4 /* exchange_object_provider.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange_object_provider.pb.cc; sourceTree = "<group>"; };
+		6C3FB57E1424542900B296F4 /* exchange_object_provider.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange_object_provider.pb.h; sourceTree = "<group>"; };
+		6C3FB57F1424542900B296F4 /* invitation.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = invitation.pb.cc; sourceTree = "<group>"; };
+		6C3FB5801424542900B296F4 /* invitation.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = invitation.pb.h; sourceTree = "<group>"; };
+		6C3FB5811424542900B296F4 /* resource.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resource.pb.cc; sourceTree = "<group>"; };
+		6C3FB5821424542900B296F4 /* resource.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resource.pb.h; sourceTree = "<group>"; };
+		6C3FB5841424542900B296F4 /* connection.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = connection.pb.cc; sourceTree = "<group>"; };
+		6C3FB5851424542900B296F4 /* connection.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = connection.pb.h; sourceTree = "<group>"; };
+		6C3FB5861424542900B296F4 /* rpc.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rpc.pb.cc; sourceTree = "<group>"; };
+		6C3FB5871424542900B296F4 /* rpc.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpc.pb.h; sourceTree = "<group>"; };
+		6C3FB5881424542900B296F4 /* OnlineService.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnlineService.pb.cc; sourceTree = "<group>"; };
+		6C3FB5891424542900B296F4 /* OnlineService.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineService.pb.h; sourceTree = "<group>"; };
+		6C3FB58A1424542900B296F4 /* PartyMessage.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartyMessage.pb.cc; sourceTree = "<group>"; };
+		6C3FB58B1424542900B296F4 /* PartyMessage.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyMessage.pb.h; sourceTree = "<group>"; };
+		6C3FB58D1424542900B296F4 /* libprotobuf-lite.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libprotobuf-lite.lib"; sourceTree = "<group>"; };
+		6C3FB58E1424542900B296F4 /* libprotobuf.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libprotobuf.lib; sourceTree = "<group>"; };
+		6C3FB58F1424542900B296F4 /* libprotoc.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libprotoc.lib; sourceTree = "<group>"; };
+		6C3FB5901424542900B296F4 /* Quest.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quest.pb.cc; sourceTree = "<group>"; };
+		6C3FB5911424542900B296F4 /* Quest.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quest.pb.h; sourceTree = "<group>"; };
+		6C3FB5941424542900B296F4 /* authentication.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = authentication.pb.cc; sourceTree = "<group>"; };
+		6C3FB5951424542900B296F4 /* authentication.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authentication.pb.h; sourceTree = "<group>"; };
+		6C3FB5971424542900B296F4 /* channel_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = channel_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB5981424542900B296F4 /* channel_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = channel_types.pb.h; sourceTree = "<group>"; };
+		6C3FB59A1424542900B296F4 /* channel.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = channel.pb.cc; sourceTree = "<group>"; };
+		6C3FB59B1424542900B296F4 /* channel.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = channel.pb.h; sourceTree = "<group>"; };
+		6C3FB59D1424542900B296F4 /* channel_invitation_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = channel_invitation_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB59E1424542900B296F4 /* channel_invitation_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = channel_invitation_types.pb.h; sourceTree = "<group>"; };
+		6C3FB5A01424542900B296F4 /* channel_invitation.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = channel_invitation.pb.cc; sourceTree = "<group>"; };
+		6C3FB5A11424542900B296F4 /* channel_invitation.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = channel_invitation.pb.h; sourceTree = "<group>"; };
+		6C3FB5A41424542900B296F4 /* chat.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chat.pb.cc; sourceTree = "<group>"; };
+		6C3FB5A51424542900B296F4 /* chat.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chat.pb.h; sourceTree = "<group>"; };
+		6C3FB5A61424542900B296F4 /* chat_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chat_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB5A71424542900B296F4 /* chat_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chat_types.pb.h; sourceTree = "<group>"; };
+		6C3FB5A91424542900B296F4 /* exchange.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange.pb.cc; sourceTree = "<group>"; };
+		6C3FB5AA1424542900B296F4 /* exchange.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange.pb.h; sourceTree = "<group>"; };
+		6C3FB5AB1424542900B296F4 /* exchange_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB5AC1424542900B296F4 /* exchange_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange_types.pb.h; sourceTree = "<group>"; };
+		6C3FB5AF1424542900B296F4 /* followers.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = followers.pb.cc; sourceTree = "<group>"; };
+		6C3FB5B01424542900B296F4 /* followers.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = followers.pb.h; sourceTree = "<group>"; };
+		6C3FB5B31424542900B296F4 /* friends.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = friends.pb.cc; sourceTree = "<group>"; };
+		6C3FB5B41424542900B296F4 /* friends.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = friends.pb.h; sourceTree = "<group>"; };
+		6C3FB5B51424542900B296F4 /* friends_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = friends_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB5B61424542900B296F4 /* friends_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = friends_types.pb.h; sourceTree = "<group>"; };
+		6C3FB5B81424542900B296F4 /* game_factory.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_factory.pb.cc; sourceTree = "<group>"; };
+		6C3FB5B91424542900B296F4 /* game_factory.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_factory.pb.h; sourceTree = "<group>"; };
+		6C3FB5BA1424542900B296F4 /* game_master.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_master.pb.cc; sourceTree = "<group>"; };
+		6C3FB5BB1424542900B296F4 /* game_master.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_master.pb.h; sourceTree = "<group>"; };
+		6C3FB5BC1424542900B296F4 /* game_master_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_master_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB5BD1424542900B296F4 /* game_master_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_master_types.pb.h; sourceTree = "<group>"; };
+		6C3FB5BF1424542900B296F4 /* game_utilities.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_utilities.pb.cc; sourceTree = "<group>"; };
+		6C3FB5C01424542900B296F4 /* game_utilities.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_utilities.pb.h; sourceTree = "<group>"; };
+		6C3FB5C21424542900B296F4 /* notification.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = notification.pb.cc; sourceTree = "<group>"; };
+		6C3FB5C31424542900B296F4 /* notification.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notification.pb.h; sourceTree = "<group>"; };
+		6C3FB5C61424542900B296F4 /* party.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = party.pb.cc; sourceTree = "<group>"; };
+		6C3FB5C71424542900B296F4 /* party.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = party.pb.h; sourceTree = "<group>"; };
+		6C3FB5C91424542900B296F4 /* presence.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = presence.pb.cc; sourceTree = "<group>"; };
+		6C3FB5CA1424542900B296F4 /* presence.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presence.pb.h; sourceTree = "<group>"; };
+		6C3FB5CB1424542900B296F4 /* presence_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = presence_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB5CC1424542900B296F4 /* presence_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presence_types.pb.h; sourceTree = "<group>"; };
+		6C3FB5CE1424542900B296F4 /* search.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search.pb.cc; sourceTree = "<group>"; };
+		6C3FB5CF1424542900B296F4 /* search.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.pb.h; sourceTree = "<group>"; };
+		6C3FB5D01424542900B296F4 /* search_types.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search_types.pb.cc; sourceTree = "<group>"; };
+		6C3FB5D11424542900B296F4 /* search_types.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search_types.pb.h; sourceTree = "<group>"; };
+		6C3FB5D31424542900B296F4 /* server_pool.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = server_pool.pb.cc; sourceTree = "<group>"; };
+		6C3FB5D41424542900B296F4 /* server_pool.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = server_pool.pb.h; sourceTree = "<group>"; };
+		6C3FB5D61424542900B296F4 /* storage.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = storage.pb.cc; sourceTree = "<group>"; };
+		6C3FB5D71424542900B296F4 /* storage.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storage.pb.h; sourceTree = "<group>"; };
+		6C3FB5D91424542900B296F4 /* toon.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toon.pb.cc; sourceTree = "<group>"; };
+		6C3FB5DA1424542900B296F4 /* toon.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toon.pb.h; sourceTree = "<group>"; };
+		6C3FB5DB1424542900B296F4 /* toon_external.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toon_external.pb.cc; sourceTree = "<group>"; };
+		6C3FB5DC1424542900B296F4 /* toon_external.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toon_external.pb.h; sourceTree = "<group>"; };
+		6C3FB5DE1424542900B296F4 /* user_manager.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user_manager.pb.cc; sourceTree = "<group>"; };
+		6C3FB5DF1424542900B296F4 /* user_manager.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user_manager.pb.h; sourceTree = "<group>"; };
+		6C3FB5E01424542900B296F4 /* Settings.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.pb.cc; sourceTree = "<group>"; };
+		6C3FB5E11424542900B296F4 /* Settings.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.pb.h; sourceTree = "<group>"; };
+		6C3FB5E21424542900B296F4 /* Stats.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stats.pb.cc; sourceTree = "<group>"; };
+		6C3FB5E31424542900B296F4 /* Stats.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stats.pb.h; sourceTree = "<group>"; };
+		6C3FB5E51424542900B296F4 /* Client.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cc; sourceTree = "<group>"; };
+		6C3FB5E61424542900B296F4 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		6C3FB5E71424542900B296F4 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
+		6C3FB5E91424542900B296F4 /* AuthenticationService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuthenticationService.cc; sourceTree = "<group>"; };
+		6C3FB5EA1424542900B296F4 /* AuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationService.h; sourceTree = "<group>"; };
+		6C3FB5EB1424542900B296F4 /* BaseService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseService.cc; sourceTree = "<group>"; };
+		6C3FB5EC1424542900B296F4 /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
+		6C3FB5ED1424542900B296F4 /* ChannelInvitationService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChannelInvitationService.cc; sourceTree = "<group>"; };
+		6C3FB5EE1424542900B296F4 /* ChannelInvitationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInvitationService.h; sourceTree = "<group>"; };
+		6C3FB5EF1424542900B296F4 /* FollowersService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FollowersService.cc; sourceTree = "<group>"; };
+		6C3FB5F01424542900B296F4 /* FollowersService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowersService.h; sourceTree = "<group>"; };
+		6C3FB5F11424542900B296F4 /* FriendsService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendsService.cc; sourceTree = "<group>"; };
+		6C3FB5F21424542900B296F4 /* FriendsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsService.h; sourceTree = "<group>"; };
+		6C3FB5F31424542900B296F4 /* GameMasterService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMasterService.cc; sourceTree = "<group>"; };
+		6C3FB5F41424542900B296F4 /* GameMasterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMasterService.h; sourceTree = "<group>"; };
+		6C3FB5F51424542900B296F4 /* PresenceService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PresenceService.cc; sourceTree = "<group>"; };
+		6C3FB5F61424542900B296F4 /* PresenceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenceService.h; sourceTree = "<group>"; };
+		6C3FB5F71424542900B296F4 /* Service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Service.cc; sourceTree = "<group>"; };
+		6C3FB5F81424542900B296F4 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		6C3FB5F91424542900B296F4 /* StorageService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StorageService.cc; sourceTree = "<group>"; };
+		6C3FB5FA1424542900B296F4 /* StorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
+		6C3FB5FB1424542900B296F4 /* UserManagerService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserManagerService.cc; sourceTree = "<group>"; };
+		6C3FB5FC1424542900B296F4 /* UserManagerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManagerService.h; sourceTree = "<group>"; };
+		6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libprotobuf-lite.6.dylib"; path = "../../../../../../usr/local/lib/libprotobuf-lite.6.dylib"; sourceTree = "<group>"; };
+		6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotobuf.6.dylib; path = ../../../../../../usr/local/lib/libprotobuf.6.dylib; sourceTree = "<group>"; };
+		6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotoc.6.dylib; path = ../../../../../../usr/local/lib/libprotoc.6.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C3FB51A1424517800B296F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C3FB65C14245ED700B296F4 /* libprotobuf-lite.6.dylib in Frameworks */,
+				6C3FB65D14245ED700B296F4 /* libprotobuf.6.dylib in Frameworks */,
+				6C3FB65E14245ED700B296F4 /* libprotoc.6.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C3FB5121424517800B296F4 = {
+			isa = PBXGroup;
+			children = (
+				6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */,
+				6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */,
+				6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */,
+				6C3FB52F1424542900B296F4 /* bnet */,
+				6C3FB5E41424542900B296F4 /* src */,
+				6C3FB51E1424517800B296F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C3FB51E1424517800B296F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB51D1424517800B296F4 /* d3emu */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C3FB52F1424542900B296F4 /* bnet */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5301424542900B296F4 /* Account.pb.cc */,
+				6C3FB5311424542900B296F4 /* Account.pb.h */,
+				6C3FB5321424542900B296F4 /* AttributeSerializer.pb.cc */,
+				6C3FB5331424542900B296F4 /* AttributeSerializer.pb.h */,
+				6C3FB5341424542900B296F4 /* GameMessage.pb.cc */,
+				6C3FB5351424542900B296F4 /* GameMessage.pb.h */,
+				6C3FB5361424542900B296F4 /* GBHandle.pb.cc */,
+				6C3FB5371424542900B296F4 /* GBHandle.pb.h */,
+				6C3FB5631424542900B296F4 /* Hero.pb.cc */,
+				6C3FB5641424542900B296F4 /* Hero.pb.h */,
+				6C3FB5651424542900B296F4 /* Hireling.pb.cc */,
+				6C3FB5661424542900B296F4 /* Hireling.pb.h */,
+				6C3FB5671424542900B296F4 /* ItemCrafting.pb.cc */,
+				6C3FB5681424542900B296F4 /* ItemCrafting.pb.h */,
+				6C3FB5691424542900B296F4 /* Items.pb.cc */,
+				6C3FB56A1424542900B296F4 /* Items.pb.h */,
+				6C3FB56B1424542900B296F4 /* lib */,
+				6C3FB5881424542900B296F4 /* OnlineService.pb.cc */,
+				6C3FB5891424542900B296F4 /* OnlineService.pb.h */,
+				6C3FB58A1424542900B296F4 /* PartyMessage.pb.cc */,
+				6C3FB58B1424542900B296F4 /* PartyMessage.pb.h */,
+				6C3FB58C1424542900B296F4 /* protobuf */,
+				6C3FB5901424542900B296F4 /* Quest.pb.cc */,
+				6C3FB5911424542900B296F4 /* Quest.pb.h */,
+				6C3FB5921424542900B296F4 /* service */,
+				6C3FB5E01424542900B296F4 /* Settings.pb.cc */,
+				6C3FB5E11424542900B296F4 /* Settings.pb.h */,
+				6C3FB5E21424542900B296F4 /* Stats.pb.cc */,
+				6C3FB5E31424542900B296F4 /* Stats.pb.h */,
+			);
+			name = bnet;
+			path = ../bnet;
+			sourceTree = "<group>";
+		};
+		6C3FB56B1424542900B296F4 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB56C1424542900B296F4 /* config */,
+				6C3FB56F1424542900B296F4 /* profanity */,
+				6C3FB5721424542900B296F4 /* protocol */,
+				6C3FB5831424542900B296F4 /* rpc */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		6C3FB56C1424542900B296F4 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB56D1424542900B296F4 /* process_config.pb.cc */,
+				6C3FB56E1424542900B296F4 /* process_config.pb.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		6C3FB56F1424542900B296F4 /* profanity */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5701424542900B296F4 /* profanity.pb.cc */,
+				6C3FB5711424542900B296F4 /* profanity.pb.h */,
+			);
+			path = profanity;
+			sourceTree = "<group>";
+		};
+		6C3FB5721424542900B296F4 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5731424542900B296F4 /* attribute.pb.cc */,
+				6C3FB5741424542900B296F4 /* attribute.pb.h */,
+				6C3FB5751424542900B296F4 /* content_handle.pb.cc */,
+				6C3FB5761424542900B296F4 /* content_handle.pb.h */,
+				6C3FB5771424542900B296F4 /* descriptor.pb.cc */,
+				6C3FB5781424542900B296F4 /* descriptor.pb.h */,
+				6C3FB5791424542900B296F4 /* entity.pb.cc */,
+				6C3FB57A1424542900B296F4 /* entity.pb.h */,
+				6C3FB57B1424542900B296F4 /* exchange.pb.cc */,
+				6C3FB57C1424542900B296F4 /* exchange.pb.h */,
+				6C3FB57D1424542900B296F4 /* exchange_object_provider.pb.cc */,
+				6C3FB57E1424542900B296F4 /* exchange_object_provider.pb.h */,
+				6C3FB57F1424542900B296F4 /* invitation.pb.cc */,
+				6C3FB5801424542900B296F4 /* invitation.pb.h */,
+				6C3FB5811424542900B296F4 /* resource.pb.cc */,
+				6C3FB5821424542900B296F4 /* resource.pb.h */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		6C3FB5831424542900B296F4 /* rpc */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5841424542900B296F4 /* connection.pb.cc */,
+				6C3FB5851424542900B296F4 /* connection.pb.h */,
+				6C3FB5861424542900B296F4 /* rpc.pb.cc */,
+				6C3FB5871424542900B296F4 /* rpc.pb.h */,
+			);
+			path = rpc;
+			sourceTree = "<group>";
+		};
+		6C3FB58C1424542900B296F4 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB58D1424542900B296F4 /* libprotobuf-lite.lib */,
+				6C3FB58E1424542900B296F4 /* libprotobuf.lib */,
+				6C3FB58F1424542900B296F4 /* libprotoc.lib */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		6C3FB5921424542900B296F4 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5931424542900B296F4 /* authentication */,
+				6C3FB5961424542900B296F4 /* channel */,
+				6C3FB59C1424542900B296F4 /* channel_invitation */,
+				6C3FB5A21424542900B296F4 /* chat */,
+				6C3FB5A81424542900B296F4 /* exchange */,
+				6C3FB5AD1424542900B296F4 /* followers */,
+				6C3FB5B11424542900B296F4 /* friends */,
+				6C3FB5B71424542900B296F4 /* game_master */,
+				6C3FB5BE1424542900B296F4 /* game_utilities */,
+				6C3FB5C11424542900B296F4 /* notification */,
+				6C3FB5C41424542900B296F4 /* party */,
+				6C3FB5C81424542900B296F4 /* presence */,
+				6C3FB5CD1424542900B296F4 /* search */,
+				6C3FB5D21424542900B296F4 /* server_pool */,
+				6C3FB5D51424542900B296F4 /* storage */,
+				6C3FB5D81424542900B296F4 /* toon */,
+				6C3FB5DD1424542900B296F4 /* user_manager */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		6C3FB5931424542900B296F4 /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5941424542900B296F4 /* authentication.pb.cc */,
+				6C3FB5951424542900B296F4 /* authentication.pb.h */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		6C3FB5961424542900B296F4 /* channel */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5971424542900B296F4 /* channel_types.pb.cc */,
+				6C3FB5981424542900B296F4 /* channel_types.pb.h */,
+				6C3FB5991424542900B296F4 /* definition */,
+			);
+			path = channel;
+			sourceTree = "<group>";
+		};
+		6C3FB5991424542900B296F4 /* definition */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB59A1424542900B296F4 /* channel.pb.cc */,
+				6C3FB59B1424542900B296F4 /* channel.pb.h */,
+			);
+			path = definition;
+			sourceTree = "<group>";
+		};
+		6C3FB59C1424542900B296F4 /* channel_invitation */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB59D1424542900B296F4 /* channel_invitation_types.pb.cc */,
+				6C3FB59E1424542900B296F4 /* channel_invitation_types.pb.h */,
+				6C3FB59F1424542900B296F4 /* definition */,
+			);
+			path = channel_invitation;
+			sourceTree = "<group>";
+		};
+		6C3FB59F1424542900B296F4 /* definition */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5A01424542900B296F4 /* channel_invitation.pb.cc */,
+				6C3FB5A11424542900B296F4 /* channel_invitation.pb.h */,
+			);
+			path = definition;
+			sourceTree = "<group>";
+		};
+		6C3FB5A21424542900B296F4 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5A31424542900B296F4 /* definition */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		6C3FB5A31424542900B296F4 /* definition */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5A41424542900B296F4 /* chat.pb.cc */,
+				6C3FB5A51424542900B296F4 /* chat.pb.h */,
+				6C3FB5A61424542900B296F4 /* chat_types.pb.cc */,
+				6C3FB5A71424542900B296F4 /* chat_types.pb.h */,
+			);
+			path = definition;
+			sourceTree = "<group>";
+		};
+		6C3FB5A81424542900B296F4 /* exchange */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5A91424542900B296F4 /* exchange.pb.cc */,
+				6C3FB5AA1424542900B296F4 /* exchange.pb.h */,
+				6C3FB5AB1424542900B296F4 /* exchange_types.pb.cc */,
+				6C3FB5AC1424542900B296F4 /* exchange_types.pb.h */,
+			);
+			path = exchange;
+			sourceTree = "<group>";
+		};
+		6C3FB5AD1424542900B296F4 /* followers */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5AE1424542900B296F4 /* definition */,
+			);
+			path = followers;
+			sourceTree = "<group>";
+		};
+		6C3FB5AE1424542900B296F4 /* definition */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5AF1424542900B296F4 /* followers.pb.cc */,
+				6C3FB5B01424542900B296F4 /* followers.pb.h */,
+			);
+			path = definition;
+			sourceTree = "<group>";
+		};
+		6C3FB5B11424542900B296F4 /* friends */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5B21424542900B296F4 /* definition */,
+				6C3FB5B51424542900B296F4 /* friends_types.pb.cc */,
+				6C3FB5B61424542900B296F4 /* friends_types.pb.h */,
+			);
+			path = friends;
+			sourceTree = "<group>";
+		};
+		6C3FB5B21424542900B296F4 /* definition */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5B31424542900B296F4 /* friends.pb.cc */,
+				6C3FB5B41424542900B296F4 /* friends.pb.h */,
+			);
+			path = definition;
+			sourceTree = "<group>";
+		};
+		6C3FB5B71424542900B296F4 /* game_master */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5B81424542900B296F4 /* game_factory.pb.cc */,
+				6C3FB5B91424542900B296F4 /* game_factory.pb.h */,
+				6C3FB5BA1424542900B296F4 /* game_master.pb.cc */,
+				6C3FB5BB1424542900B296F4 /* game_master.pb.h */,
+				6C3FB5BC1424542900B296F4 /* game_master_types.pb.cc */,
+				6C3FB5BD1424542900B296F4 /* game_master_types.pb.h */,
+			);
+			path = game_master;
+			sourceTree = "<group>";
+		};
+		6C3FB5BE1424542900B296F4 /* game_utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5BF1424542900B296F4 /* game_utilities.pb.cc */,
+				6C3FB5C01424542900B296F4 /* game_utilities.pb.h */,
+			);
+			path = game_utilities;
+			sourceTree = "<group>";
+		};
+		6C3FB5C11424542900B296F4 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5C21424542900B296F4 /* notification.pb.cc */,
+				6C3FB5C31424542900B296F4 /* notification.pb.h */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
+		6C3FB5C41424542900B296F4 /* party */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5C51424542900B296F4 /* definition */,
+			);
+			path = party;
+			sourceTree = "<group>";
+		};
+		6C3FB5C51424542900B296F4 /* definition */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5C61424542900B296F4 /* party.pb.cc */,
+				6C3FB5C71424542900B296F4 /* party.pb.h */,
+			);
+			path = definition;
+			sourceTree = "<group>";
+		};
+		6C3FB5C81424542900B296F4 /* presence */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5C91424542900B296F4 /* presence.pb.cc */,
+				6C3FB5CA1424542900B296F4 /* presence.pb.h */,
+				6C3FB5CB1424542900B296F4 /* presence_types.pb.cc */,
+				6C3FB5CC1424542900B296F4 /* presence_types.pb.h */,
+			);
+			path = presence;
+			sourceTree = "<group>";
+		};
+		6C3FB5CD1424542900B296F4 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5CE1424542900B296F4 /* search.pb.cc */,
+				6C3FB5CF1424542900B296F4 /* search.pb.h */,
+				6C3FB5D01424542900B296F4 /* search_types.pb.cc */,
+				6C3FB5D11424542900B296F4 /* search_types.pb.h */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		6C3FB5D21424542900B296F4 /* server_pool */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5D31424542900B296F4 /* server_pool.pb.cc */,
+				6C3FB5D41424542900B296F4 /* server_pool.pb.h */,
+			);
+			path = server_pool;
+			sourceTree = "<group>";
+		};
+		6C3FB5D51424542900B296F4 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5D61424542900B296F4 /* storage.pb.cc */,
+				6C3FB5D71424542900B296F4 /* storage.pb.h */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
+		6C3FB5D81424542900B296F4 /* toon */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5D91424542900B296F4 /* toon.pb.cc */,
+				6C3FB5DA1424542900B296F4 /* toon.pb.h */,
+				6C3FB5DB1424542900B296F4 /* toon_external.pb.cc */,
+				6C3FB5DC1424542900B296F4 /* toon_external.pb.h */,
+			);
+			path = toon;
+			sourceTree = "<group>";
+		};
+		6C3FB5DD1424542900B296F4 /* user_manager */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5DE1424542900B296F4 /* user_manager.pb.cc */,
+				6C3FB5DF1424542900B296F4 /* user_manager.pb.h */,
+			);
+			path = user_manager;
+			sourceTree = "<group>";
+		};
+		6C3FB5E41424542900B296F4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5E51424542900B296F4 /* Client.cc */,
+				6C3FB5E61424542900B296F4 /* Client.h */,
+				6C3FB5E71424542900B296F4 /* main.cc */,
+				6C3FB5E81424542900B296F4 /* Services */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		6C3FB5E81424542900B296F4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB5E91424542900B296F4 /* AuthenticationService.cc */,
+				6C3FB5EA1424542900B296F4 /* AuthenticationService.h */,
+				6C3FB5EB1424542900B296F4 /* BaseService.cc */,
+				6C3FB5EC1424542900B296F4 /* BaseService.h */,
+				6C3FB5ED1424542900B296F4 /* ChannelInvitationService.cc */,
+				6C3FB5EE1424542900B296F4 /* ChannelInvitationService.h */,
+				6C3FB5EF1424542900B296F4 /* FollowersService.cc */,
+				6C3FB5F01424542900B296F4 /* FollowersService.h */,
+				6C3FB5F11424542900B296F4 /* FriendsService.cc */,
+				6C3FB5F21424542900B296F4 /* FriendsService.h */,
+				6C3FB5F31424542900B296F4 /* GameMasterService.cc */,
+				6C3FB5F41424542900B296F4 /* GameMasterService.h */,
+				6C3FB5F51424542900B296F4 /* PresenceService.cc */,
+				6C3FB5F61424542900B296F4 /* PresenceService.h */,
+				6C3FB5F71424542900B296F4 /* Service.cc */,
+				6C3FB5F81424542900B296F4 /* Service.h */,
+				6C3FB5F91424542900B296F4 /* StorageService.cc */,
+				6C3FB5FA1424542900B296F4 /* StorageService.h */,
+				6C3FB5FB1424542900B296F4 /* UserManagerService.cc */,
+				6C3FB5FC1424542900B296F4 /* UserManagerService.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C3FB51C1424517800B296F4 /* d3emu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C3FB5271424517800B296F4 /* Build configuration list for PBXNativeTarget "d3emu" */;
+			buildPhases = (
+				6C3FB5191424517800B296F4 /* Sources */,
+				6C3FB51A1424517800B296F4 /* Frameworks */,
+				6C3FB51B1424517800B296F4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = d3emu;
+			productName = d3emu;
+			productReference = 6C3FB51D1424517800B296F4 /* d3emu */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C3FB5141424517800B296F4 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 6C3FB5171424517800B296F4 /* Build configuration list for PBXProject "d3emu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6C3FB5121424517800B296F4;
+			productRefGroup = 6C3FB51E1424517800B296F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C3FB51C1424517800B296F4 /* d3emu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C3FB5191424517800B296F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C3FB5FD1424542900B296F4 /* Account.pb.cc in Sources */,
+				6C3FB5FE1424542900B296F4 /* AttributeSerializer.pb.cc in Sources */,
+				6C3FB5FF1424542900B296F4 /* GameMessage.pb.cc in Sources */,
+				6C3FB6001424542900B296F4 /* GBHandle.pb.cc in Sources */,
+				6C3FB6021424542900B296F4 /* Hero.pb.cc in Sources */,
+				6C3FB6031424542900B296F4 /* Hireling.pb.cc in Sources */,
+				6C3FB6041424542900B296F4 /* ItemCrafting.pb.cc in Sources */,
+				6C3FB6051424542900B296F4 /* Items.pb.cc in Sources */,
+				6C3FB6061424542900B296F4 /* process_config.pb.cc in Sources */,
+				6C3FB6071424542900B296F4 /* profanity.pb.cc in Sources */,
+				6C3FB6081424542900B296F4 /* attribute.pb.cc in Sources */,
+				6C3FB6091424542900B296F4 /* content_handle.pb.cc in Sources */,
+				6C3FB60A1424542900B296F4 /* descriptor.pb.cc in Sources */,
+				6C3FB60B1424542900B296F4 /* entity.pb.cc in Sources */,
+				6C3FB60C1424542900B296F4 /* exchange.pb.cc in Sources */,
+				6C3FB60D1424542900B296F4 /* exchange_object_provider.pb.cc in Sources */,
+				6C3FB60E1424542900B296F4 /* invitation.pb.cc in Sources */,
+				6C3FB60F1424542900B296F4 /* resource.pb.cc in Sources */,
+				6C3FB6101424542900B296F4 /* connection.pb.cc in Sources */,
+				6C3FB6111424542900B296F4 /* rpc.pb.cc in Sources */,
+				6C3FB6121424542900B296F4 /* OnlineService.pb.cc in Sources */,
+				6C3FB6131424542900B296F4 /* PartyMessage.pb.cc in Sources */,
+				6C3FB6171424542900B296F4 /* Quest.pb.cc in Sources */,
+				6C3FB6181424542900B296F4 /* authentication.pb.cc in Sources */,
+				6C3FB6191424542900B296F4 /* channel_types.pb.cc in Sources */,
+				6C3FB61A1424542900B296F4 /* channel.pb.cc in Sources */,
+				6C3FB61B1424542900B296F4 /* channel_invitation_types.pb.cc in Sources */,
+				6C3FB61C1424542900B296F4 /* channel_invitation.pb.cc in Sources */,
+				6C3FB61D1424542900B296F4 /* chat.pb.cc in Sources */,
+				6C3FB61E1424542900B296F4 /* chat_types.pb.cc in Sources */,
+				6C3FB61F1424542900B296F4 /* exchange.pb.cc in Sources */,
+				6C3FB6201424542900B296F4 /* exchange_types.pb.cc in Sources */,
+				6C3FB6211424542900B296F4 /* followers.pb.cc in Sources */,
+				6C3FB6221424542900B296F4 /* friends.pb.cc in Sources */,
+				6C3FB6231424542900B296F4 /* friends_types.pb.cc in Sources */,
+				6C3FB6241424542900B296F4 /* game_factory.pb.cc in Sources */,
+				6C3FB6251424542900B296F4 /* game_master.pb.cc in Sources */,
+				6C3FB6261424542900B296F4 /* game_master_types.pb.cc in Sources */,
+				6C3FB6271424542900B296F4 /* game_utilities.pb.cc in Sources */,
+				6C3FB6281424542900B296F4 /* notification.pb.cc in Sources */,
+				6C3FB6291424542900B296F4 /* party.pb.cc in Sources */,
+				6C3FB62A1424542900B296F4 /* presence.pb.cc in Sources */,
+				6C3FB62B1424542900B296F4 /* presence_types.pb.cc in Sources */,
+				6C3FB62C1424542900B296F4 /* search.pb.cc in Sources */,
+				6C3FB62D1424542900B296F4 /* search_types.pb.cc in Sources */,
+				6C3FB62E1424542900B296F4 /* server_pool.pb.cc in Sources */,
+				6C3FB62F1424542900B296F4 /* storage.pb.cc in Sources */,
+				6C3FB6301424542900B296F4 /* toon.pb.cc in Sources */,
+				6C3FB6311424542900B296F4 /* toon_external.pb.cc in Sources */,
+				6C3FB6321424542900B296F4 /* user_manager.pb.cc in Sources */,
+				6C3FB6331424542900B296F4 /* Settings.pb.cc in Sources */,
+				6C3FB6341424542900B296F4 /* Stats.pb.cc in Sources */,
+				6C3FB6351424542900B296F4 /* Client.cc in Sources */,
+				6C3FB6361424542900B296F4 /* main.cc in Sources */,
+				6C3FB6371424542900B296F4 /* AuthenticationService.cc in Sources */,
+				6C3FB6381424542900B296F4 /* BaseService.cc in Sources */,
+				6C3FB6391424542900B296F4 /* ChannelInvitationService.cc in Sources */,
+				6C3FB63A1424542900B296F4 /* FollowersService.cc in Sources */,
+				6C3FB63B1424542900B296F4 /* FriendsService.cc in Sources */,
+				6C3FB63C1424542900B296F4 /* GameMasterService.cc in Sources */,
+				6C3FB63D1424542900B296F4 /* PresenceService.cc in Sources */,
+				6C3FB63E1424542900B296F4 /* Service.cc in Sources */,
+				6C3FB63F1424542900B296F4 /* StorageService.cc in Sources */,
+				6C3FB6401424542900B296F4 /* UserManagerService.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6C3FB5251424517800B296F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/include/**",
+					"../bnet/**",
+					"../src/**",
+				);
+				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6C3FB5261424517800B296F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/include/**",
+					"../bnet/**",
+					"../src/**",
+				);
+				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6C3FB5281424517800B296F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../bnet/protobuf\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6C3FB5291424517800B296F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../bnet/protobuf\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C3FB5171424517800B296F4 /* Build configuration list for PBXProject "d3emu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C3FB5251424517800B296F4 /* Debug */,
+				6C3FB5261424517800B296F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C3FB5271424517800B296F4 /* Build configuration list for PBXNativeTarget "d3emu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C3FB5281424517800B296F4 /* Debug */,
+				6C3FB5291424517800B296F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C3FB5141424517800B296F4 /* Project object */;
+}
