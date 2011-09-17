@@ -21,7 +21,6 @@
 		6C3FB6091424542900B296F4 /* content_handle.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5751424542900B296F4 /* content_handle.pb.cc */; };
 		6C3FB60A1424542900B296F4 /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5771424542900B296F4 /* descriptor.pb.cc */; };
 		6C3FB60B1424542900B296F4 /* entity.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5791424542900B296F4 /* entity.pb.cc */; };
-		6C3FB60C1424542900B296F4 /* exchange.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB57B1424542900B296F4 /* exchange.pb.cc */; };
 		6C3FB60D1424542900B296F4 /* exchange_object_provider.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB57D1424542900B296F4 /* exchange_object_provider.pb.cc */; };
 		6C3FB60E1424542900B296F4 /* invitation.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB57F1424542900B296F4 /* invitation.pb.cc */; };
 		6C3FB60F1424542900B296F4 /* resource.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5811424542900B296F4 /* resource.pb.cc */; };
@@ -74,6 +73,7 @@
 		6C3FB65C14245ED700B296F4 /* libprotobuf-lite.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */; };
 		6C3FB65D14245ED700B296F4 /* libprotobuf.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */; };
 		6C3FB65E14245ED700B296F4 /* libprotoc.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */; };
+		6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,8 +118,6 @@
 		6C3FB5781424542900B296F4 /* descriptor.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = descriptor.pb.h; sourceTree = "<group>"; };
 		6C3FB5791424542900B296F4 /* entity.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entity.pb.cc; sourceTree = "<group>"; };
 		6C3FB57A1424542900B296F4 /* entity.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entity.pb.h; sourceTree = "<group>"; };
-		6C3FB57B1424542900B296F4 /* exchange.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange.pb.cc; sourceTree = "<group>"; };
-		6C3FB57C1424542900B296F4 /* exchange.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange.pb.h; sourceTree = "<group>"; };
 		6C3FB57D1424542900B296F4 /* exchange_object_provider.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange_object_provider.pb.cc; sourceTree = "<group>"; };
 		6C3FB57E1424542900B296F4 /* exchange_object_provider.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange_object_provider.pb.h; sourceTree = "<group>"; };
 		6C3FB57F1424542900B296F4 /* invitation.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = invitation.pb.cc; sourceTree = "<group>"; };
@@ -223,6 +221,8 @@
 		6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libprotobuf-lite.6.dylib"; path = "../../../../../../usr/local/lib/libprotobuf-lite.6.dylib"; sourceTree = "<group>"; };
 		6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotobuf.6.dylib; path = ../../../../../../usr/local/lib/libprotobuf.6.dylib; sourceTree = "<group>"; };
 		6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotoc.6.dylib; path = ../../../../../../usr/local/lib/libprotoc.6.dylib; sourceTree = "<group>"; };
+		6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange_base.pb.cc; sourceTree = "<group>"; };
+		6C3FB66514253E0100B296F4 /* exchange_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange_base.pb.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +328,8 @@
 		6C3FB5721424542900B296F4 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
+				6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */,
+				6C3FB66514253E0100B296F4 /* exchange_base.pb.h */,
 				6C3FB5731424542900B296F4 /* attribute.pb.cc */,
 				6C3FB5741424542900B296F4 /* attribute.pb.h */,
 				6C3FB5751424542900B296F4 /* content_handle.pb.cc */,
@@ -336,8 +338,6 @@
 				6C3FB5781424542900B296F4 /* descriptor.pb.h */,
 				6C3FB5791424542900B296F4 /* entity.pb.cc */,
 				6C3FB57A1424542900B296F4 /* entity.pb.h */,
-				6C3FB57B1424542900B296F4 /* exchange.pb.cc */,
-				6C3FB57C1424542900B296F4 /* exchange.pb.h */,
 				6C3FB57D1424542900B296F4 /* exchange_object_provider.pb.cc */,
 				6C3FB57E1424542900B296F4 /* exchange_object_provider.pb.h */,
 				6C3FB57F1424542900B296F4 /* invitation.pb.cc */,
@@ -714,7 +714,6 @@
 				6C3FB6091424542900B296F4 /* content_handle.pb.cc in Sources */,
 				6C3FB60A1424542900B296F4 /* descriptor.pb.cc in Sources */,
 				6C3FB60B1424542900B296F4 /* entity.pb.cc in Sources */,
-				6C3FB60C1424542900B296F4 /* exchange.pb.cc in Sources */,
 				6C3FB60D1424542900B296F4 /* exchange_object_provider.pb.cc in Sources */,
 				6C3FB60E1424542900B296F4 /* invitation.pb.cc in Sources */,
 				6C3FB60F1424542900B296F4 /* resource.pb.cc in Sources */,
@@ -764,6 +763,7 @@
 				6C3FB63E1424542900B296F4 /* Service.cc in Sources */,
 				6C3FB63F1424542900B296F4 /* StorageService.cc in Sources */,
 				6C3FB6401424542900B296F4 /* UserManagerService.cc in Sources */,
+				6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
