@@ -36,6 +36,8 @@
 #include "service/presence/presence.pb.h"
 #include "service/storage/storage.pb.h"
 
+#include "OnlineService.pb.h"
+
 #include "Client.h"
 
 #include "Services/Service.h"
@@ -55,55 +57,101 @@ ERROR_3005 | Awaiting response
 
 namespace d3emu
 {
-// 0x4124C31B bnet.protocol.toon.external.ToonListRequest
+    // 0x4124C31B bnet.protocol.toon.external.*
 
-class ToonListService : public Service
-{
-public:
-	ToonListService(uint32_t _service_hash, uint8_t _service_id);
-	void Request(const char *packet, int packet_length);
-	std::string Name() const;
-};
+    class ToonExternalService : public Service
+    {
+    public:
+        ToonExternalService(uint32_t _service_hash, uint8_t _service_id);
+        void Request(const char *packet, int packet_length);
+        std::string Name() const;
+        
+    private:
+        // 0x01
+        void ToonListRequest(bnet::protocol::toon::external::ToonListRequest &request);
+        
+        // 0x02
+        void SelectToonRequest(bnet::protocol::toon::external::SelectToonRequest &request);
+        
+        // 0x03
+        void CreateToonRequest(bnet::protocol::toon::external::CreateToonRequest &request);
+    };
 
-ToonListService::ToonListService(uint32_t _service_hash, uint8_t _service_id)
-	: Service(_service_hash, _service_id) 
-{
-}
+    ToonExternalService::ToonExternalService(uint32_t _service_hash, uint8_t _service_id)
+        : Service(_service_hash, _service_id) 
+    {
+    }
 
-void ToonListService::Request(const char *packet, int packet_length)
-{
-	this->set_current_packet(packet, packet_length);
+    void ToonExternalService::ToonListRequest(bnet::protocol::toon::external::ToonListRequest &request)
+    {
+        std::cout << request.GetTypeName() << ":" << std::endl << request.DebugString() << std::endl;
+        
+        bnet::protocol::toon::external::ToonListResponse response;
+        
+        unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
+        std::string built_response = response.SerializeAsString();
+        built_response.insert(built_response.begin(), header, header + 5);
+        
+        std::cout << response.GetTypeName() << ":" << std::endl << response.DebugString() << std::endl;
+        send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+    }
+    
+    void ToonExternalService::CreateToonRequest(bnet::protocol::toon::external::CreateToonRequest &request)
+    {
+        std::cout << request.GetTypeName() << ":" << std::endl << request.DebugString() << std::endl;
+        
+        
+        bnet::protocol::toon::external::CreateToonResponse response;
+        
+        for (int i = 0; i < request.attribute_size(); i++)
+        {
+            // http://pastebin.com/ULfdcMba
+            D3::OnlineService::HeroCreateParams params;
+            params.ParseFromString(request.attribute(i).value().message_value());
+            
+            std::cout << params.GetTypeName() << ":" << std::endl
+                << params.DebugString() << std::endl;
+            
+            response.mutable_toon()->set_low(234);
+            response.mutable_toon()->set_high(234234);
+        }
+        
+        unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
+        std::string built_response = response.SerializeAsString();
+        built_response.insert(built_response.begin(), header, header + 5);
+        
+        std::cout << response.GetTypeName() << ":" << std::endl << response.DebugString() << std::endl;
+        send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+    }
 
-	std::cout << "bnet::protocol::toon::external::ToonListRequest -> Method ID: " 
-		<< ((uint8_t)packet[1] & 0xff) << std::endl;
-	bnet::protocol::toon::external::ToonListRequest request;
+    void ToonExternalService::Request(const char *packet, int packet_length)
+    {
+        this->set_current_packet(packet, packet_length);
 
-	if (request.ParseFromArray(&packet[6], packet_length - 6))
-	{
-		std::cout << "--> (DebugString): " << request.DebugString() << std::endl;
+        switch ((uint8_t)packet[1])
+        {
+            case 0x01:
+            {
+                bnet::protocol::toon::external::ToonListRequest request;
+                if (request.ParseFromArray(&packet[6], packet[5]))
+                    this->ToonListRequest(request);
+                break;
+            }
+                
+            case 0x03:
+            {
+                bnet::protocol::toon::external::CreateToonRequest request;
+                if (request.ParseFromArray(&packet[6], packet[5]))
+                    this->CreateToonRequest(request);
+                break;
+            }
+        }
+    }
 
-		bnet::protocol::toon::external::ToonListResponse response;
-
-		unsigned char header[5] = { 0xfe, 0x00, packet[2], 0x00, response.ByteSize() };
-		std::string built_response = response.SerializeAsString();
-		built_response.insert(built_response.begin(), header, header + 5);
-
-		printf("<-- (Hex): ");
-		for (size_t i = 0; i < built_response.length(); i++)
-		{
-			printf("%02X ", built_response[i] & 0xff);
-		}
-		printf("\n");
-
-		std::cout << "<-- (DebugString): " << response.DebugString() << std::endl;
-		send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-	}
-}
-
-std::string ToonListService::Name() const
-{
-	return std::string("d3emu::ToonListService");
-}
+    std::string ToonExternalService::Name() const
+    {
+        return std::string("d3emu::ToonListService");
+    }
 
 }
 
@@ -125,6 +173,10 @@ int main(int argc, char **argv)
 		std::cout << "Invalid socket." << std::endl;
 		exit(0);
 	}
+    else
+    {
+        std::cout << "Server listening on 127.0.0.1:6543" << std::endl;
+    }
 
 	d3emu::BoundServicesManager service_manager;
 
@@ -132,7 +184,7 @@ int main(int argc, char **argv)
 	service_manager.Bind(new d3emu::ChannelInvitationService(0x83040608, 0));
 	service_manager.Bind(new d3emu::UserManagerService(0x3E19268A, 0));
 	service_manager.Bind(new d3emu::GameMasterService(0x810CB195, 0));
-	service_manager.Bind(new d3emu::ToonListService(0x4124C31B, 0));
+	service_manager.Bind(new d3emu::ToonExternalService(0x4124C31B, 0));
 	service_manager.Bind(new d3emu::FollowersService(0xE5A11099, 0));
 	service_manager.Bind(new d3emu::FriendsService(0xA3DDB1BD, 0));
 	service_manager.Bind(new d3emu::PresenceService(0xFA0796FF, 0));

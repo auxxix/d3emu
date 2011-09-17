@@ -43,7 +43,7 @@ void StorageService::ExecuteRequest(bnet::protocol::storage::ExecuteRequest &req
 	else if (!request.query_name().compare("LoadAccountDigest"))
 	{
 		D3::Account::Digest digest;
-		digest.set_version(1);
+		digest.set_version(99);
 		digest.set_flags(0);
 		digest.mutable_last_played_hero_id()->set_id_high(0);
 		digest.mutable_last_played_hero_id()->set_id_low(0);
