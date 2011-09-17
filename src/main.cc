@@ -22,22 +22,6 @@
 #include <time.h>
 #include <stdint.h>
 
-#include "lib/rpc/rpc.pb.h"
-#include "lib/rpc/connection.pb.h"
-#include "service/authentication/authentication.pb.h"
-#include "service/exchange/exchange.pb.h"
-#include "service/user_manager/user_manager.pb.h"
-#include "service/friends/definition/friends.pb.h"
-#include "service/channel_invitation/definition/channel_invitation.pb.h"
-#include "service/game_master/game_master.pb.h"
-#include "service/followers/definition/followers.pb.h"
-#include "service/presence/presence.pb.h"
-#include "service/storage/storage.pb.h"
-
-#include "OnlineService.pb.h"
-
-#include "Client.h"
-
 #include "Services/Service.h"
 #include "Services/BaseService.h"
 #include "Services/AuthenticationService.h"
@@ -49,9 +33,6 @@
 #include "Services/PresenceService.h"
 #include "Services/StorageService.h"
 #include "Services/ToonExternalService.h"
-/*
-ERROR_3005 | Awaiting response
-*/
 
 int StartServer(const char *ip, const char *port);
 void StopServer(int s);
