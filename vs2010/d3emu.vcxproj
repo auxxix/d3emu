@@ -11,9 +11,135 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="lib\libprotobuf-lite.lib" />
-    <Library Include="lib\libprotobuf.lib" />
-    <Library Include="lib\libprotoc.lib" />
+    <ClCompile Include="..\bnet\Account.pb.cc" />
+    <ClCompile Include="..\bnet\AttributeSerializer.pb.cc" />
+    <ClCompile Include="..\bnet\GameMessage.pb.cc" />
+    <ClCompile Include="..\bnet\GBHandle.pb.cc" />
+    <ClCompile Include="..\bnet\Hero.pb.cc" />
+    <ClCompile Include="..\bnet\Hireling.pb.cc" />
+    <ClCompile Include="..\bnet\ItemCrafting.pb.cc" />
+    <ClCompile Include="..\bnet\Items.pb.cc" />
+    <ClCompile Include="..\bnet\lib\config\process_config.pb.cc" />
+    <ClCompile Include="..\bnet\lib\profanity\profanity.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\attribute.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\content_handle.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\descriptor.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\entity.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\exchange_base.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\exchange_object_provider.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\invitation.pb.cc" />
+    <ClCompile Include="..\bnet\lib\protocol\resource.pb.cc" />
+    <ClCompile Include="..\bnet\lib\rpc\connection.pb.cc" />
+    <ClCompile Include="..\bnet\lib\rpc\rpc.pb.cc" />
+    <ClCompile Include="..\bnet\OnlineService.pb.cc" />
+    <ClCompile Include="..\bnet\PartyMessage.pb.cc" />
+    <ClCompile Include="..\bnet\Quest.pb.cc" />
+    <ClCompile Include="..\bnet\service\authentication\authentication.pb.cc" />
+    <ClCompile Include="..\bnet\service\channel\channel_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\channel\definition\channel.pb.cc" />
+    <ClCompile Include="..\bnet\service\channel_invitation\channel_invitation_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\channel_invitation\definition\channel_invitation.pb.cc" />
+    <ClCompile Include="..\bnet\service\chat\definition\chat.pb.cc" />
+    <ClCompile Include="..\bnet\service\chat\definition\chat_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\exchange\exchange.pb.cc" />
+    <ClCompile Include="..\bnet\service\exchange\exchange_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\followers\definition\followers.pb.cc" />
+    <ClCompile Include="..\bnet\service\friends\definition\friends.pb.cc" />
+    <ClCompile Include="..\bnet\service\friends\friends_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\game_master\game_factory.pb.cc" />
+    <ClCompile Include="..\bnet\service\game_master\game_master.pb.cc" />
+    <ClCompile Include="..\bnet\service\game_master\game_master_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\game_utilities\game_utilities.pb.cc" />
+    <ClCompile Include="..\bnet\service\notification\notification.pb.cc" />
+    <ClCompile Include="..\bnet\service\party\definition\party.pb.cc" />
+    <ClCompile Include="..\bnet\service\presence\presence.pb.cc" />
+    <ClCompile Include="..\bnet\service\presence\presence_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\search\search.pb.cc" />
+    <ClCompile Include="..\bnet\service\search\search_types.pb.cc" />
+    <ClCompile Include="..\bnet\service\server_pool\server_pool.pb.cc" />
+    <ClCompile Include="..\bnet\service\storage\storage.pb.cc" />
+    <ClCompile Include="..\bnet\service\toon\toon.pb.cc" />
+    <ClCompile Include="..\bnet\service\toon\toon_external.pb.cc" />
+    <ClCompile Include="..\bnet\service\user_manager\user_manager.pb.cc" />
+    <ClCompile Include="..\bnet\Settings.pb.cc" />
+    <ClCompile Include="..\bnet\Stats.pb.cc" />
+    <ClCompile Include="..\src\Client.cc" />
+    <ClCompile Include="..\src\main.cc" />
+    <ClCompile Include="..\src\Services\AuthenticationService.cc" />
+    <ClCompile Include="..\src\Services\BaseService.cc" />
+    <ClCompile Include="..\src\Services\ChannelInvitationService.cc" />
+    <ClCompile Include="..\src\Services\FollowersService.cc" />
+    <ClCompile Include="..\src\Services\FriendsService.cc" />
+    <ClCompile Include="..\src\Services\GameMasterService.cc" />
+    <ClCompile Include="..\src\Services\PresenceService.cc" />
+    <ClCompile Include="..\src\Services\Service.cc" />
+    <ClCompile Include="..\src\Services\StorageService.cc" />
+    <ClCompile Include="..\src\Services\UserManagerService.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\bnet\Account.pb.h" />
+    <ClInclude Include="..\bnet\AttributeSerializer.pb.h" />
+    <ClInclude Include="..\bnet\GameMessage.pb.h" />
+    <ClInclude Include="..\bnet\GBHandle.pb.h" />
+    <ClInclude Include="..\bnet\Hero.pb.h" />
+    <ClInclude Include="..\bnet\Hireling.pb.h" />
+    <ClInclude Include="..\bnet\ItemCrafting.pb.h" />
+    <ClInclude Include="..\bnet\Items.pb.h" />
+    <ClInclude Include="..\bnet\lib\config\process_config.pb.h" />
+    <ClInclude Include="..\bnet\lib\profanity\profanity.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\attribute.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\content_handle.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\descriptor.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\entity.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\exchange_base.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\exchange_object_provider.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\invitation.pb.h" />
+    <ClInclude Include="..\bnet\lib\protocol\resource.pb.h" />
+    <ClInclude Include="..\bnet\lib\rpc\connection.pb.h" />
+    <ClInclude Include="..\bnet\lib\rpc\rpc.pb.h" />
+    <ClInclude Include="..\bnet\OnlineService.pb.h" />
+    <ClInclude Include="..\bnet\PartyMessage.pb.h" />
+    <ClInclude Include="..\bnet\Quest.pb.h" />
+    <ClInclude Include="..\bnet\service\authentication\authentication.pb.h" />
+    <ClInclude Include="..\bnet\service\channel\channel_types.pb.h" />
+    <ClInclude Include="..\bnet\service\channel\definition\channel.pb.h" />
+    <ClInclude Include="..\bnet\service\channel_invitation\channel_invitation_types.pb.h" />
+    <ClInclude Include="..\bnet\service\channel_invitation\definition\channel_invitation.pb.h" />
+    <ClInclude Include="..\bnet\service\chat\definition\chat.pb.h" />
+    <ClInclude Include="..\bnet\service\chat\definition\chat_types.pb.h" />
+    <ClInclude Include="..\bnet\service\exchange\exchange.pb.h" />
+    <ClInclude Include="..\bnet\service\exchange\exchange_types.pb.h" />
+    <ClInclude Include="..\bnet\service\followers\definition\followers.pb.h" />
+    <ClInclude Include="..\bnet\service\friends\definition\friends.pb.h" />
+    <ClInclude Include="..\bnet\service\friends\friends_types.pb.h" />
+    <ClInclude Include="..\bnet\service\game_master\game_factory.pb.h" />
+    <ClInclude Include="..\bnet\service\game_master\game_master.pb.h" />
+    <ClInclude Include="..\bnet\service\game_master\game_master_types.pb.h" />
+    <ClInclude Include="..\bnet\service\game_utilities\game_utilities.pb.h" />
+    <ClInclude Include="..\bnet\service\notification\notification.pb.h" />
+    <ClInclude Include="..\bnet\service\party\definition\party.pb.h" />
+    <ClInclude Include="..\bnet\service\presence\presence.pb.h" />
+    <ClInclude Include="..\bnet\service\presence\presence_types.pb.h" />
+    <ClInclude Include="..\bnet\service\search\search.pb.h" />
+    <ClInclude Include="..\bnet\service\search\search_types.pb.h" />
+    <ClInclude Include="..\bnet\service\server_pool\server_pool.pb.h" />
+    <ClInclude Include="..\bnet\service\storage\storage.pb.h" />
+    <ClInclude Include="..\bnet\service\toon\toon.pb.h" />
+    <ClInclude Include="..\bnet\service\toon\toon_external.pb.h" />
+    <ClInclude Include="..\bnet\service\user_manager\user_manager.pb.h" />
+    <ClInclude Include="..\bnet\Settings.pb.h" />
+    <ClInclude Include="..\bnet\Stats.pb.h" />
+    <ClInclude Include="..\src\Client.h" />
+    <ClInclude Include="..\src\Services\AuthenticationService.h" />
+    <ClInclude Include="..\src\Services\BaseService.h" />
+    <ClInclude Include="..\src\Services\ChannelInvitationService.h" />
+    <ClInclude Include="..\src\Services\FollowersService.h" />
+    <ClInclude Include="..\src\Services\FriendsService.h" />
+    <ClInclude Include="..\src\Services\GameMasterService.h" />
+    <ClInclude Include="..\src\Services\PresenceService.h" />
+    <ClInclude Include="..\src\Services\Service.h" />
+    <ClInclude Include="..\src\Services\StorageService.h" />
+    <ClInclude Include="..\src\Services\UserManagerService.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3BFF6C6E-C0FF-440F-8267-B4F89A9F30AF}</ProjectGuid>
@@ -42,8 +168,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\src;..\bnet;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\include;..\src;..\bnet;$(IncludePath)</IncludePath>
     <SourcePath>..\bnet;..\src;$(SourcePath)</SourcePath>
+    <LibraryPath>D:\Dropbox\Development\lib\google\protobuf;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\src;..\bnet;..\..\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>..\..\lib\google\protobuf;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -52,6 +185,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libprotobuf.lib;libprotobuf-lite.lib;libprotoc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -65,6 +199,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;libprotobuf.lib;libprotobuf-lite.lib;libprotoc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

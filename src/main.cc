@@ -5,7 +5,7 @@
 
     typedef SSIZE_T ssize_t;
 
-    #define close(s) closesocket(x)
+    #define close(s) closesocket(s)
 
 #else
     #include <sys/types.h>

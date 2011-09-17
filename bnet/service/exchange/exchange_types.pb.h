@@ -24,7 +24,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include "lib/protocol/entity.pb.h"
-#include "lib/protocol/exchange.pb.h"
+#include "lib/protocol/exchange_base.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace bnet {

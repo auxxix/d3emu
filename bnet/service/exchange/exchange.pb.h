@@ -25,7 +25,7 @@
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/service.h>
 #include "lib/rpc/rpc.pb.h"
-#include "lib/protocol/exchange.pb.h"
+#include "lib/protocol/exchange_base.pb.h"
 #include "lib/protocol/exchange_object_provider.pb.h"
 #include "lib/protocol/entity.pb.h"
 #include "service/exchange/exchange_types.pb.h"
