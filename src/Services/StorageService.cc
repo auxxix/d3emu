@@ -8,7 +8,7 @@
     #include <sys/socket.h>
 #endif
 
-#include "../Account.pb.h"
+#include "../bnet/Account.pb.h"
 
 namespace d3emu
 {
