@@ -44,6 +44,11 @@ namespace d3emu
 
 	std::string PacketHeader::SerializeAsString() const
 	{
-		return std::string(this->raw_bytes_, this->raw_bytes_ + 5);
+		return std::string(this->mutable_bytes_, this->mutable_bytes_ + 5);
+	}
+
+	uint8_t *PacketHeader::mutable_bytes()
+	{
+		return this->mutable_bytes_;
 	}
 }

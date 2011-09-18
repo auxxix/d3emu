@@ -21,8 +21,10 @@ namespace d3emu
 
 		std::string SerializeAsString() const;
 
+		uint8_t *mutable_bytes();
+
 	private:
-		uint8_t raw_bytes_[5];
+		uint8_t mutable_bytes_[5];
 		uint8_t service_id_;
 		uint8_t method_id_;
 		uint8_t request_id_;
