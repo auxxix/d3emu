@@ -12,6 +12,7 @@
 		6C3FB6921425498500B296F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6911425498500B296F4 /* main.m */; };
 		6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */; };
 		6C3FB69C1425498600B296F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3FB69A1425498600B296F4 /* MainMenu.xib */; };
+		6C3FB6BD142571DC00B296F4 /* D3EmuServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6BC142571DC00B296F4 /* D3EmuServer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		6C3FB6971425498500B296F4 /* d3emu_cocoaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = d3emu_cocoaAppDelegate.h; sourceTree = "<group>"; };
 		6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = d3emu_cocoaAppDelegate.m; sourceTree = "<group>"; };
 		6C3FB69B1425498600B296F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6C3FB6BB142571DC00B296F4 /* D3EmuServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3EmuServer.h; sourceTree = "<group>"; };
+		6C3FB6BC142571DC00B296F4 /* D3EmuServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3EmuServer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 		6C3FB68B1425498500B296F4 /* d3emu-cocoa */ = {
 			isa = PBXGroup;
 			children = (
+				6C3FB6BA142571DC00B296F4 /* D3Emu */,
 				6C3FB6971425498500B296F4 /* d3emu_cocoaAppDelegate.h */,
 				6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */,
 				6C3FB69A1425498600B296F4 /* MainMenu.xib */,
@@ -97,6 +101,15 @@
 				6C3FB6931425498500B296F4 /* d3emu-cocoa-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C3FB6BA142571DC00B296F4 /* D3Emu */ = {
+			isa = PBXGroup;
+			children = (
+				6C3FB6BB142571DC00B296F4 /* D3EmuServer.h */,
+				6C3FB6BC142571DC00B296F4 /* D3EmuServer.m */,
+			);
+			path = D3Emu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +173,7 @@
 			files = (
 				6C3FB6921425498500B296F4 /* main.m in Sources */,
 				6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */,
+				6C3FB6BD142571DC00B296F4 /* D3EmuServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +285,7 @@
 				6C3FB6A11425498600B296F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
