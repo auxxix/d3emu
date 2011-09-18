@@ -9,6 +9,22 @@
 @synthesize consoleTypeColumn;
 @synthesize consoleLengthColumn;
 @synthesize consoleItemsArray;
+@synthesize server;
+@synthesize serverThread;
+
+#pragma mark - D3EmuServerDelegate
+
+- (BOOL)server:(D3EmuServer *)server didReceivePacket:(const char *)packet length:(int)length
+{
+    D3EmuPacket *thePacket = [[D3EmuPacket alloc] init];
+    // Note that we receive this in the server's thread
+    [self performSelector:@selector(logPacket:) onThread:[NSThread mainThread]
+               withObject:thePacket waitUntilDone:YES];
+    [thePacket release];
+    
+    return YES;
+}
+
 
 - (void)logPacket:(D3EmuPacket *)packet
 {
@@ -28,9 +44,11 @@
     self.consoleItemsArray = array;
     [array release];
     
-    D3EmuServer *server = [[D3EmuServer alloc] initWithHost:@"127.0.0.1" port:@"6543"];
-    [NSThread detachNewThreadSelector:@selector(run) toTarget:server withObject:nil];
-    [server release];
+    D3EmuServer *theServer = [[D3EmuServer alloc] initWithHost:@"127.0.0.1" port:@"6543"];
+    self.server = theServer;
+    self.server.delegate = self;
+    [NSThread detachNewThreadSelector:@selector(run) toTarget:self.server withObject:nil];
+    [theServer release];
 }
 
 #pragma mark - NSOutlineViewDelegate

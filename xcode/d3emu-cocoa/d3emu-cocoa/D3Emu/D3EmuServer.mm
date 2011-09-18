@@ -55,6 +55,8 @@
 
 - (void)run
 {
+    _alive = YES;
+    
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
     struct addrinfo hints;
