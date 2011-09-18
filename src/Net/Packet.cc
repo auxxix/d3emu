@@ -6,7 +6,11 @@ namespace d3emu
 
 	PacketHeaderResponse::PacketHeaderResponse()
 	{
-		memset(this->mutable_bytes_, 0, 5);
+	}
+
+	PacketHeaderResponse::PacketHeaderResponse(const char *packet, size_t length)
+	{
+		PacketHeaderResponse((uint8_t *)packet, length);
 	}
 
 	PacketHeaderResponse::PacketHeaderResponse(const uint8_t *packet, size_t length)
@@ -77,19 +81,20 @@ namespace d3emu
 
 	std::string PacketHeaderResponse::SerializeAsString() const
 	{
-		return std::string(this->mutable_bytes_, this->mutable_bytes_ + 5);
-	}
-
-	uint8_t *PacketHeaderResponse::mutable_bytes()
-	{
-		return this->mutable_bytes_;
+		char bytes[5] = { this->service_id(), this->method_id(), 
+			this->request_id(), 0x00, this->message_size() };
+		return std::string(bytes, bytes + 5);
 	}
 
 	// PacketHeaderRequest
 
 	PacketHeaderRequest::PacketHeaderRequest()
 	{
-		memset(this->mutable_bytes_, 0, 6);
+	}
+
+	PacketHeaderRequest::PacketHeaderRequest(const char *packet, size_t length)
+	{
+		PacketHeaderRequest((uint8_t *)packet, length);
 	}
 
 	PacketHeaderRequest::PacketHeaderRequest(const uint8_t *packet, size_t length)
@@ -160,12 +165,8 @@ namespace d3emu
 
 	std::string PacketHeaderRequest::SerializeAsString() const
 	{
-		return std::string(this->mutable_bytes_, this->mutable_bytes_ + 5);
+		char bytes[6] = { this->service_id(), this->method_id(), 
+			this->request_id(), 0x00, 0x00, this->message_size() };
+		return std::string(bytes, bytes + 6);
 	}
-
-	uint8_t *PacketHeaderRequest::mutable_bytes()
-	{
-		return this->mutable_bytes_;
-	}
-
 }

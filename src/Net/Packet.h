@@ -10,6 +10,7 @@ namespace d3emu
 	{
 	public:
 		PacketHeaderRequest();
+		PacketHeaderRequest(const char *packet, size_t length);
 		PacketHeaderRequest(const uint8_t *packet, size_t length);
 		PacketHeaderRequest(std::string &packet);
 
@@ -25,10 +26,7 @@ namespace d3emu
 
 		std::string SerializeAsString() const;
 
-		uint8_t *mutable_bytes();
-
 	private:
-		uint8_t mutable_bytes_[6];
 		uint8_t service_id_;
 		uint8_t method_id_;
 		uint8_t request_id_;
@@ -39,6 +37,7 @@ namespace d3emu
 	{
 	public:
 		PacketHeaderResponse();
+		PacketHeaderResponse(const char *packet, size_t length);
 		PacketHeaderResponse(const uint8_t *packet, size_t length);
 		PacketHeaderResponse(std::string &packet);
 
@@ -54,10 +53,7 @@ namespace d3emu
 
 		std::string SerializeAsString() const;
 
-		uint8_t *mutable_bytes();
-
 	private:
-		uint8_t mutable_bytes_[5];
 		uint8_t service_id_;
 		uint8_t method_id_;
 		uint8_t request_id_;

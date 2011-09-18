@@ -66,7 +66,7 @@ namespace d3emu
     void ToonExternalService::Request(const char *packet, int packet_length)
     {
         this->set_current_packet(packet, packet_length);
-        
+
         switch ((uint8_t)packet[1])
         {
             case 0x01:

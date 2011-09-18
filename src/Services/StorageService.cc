@@ -196,13 +196,14 @@ namespace d3emu
 	{
 		this->set_current_packet(packet, packet_length);
 
-		uint8_t method_id = (uint8_t)packet[1];
-		switch (method_id)
+		PacketHeaderRequest request_header(packet, 6);
+
+		switch (request_header.method_id())
 		{
 			case 0x01:
 			{
 				bnet::protocol::storage::ExecuteRequest request;
-				if (request.ParseFromArray(&packet[6], packet[5]))
+				if (request.ParseFromArray(&packet[6], request_header.message_size()))
 					this->ExecuteRequest(request);
 				break;
 			}
@@ -210,7 +211,7 @@ namespace d3emu
 			case 0x02:
 			{
 				bnet::protocol::storage::OpenTableRequest request;
-				if (request.ParseFromArray(&packet[6], packet[5]))
+				if (request.ParseFromArray(&packet[6], request_header.message_size()))
 					this->OpenTableRequest(request);
 				break;
 			}
@@ -218,7 +219,7 @@ namespace d3emu
 			case 0x03:
 			{
 				bnet::protocol::storage::OpenColumnRequest request;
-				if (request.ParseFromArray(&packet[6], packet[5]))
+				if (request.ParseFromArray(&packet[6], request_header.message_size()))
 					this->OpenColumnRequest(request);
 				break;
 			}
