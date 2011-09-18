@@ -169,4 +169,73 @@ namespace d3emu
 			this->request_id(), 0x00, 0x00, this->message_size() };
 		return std::string(bytes, bytes + 6);
 	}
+
+	// PacketRequest
+
+	PacketRequest::PacketRequest()
+	{
+		this->clear_has_message();
+	}
+
+	PacketRequest::PacketRequest(const char *packet, size_t length)
+	{
+		PacketRequest((uint8_t *)packet, length);
+	}
+
+	PacketRequest::PacketRequest(const uint8_t *packet, size_t length)
+		: header_(packet, 6), message_data_((char *)&packet[6], (char *)&packet[6] + packet[5])
+	{
+		PacketRequest();
+	}
+
+	PacketRequest::PacketRequest(std::string &packet)
+		: header_(packet), message_data_(packet.begin() + 6, packet.begin() + 6 + packet[5])
+	{
+		PacketRequest();
+	}
+
+	const PacketHeaderRequest &PacketRequest::header() const
+	{
+		return this->header_;
+	}
+
+	PacketHeaderRequest *PacketRequest::mutable_header()
+	{
+		return &this->header_;
+	}
+
+	void PacketRequest::set_message(google::protobuf::Message *message)
+	{
+		if (message)
+		{
+			this->set_has_message();
+			this->message_ = message;
+		}
+	}
+
+	bool PacketRequest::has_message() const
+	{
+		return this->has_message_;
+	}
+	
+	google::protobuf::Message *PacketRequest::mutable_message()
+	{
+		return this->message_;
+	}
+
+	std::string PacketRequest::message_data() const
+	{
+		return this->message_data_;
+	}
+
+	void PacketRequest::clear_has_message()
+	{
+		this->message_ = 0;
+		this->has_message_ = false;
+	}
+
+	void PacketRequest::set_has_message()
+	{
+		this->has_message_ = true;
+	}
 }

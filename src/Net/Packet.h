@@ -60,6 +60,38 @@ namespace d3emu
 		uint8_t message_size_;
 	};
 
+	class PacketRequest
+	{
+	public:
+		PacketRequest();
+		PacketRequest(const char *packet, size_t length);
+		PacketRequest(const uint8_t *packet, size_t length);
+		PacketRequest(std::string &packet);
+
+		const PacketHeaderRequest &header() const;
+		PacketHeaderRequest *mutable_header();
+
+		void set_message(google::protobuf::Message *message);
+		bool has_message() const;
+		google::protobuf::Message *mutable_message();
+
+		std::string message_data() const;
+
+	private:
+		void clear_has_message();
+		void set_has_message();
+
+		std::string message_data_;
+		PacketHeaderRequest header_;
+		google::protobuf::Message *message_;
+		bool has_message_;
+	};
+
+	class PacketResponse
+	{
+
+	};
+
 	class Packet
 	{
 	public:
