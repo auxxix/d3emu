@@ -65,6 +65,7 @@
     <ClCompile Include="..\bnet\Stats.pb.cc" />
     <ClCompile Include="..\src\Client.cc" />
     <ClCompile Include="..\src\main.cc" />
+    <ClCompile Include="..\src\Net\Packet.cc" />
     <ClCompile Include="..\src\Services\AuthenticationService.cc" />
     <ClCompile Include="..\src\Services\BaseService.cc" />
     <ClCompile Include="..\src\Services\ChannelInvitationService.cc" />
@@ -131,6 +132,7 @@
     <ClInclude Include="..\bnet\Settings.pb.h" />
     <ClInclude Include="..\bnet\Stats.pb.h" />
     <ClInclude Include="..\src\Client.h" />
+    <ClInclude Include="..\src\Net\Packet.h" />
     <ClInclude Include="..\src\Services\AuthenticationService.h" />
     <ClInclude Include="..\src\Services\BaseService.h" />
     <ClInclude Include="..\src\Services\ChannelInvitationService.h" />
