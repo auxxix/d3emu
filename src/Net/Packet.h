@@ -6,10 +6,41 @@
 
 namespace d3emu
 {
+	class PacketHeaderRequest
+	{
+	public:
+		PacketHeaderRequest();
+		PacketHeaderRequest(const uint8_t *packet, size_t length);
+		PacketHeaderRequest(std::string &packet);
+
+		void set_service_id(uint8_t service_id);
+		void set_method_id(uint8_t method_id);
+		void set_request_id(uint8_t request_id);
+		void set_message_size(uint8_t message_size);
+
+		uint8_t service_id() const;
+		uint8_t method_id() const;
+		uint8_t request_id() const;
+		uint8_t message_size() const;
+
+		std::string SerializeAsString() const;
+
+		uint8_t *mutable_bytes();
+
+	private:
+		uint8_t mutable_bytes_[6];
+		uint8_t service_id_;
+		uint8_t method_id_;
+		uint8_t request_id_;
+		uint8_t message_size_;
+	};
+	
 	class PacketHeaderResponse
 	{
 	public:
 		PacketHeaderResponse();
+		PacketHeaderResponse(const uint8_t *packet, size_t length);
+		PacketHeaderResponse(std::string &packet);
 
 		void set_service_id(uint8_t service_id);
 		void set_method_id(uint8_t method_id);
@@ -44,35 +75,7 @@ namespace d3emu
 		google::protobuf::Message *message_;
 	};
 
-	class PacketHeaderRequest
-	{
-	public:
-		PacketHeaderRequest();
-		PacketHeaderRequest(const uint8_t *packet, size_t length);
-		PacketHeaderRequest(std::string &packet);
-
-		void set_service_id(uint8_t service_id);
-		void set_method_id(uint8_t method_id);
-		void set_request_id(uint8_t request_id);
-		void set_message_size(uint8_t message_size);
-
-		uint8_t service_id() const;
-		uint8_t method_id() const;
-		uint8_t request_id() const;
-		uint8_t message_size() const;
-
-		std::string SerializeAsString() const;
-
-		uint8_t *mutable_bytes();
-
-	private:
-		uint8_t mutable_bytes_[6];
-		uint8_t service_id_;
-		uint8_t method_id_;
-		uint8_t request_id_;
-		uint8_t message_size_;
-	};
-
+	
 }
 
 #endif
