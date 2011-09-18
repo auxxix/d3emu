@@ -1,11 +1,26 @@
 #include "Client.h"
 
-void d3emu::Client::set_socket(int socket)
+namespace d3emu
 {
-	this->socket_ = socket;
-}
+	bool Client::Send(std::string &header, google::protobuf::Message &message)
+	{
+		int sent = 0;
 
-int d3emu::Client::socket() const
-{
-	return this->socket_;
+		std::string built_response;
+		built_response.append(header);
+		built_response.append(message.SerializeAsString());
+
+		return (sent == built_response.length());
+	}
+
+	void Client::set_socket(int socket)
+	{
+		this->socket_ = socket;
+	}
+
+	int Client::socket() const
+	{
+		return this->socket_;
+	}
+
 }

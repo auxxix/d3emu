@@ -1,18 +1,20 @@
 #ifndef D3EMU_CLIENT_H
 #define D3EMU_CLIENT_H
 
-namespace d3emu {
+#include <google/protobuf/message.h>
 
-class Client
+namespace d3emu
 {
-public:
-	void set_socket(int socket);
-	int socket() const;
+	class Client
+	{
+	public:
+		virtual bool Send(std::string &header, google::protobuf::Message &message);
+		void set_socket(int socket);
+		int socket() const;
 
-private:
-	int socket_;
-};
-
+	private:
+		int socket_;
+	};
 } // d3emu service
 
 #endif
