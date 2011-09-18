@@ -207,6 +207,9 @@
     <ClCompile Include="..\bnet\lib\protocol\exchange_base.pb.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Services\ToonExternalService.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\bnet\Account.pb.h">
@@ -396,6 +399,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\bnet\lib\protocol\exchange_base.pb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Services\ToonExternalService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

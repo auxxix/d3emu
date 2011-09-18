@@ -74,6 +74,7 @@
     <ClCompile Include="..\src\Services\PresenceService.cc" />
     <ClCompile Include="..\src\Services\Service.cc" />
     <ClCompile Include="..\src\Services\StorageService.cc" />
+    <ClCompile Include="..\src\Services\ToonExternalService.cc" />
     <ClCompile Include="..\src\Services\UserManagerService.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="..\src\Services\PresenceService.h" />
     <ClInclude Include="..\src\Services\Service.h" />
     <ClInclude Include="..\src\Services\StorageService.h" />
+    <ClInclude Include="..\src\Services\ToonExternalService.h" />
     <ClInclude Include="..\src\Services\UserManagerService.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

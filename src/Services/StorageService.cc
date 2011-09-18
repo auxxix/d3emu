@@ -82,7 +82,7 @@ void StorageService::ExecuteRequest(bnet::protocol::storage::ExecuteRequest &req
 		D3::Hero::Digest digest;
 
 		digest.set_version(99);
-		digest.set_hero_name("auxxix#1");
+		digest.set_hero_name("auxxix");
 		digest.set_gbid_class(0x4FB91EE2);
 		digest.set_highest_unlocked_act(0);
 		digest.set_highest_unlocked_difficulty(0);
