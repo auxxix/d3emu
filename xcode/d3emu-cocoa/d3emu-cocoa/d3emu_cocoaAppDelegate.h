@@ -1,5 +1,7 @@
 #import <Cocoa/Cocoa.h>
 
+#include "D3EmuPacket.h"
+
 @interface d3emu_cocoaAppDelegate : NSObject <NSApplicationDelegate,
     NSOutlineViewDelegate, NSOutlineViewDataSource> {
     NSWindow *window;
@@ -12,6 +14,6 @@
 
 @property (nonatomic, retain) NSMutableArray *consoleItemsArray;
 
-- (void)logPacket:(Packet *)packet;
+- (void)logPacket:(D3EmuPacket *)packet;
 
 @end

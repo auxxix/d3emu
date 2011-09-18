@@ -1,8 +1,11 @@
 #import "D3EmuServer.h"
 #import "D3EmuPacket.h"
 
+#include <sys/socket.h>
+
 @implementation D3EmuServer
 
+@synthesize delegate;
 @synthesize host;
 @synthesize port;
 
@@ -37,7 +40,9 @@
 - (void)run
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSLog(@"Running server.");
+    
+    
+    
     while (_alive) {
         [NSThread sleepForTimeInterval:3];
         D3EmuPacket *packet = [[D3EmuPacket alloc] init];

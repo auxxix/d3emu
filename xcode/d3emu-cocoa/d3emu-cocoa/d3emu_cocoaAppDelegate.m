@@ -9,7 +9,7 @@
 @synthesize consoleLengthColumn;
 @synthesize consoleItemsArray;
 
-- (void)logPacket:(Packet *)packet
+- (void)logPacket:(D3EmuPacket *)packet
 {
     [self.consoleItemsArray addObject:packet];
     
@@ -19,21 +19,6 @@
                                          inParent:nil withAnimation:NSTableViewAnimationSlideDown];
     [indexSet release];
     [self.consoleOutlineView endUpdates];
-}
-
-- (void)server:(id)object
-{
-    //D3EmuServer *server = [[D3EmuServer alloc] init];
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSLog(@"Running server.");
-    
-    for (;;) {
-        [NSThread sleepForTimeInterval:3];
-        Packet *packet = [[Packet alloc] init];
-        [self performSelectorOnMainThread:@selector(logPacket:) withObject:packet waitUntilDone:YES];
-        [packet release];
-    }
-    [pool release];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
