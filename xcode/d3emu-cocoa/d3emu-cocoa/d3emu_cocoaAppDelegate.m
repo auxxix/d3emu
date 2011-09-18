@@ -16,10 +16,13 @@
 
 - (BOOL)server:(D3EmuServer *)server didReceivePacket:(const char *)packet length:(int)length
 {
-    D3EmuPacket *thePacket = [[D3EmuPacket alloc] init];
+    D3EmuPacket *thePacket = [[D3EmuPacket alloc] initWithData:
+                              [NSData dataWithBytes:packet length:length]];
+    
     // Note that we receive this in the server's thread
     [self performSelector:@selector(logPacket:) onThread:[NSThread mainThread]
                withObject:thePacket waitUntilDone:YES];
+    
     [thePacket release];
     
     return YES;
@@ -88,10 +91,17 @@
     id columnItem = nil;
     
     if (tableColumn == self.consoleTypeColumn) {
-        columnItem = [item className];
+        NSMutableString *hex = [[[NSMutableString alloc] init] autorelease];
+        const char *bytes = [[item data] bytes];
+        
+        for (int i = 0; i < [[item data] length]; i++) {
+            [hex appendFormat:@"%02X", (unsigned char)bytes[i] & 0xff];
+        }
+        
+        columnItem = hex;
     }
     else if (tableColumn == self.consoleLengthColumn) {
-        columnItem = [NSString stringWithFormat:@"%d", [item length]];
+        columnItem = [NSString stringWithFormat:@"%d", [[item data] length]];
     }
     
     return columnItem;

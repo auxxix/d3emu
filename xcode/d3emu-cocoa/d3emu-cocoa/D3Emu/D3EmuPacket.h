@@ -2,6 +2,8 @@
 
 @interface D3EmuPacket : NSObject
 
-- (NSInteger)length;
+@property (nonatomic, readonly) NSData *data;
+
+- (id)initWithData:(NSData *)theData;
 
 @end
