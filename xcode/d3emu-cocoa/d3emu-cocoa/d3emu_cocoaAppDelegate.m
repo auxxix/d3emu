@@ -1,4 +1,5 @@
 #import "d3emu_cocoaAppDelegate.h"
+#import "D3EmuServer.h"
 
 @implementation Packet
 
@@ -55,7 +56,9 @@
     self.consoleItemsArray = array;
     [array release];
     
-    [NSThread detachNewThreadSelector:@selector(server:) toTarget:self withObject:nil];
+    D3EmuServer *server = [[D3EmuServer alloc] initWithHost:@"127.0.0.1" port:@"6543"];
+    [NSThread detachNewThreadSelector:@selector(run) toTarget:server withObject:nil];
+    [server release];
 }
 
 #pragma mark - NSOutlineViewDelegate

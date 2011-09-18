@@ -3,6 +3,7 @@
 @interface D3EmuServer : NSObject {
 @private
     int _socket;
+    BOOL _alive;
 }
 
 @property (nonatomic, retain) NSString *host;

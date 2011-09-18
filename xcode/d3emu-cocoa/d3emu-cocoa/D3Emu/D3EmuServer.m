@@ -35,8 +35,17 @@
 
 - (void)run
 {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSLog(@"Running server.");
-    for (;;);
+    while (_alive) {
+        
+    }
+    [pool release];
+}
+
+- (void)stop
+{
+    _alive = NO;
 }
 
 - (void)dealloc
