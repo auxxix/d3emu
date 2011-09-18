@@ -1,20 +1,6 @@
 #import "d3emu_cocoaAppDelegate.h"
 #import "D3EmuServer.h"
 
-@implementation Packet
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@ Length=0", [self className]];
-}
-
-- (NSInteger)length
-{
-    return 0;
-}
-
-@end
-
 @implementation d3emu_cocoaAppDelegate
 
 @synthesize window;

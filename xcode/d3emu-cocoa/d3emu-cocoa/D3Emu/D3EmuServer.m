@@ -1,4 +1,5 @@
 #import "D3EmuServer.h"
+#import "D3EmuPacket.h"
 
 @implementation D3EmuServer
 
@@ -38,7 +39,10 @@
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSLog(@"Running server.");
     while (_alive) {
-        
+        [NSThread sleepForTimeInterval:3];
+        D3EmuPacket *packet = [[D3EmuPacket alloc] init];
+        [self performSelectorOnMainThread:@selector(logPacket:) withObject:packet waitUntilDone:YES];
+        [packet release];
     }
     [pool release];
 }

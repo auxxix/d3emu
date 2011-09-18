@@ -1,12 +1,5 @@
 #import <Cocoa/Cocoa.h>
 
-@interface Packet : NSObject {
-}
-
-- (NSInteger)length;
-
-@end
-
 @interface d3emu_cocoaAppDelegate : NSObject <NSApplicationDelegate,
     NSOutlineViewDelegate, NSOutlineViewDataSource> {
     NSWindow *window;

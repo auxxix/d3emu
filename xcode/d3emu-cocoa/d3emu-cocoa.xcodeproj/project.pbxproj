@@ -13,6 +13,7 @@
 		6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */; };
 		6C3FB69C1425498600B296F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3FB69A1425498600B296F4 /* MainMenu.xib */; };
 		6C3FB6BD142571DC00B296F4 /* D3EmuServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6BC142571DC00B296F4 /* D3EmuServer.m */; };
+		6C3FB6C114257C6600B296F4 /* D3EmuPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6C014257C6600B296F4 /* D3EmuPacket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		6C3FB69B1425498600B296F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6C3FB6BB142571DC00B296F4 /* D3EmuServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3EmuServer.h; sourceTree = "<group>"; };
 		6C3FB6BC142571DC00B296F4 /* D3EmuServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3EmuServer.m; sourceTree = "<group>"; };
+		6C3FB6BF14257C6600B296F4 /* D3EmuPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3EmuPacket.h; sourceTree = "<group>"; };
+		6C3FB6C014257C6600B296F4 /* D3EmuPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3EmuPacket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 			children = (
 				6C3FB6BB142571DC00B296F4 /* D3EmuServer.h */,
 				6C3FB6BC142571DC00B296F4 /* D3EmuServer.m */,
+				6C3FB6BF14257C6600B296F4 /* D3EmuPacket.h */,
+				6C3FB6C014257C6600B296F4 /* D3EmuPacket.m */,
 			);
 			path = D3Emu;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				6C3FB6921425498500B296F4 /* main.m in Sources */,
 				6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */,
 				6C3FB6BD142571DC00B296F4 /* D3EmuServer.m in Sources */,
+				6C3FB6C114257C6600B296F4 /* D3EmuPacket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
