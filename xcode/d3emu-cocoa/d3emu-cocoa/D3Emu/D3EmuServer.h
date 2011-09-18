@@ -1,6 +1,6 @@
-#import <Foundation/Foundation.h>
-
 #import "D3EmuPacket.h"
+
+#import <Foundation/Foundation.h>
 
 @class D3EmuServer;
 

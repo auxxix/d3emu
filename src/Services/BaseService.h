@@ -21,7 +21,7 @@ public:
 
 private:
     void ConnectRequest(bnet::protocol::connection::ConnectRequest &request);
-    void BaseService::BindRequest(bnet::protocol::connection::BindRequest request);
+    void BindRequest(bnet::protocol::connection::BindRequest request);
 };
 
 }

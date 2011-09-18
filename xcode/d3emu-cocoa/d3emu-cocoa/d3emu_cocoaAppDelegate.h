@@ -1,6 +1,6 @@
-#import <Cocoa/Cocoa.h>
-
 #include "D3EmuPacket.h"
+
+#import <Cocoa/Cocoa.h>
 
 @interface d3emu_cocoaAppDelegate : NSObject <NSApplicationDelegate,
     NSOutlineViewDelegate, NSOutlineViewDataSource> {
