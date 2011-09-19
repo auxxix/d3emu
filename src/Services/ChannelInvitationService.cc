@@ -18,7 +18,6 @@ PacketResponse *ChannelInvitationService::SubscribeRequest(Client &client, Packe
 	PacketResponse *response_packet = new PacketResponse();
     response_packet->set_message(response);
     response_packet->mutable_header()->set_service_id(0xfe);
-    response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
     response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
     
     return response_packet;

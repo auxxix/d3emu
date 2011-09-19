@@ -48,13 +48,12 @@ namespace d3emu
             new bnet::protocol::connection::ConnectResponse();
         response->mutable_server_id()->set_label(388207126);
         response->mutable_server_id()->set_epoch((uint32_t)time(0));
-        response->mutable_client_id()->set_label(client.socket());
+        response->mutable_client_id()->set_label(2342342);
         response->mutable_client_id()->set_epoch((uint32_t)time(0));
         
         PacketResponse *response_packet = new PacketResponse();
         response_packet->set_message(response);
         response_packet->mutable_header()->set_service_id(0xfe);
-        response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
         response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         
         return response_packet;
@@ -85,7 +84,6 @@ namespace d3emu
         PacketResponse *response_packet = new PacketResponse();
         response_packet->set_message(response);
         response_packet->mutable_header()->set_service_id(0xfe);
-        response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
         response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         
         return response_packet;

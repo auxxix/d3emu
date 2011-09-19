@@ -162,20 +162,18 @@ namespace d3emu
 	}
 
 	PacketRequest::PacketRequest(const char *packet, size_t length)
+        : header_(packet, 6), message_data_((char *)&packet[6], (char *)&packet[6] + packet[5])
 	{
-		this->clear_has_message();
 	}
 
 	PacketRequest::PacketRequest(const uint8_t *packet, size_t length)
 		: header_(packet, 6), message_data_((char *)&packet[6], (char *)&packet[6] + packet[5])
 	{
-		this->clear_has_message();
 	}
 
 	PacketRequest::PacketRequest(std::string &packet)
 		: header_(packet), message_data_(packet.begin() + 6, packet.begin() + 6 + packet[5])
 	{
-		this->clear_has_message();
 	}
 
 	const PacketHeaderRequest &PacketRequest::header() const

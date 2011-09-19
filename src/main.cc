@@ -119,12 +119,42 @@ int main(int argc, char **argv)
 					}
 					else
 					{
+                        /*
+                        std::cout << "--> (Hex)[" << (unsigned int)packet_len << "]:" << std::endl;
+						for (int i = 0; i < packet_len; i++)
+						{
+							// Output hex
+							printf("%02X ", packet[i] & 0xff);
+						}
+						printf("\n");
+                        */
 						d3emu::Client client;
 						client.set_socket(client_socket);
                         
-                        PacketRequest request_packet;
+                        d3emu::PacketRequest request_packet(packet, packet_len);
+                        d3emu::PacketResponse *response_packet = service->Request(client, request_packet);
                         
-						service->Request(client, request_packet);
+                        if (response_packet)
+                        {
+                            std::cout << response_packet->message()->GetTypeName() << std::endl
+                                << response_packet->message()->DebugString() << std::endl;
+                            
+                            std::string built_response = response_packet->SerializeAsString();
+                            for (int i = 0; i < built_response.length(); i++)
+                            {
+                                // Output hex
+                                printf("%02X ", built_response[i] & 0xff);
+                            }
+                            printf("\n");
+                            
+                            send(client_socket, built_response.c_str(), built_response.length(), 0);
+                        }
+                        else
+                        {
+                            std::cout << "No handler found for service_id: " <<
+                                (uint32_t)request_packet.header().service_id() 
+                                << " method_id: " << (uint32_t)request_packet.header().method_id() << std::endl;
+                        }
 					}
 
 					delete[] packet;
