@@ -1,4 +1,5 @@
 #import "D3EmuServer.h"
+#import "D3EmuPacket.h"
 
 #import "d3emu_cocoaAppDelegate.h"
 
@@ -14,22 +15,48 @@
 
 #pragma mark - D3EmuServerDelegate
 
-- (BOOL)server:(D3EmuServer *)server didReceivePacket:(const char *)packet length:(int)length
+- (void)server:(D3EmuServer *)server didHandlePacketRequest:(d3emu::PacketRequest *)request 
+    withPacketResponse:(d3emu::PacketResponse *)response
 {
-    D3EmuPacket *thePacket = [[D3EmuPacket alloc] initWithData:
-                              [NSData dataWithBytes:packet length:length]];
+    D3EmuPacket *theRequestPacket = [[D3EmuPacket alloc] initWithName:
+        [NSString stringWithFormat:@"%s", (request->has_message())
+         ? request->message()->GetTypeName().c_str() : "Unknown Request"]];
     
     // Note that we receive this in the server's thread
-    [self performSelector:@selector(logPacket:) onThread:[NSThread mainThread]
-               withObject:thePacket waitUntilDone:YES];
+    [self performSelector:@selector(logPacketRequest:) onThread:[NSThread mainThread]
+               withObject:theRequestPacket waitUntilDone:YES];
     
-    [thePacket release];
+    [theRequestPacket release];
     
+    D3EmuPacket *theResponsePacket = [[D3EmuPacket alloc] initWithName:
+        [NSString stringWithFormat:@"%s", (response->has_message()) ?
+         response->message()->GetTypeName().c_str() : "Unknown Response"]];
+    
+    // Note that we receive this in the server's thread
+    [self performSelector:@selector(logPacketResponse:) onThread:[NSThread mainThread]
+               withObject:theResponsePacket waitUntilDone:YES];
+    
+    [theResponsePacket release];
+}
+
+- (BOOL)server:(D3EmuServer *)server didReceivePacket:(const char *)packet length:(int)length
+{
     return YES;
 }
 
+- (void)logPacketRequest:(D3EmuPacket *)packet
+{
+    [self.consoleItemsArray addObject:packet];
+    
+    [self.consoleOutlineView beginUpdates];
+    NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:[self.consoleItemsArray count] - 1];
+    [self.consoleOutlineView insertItemsAtIndexes:indexSet
+                                         inParent:nil withAnimation:NSTableViewAnimationSlideDown];
+    [indexSet release];
+    [self.consoleOutlineView endUpdates];
+}
 
-- (void)logPacket:(D3EmuPacket *)packet
+- (void)logPacketResponse:(D3EmuPacket *)packet
 {
     [self.consoleItemsArray addObject:packet];
     
@@ -91,6 +118,7 @@
     id columnItem = nil;
     
     if (tableColumn == self.consoleTypeColumn) {
+        /*
         NSMutableString *hex = [[[NSMutableString alloc] init] autorelease];
         const char *bytes = [[item data] bytes];
         
@@ -99,9 +127,11 @@
         }
         
         columnItem = hex;
+         */
+        columnItem = [item name];
     }
     else if (tableColumn == self.consoleLengthColumn) {
-        columnItem = [NSString stringWithFormat:@"%d", [[item data] length]];
+        columnItem = [NSString stringWithFormat:@"%d", [[item name] length]];
     }
     
     return columnItem;

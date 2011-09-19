@@ -1,9 +1,7 @@
-#import <Foundation/Foundation.h>
-
 @interface D3EmuPacket : NSObject
 
-@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, retain) NSString *name;
 
-- (id)initWithData:(NSData *)theData;
+- (id)initWithName:(NSString *)theName;
 
 @end

@@ -2,20 +2,16 @@
 
 @implementation D3EmuPacket
 
-@synthesize data;
+@synthesize name;
 
-- (id)initWithData:(NSData *)theData
+- (id)initWithName:(NSString *)theName
 {
     self = [super init];
     if (self) {
-        data = [theData retain];
+        name = [theName retain];
     }
+    
     return self;
-}
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@ Length=0", [self className]];
 }
 
 @end

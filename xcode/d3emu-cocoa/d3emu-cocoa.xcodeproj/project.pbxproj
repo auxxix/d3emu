@@ -10,10 +10,9 @@
 		6C3FB6861425498500B296F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB6851425498500B296F4 /* Cocoa.framework */; };
 		6C3FB6901425498500B296F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C3FB68E1425498500B296F4 /* InfoPlist.strings */; };
 		6C3FB6921425498500B296F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6911425498500B296F4 /* main.m */; };
-		6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */; };
+		6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.mm */; };
 		6C3FB69C1425498600B296F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3FB69A1425498600B296F4 /* MainMenu.xib */; };
 		6C3FB6BD142571DC00B296F4 /* D3EmuServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6BC142571DC00B296F4 /* D3EmuServer.mm */; };
-		6C3FB6C114257C6600B296F4 /* D3EmuPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB6C014257C6600B296F4 /* D3EmuPacket.m */; };
 		6C3FB7871425926700B296F4 /* libprotobuf-lite.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB7841425926700B296F4 /* libprotobuf-lite.6.dylib */; };
 		6C3FB7881425926700B296F4 /* libprotobuf.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB7851425926700B296F4 /* libprotobuf.6.dylib */; };
 		6C3FB7891425926700B296F4 /* libprotoc.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB7861425926700B296F4 /* libprotoc.6.dylib */; };
@@ -81,6 +80,7 @@
 		6C3FB8901425BE6700B296F4 /* user_manager.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB8591425BE6700B296F4 /* user_manager.pb.cc */; };
 		6C3FB8911425BE6700B296F4 /* Settings.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB85B1425BE6700B296F4 /* Settings.pb.cc */; };
 		6C3FB8921425BE6700B296F4 /* Stats.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB85D1425BE6700B296F4 /* Stats.pb.cc */; };
+		6CB5B108142727C500837D82 /* D3EmuPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB5B107142727C500837D82 /* D3EmuPacket.m */; };
 		6CDF1AFA1426C34A009AD334 /* Packet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF1AF81426C34A009AD334 /* Packet.cc */; };
 /* End PBXBuildFile section */
 
@@ -95,12 +95,10 @@
 		6C3FB6911425498500B296F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C3FB6931425498500B296F4 /* d3emu-cocoa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "d3emu-cocoa-Prefix.pch"; sourceTree = "<group>"; };
 		6C3FB6971425498500B296F4 /* d3emu_cocoaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = d3emu_cocoaAppDelegate.h; sourceTree = "<group>"; };
-		6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = d3emu_cocoaAppDelegate.m; sourceTree = "<group>"; };
+		6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = d3emu_cocoaAppDelegate.mm; sourceTree = "<group>"; };
 		6C3FB69B1425498600B296F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6C3FB6BB142571DC00B296F4 /* D3EmuServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3EmuServer.h; sourceTree = "<group>"; };
 		6C3FB6BC142571DC00B296F4 /* D3EmuServer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = D3EmuServer.mm; sourceTree = "<group>"; };
-		6C3FB6BF14257C6600B296F4 /* D3EmuPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3EmuPacket.h; sourceTree = "<group>"; };
-		6C3FB6C014257C6600B296F4 /* D3EmuPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3EmuPacket.m; sourceTree = "<group>"; };
 		6C3FB7841425926700B296F4 /* libprotobuf-lite.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libprotobuf-lite.6.dylib"; path = "/usr/local/lib/libprotobuf-lite.6.dylib"; sourceTree = "<absolute>"; };
 		6C3FB7851425926700B296F4 /* libprotobuf.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotobuf.6.dylib; path = /usr/local/lib/libprotobuf.6.dylib; sourceTree = "<absolute>"; };
 		6C3FB7861425926700B296F4 /* libprotoc.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotoc.6.dylib; path = /usr/local/lib/libprotoc.6.dylib; sourceTree = "<absolute>"; };
@@ -232,6 +230,8 @@
 		6C3FB85C1425BE6700B296F4 /* Settings.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.pb.h; sourceTree = "<group>"; };
 		6C3FB85D1425BE6700B296F4 /* Stats.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stats.pb.cc; sourceTree = "<group>"; };
 		6C3FB85E1425BE6700B296F4 /* Stats.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stats.pb.h; sourceTree = "<group>"; };
+		6CB5B106142727C500837D82 /* D3EmuPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3EmuPacket.h; sourceTree = "<group>"; };
+		6CB5B107142727C500837D82 /* D3EmuPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3EmuPacket.m; sourceTree = "<group>"; };
 		6CDF1AF81426C34A009AD334 /* Packet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Packet.cc; sourceTree = "<group>"; };
 		6CDF1AF91426C34A009AD334 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -300,7 +300,7 @@
 				6C3FB7AE1425BE4400B296F4 /* Services */,
 				6C3FB6BA142571DC00B296F4 /* D3Emu */,
 				6C3FB6971425498500B296F4 /* d3emu_cocoaAppDelegate.h */,
-				6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.m */,
+				6C3FB6981425498500B296F4 /* d3emu_cocoaAppDelegate.mm */,
 				6C3FB69A1425498600B296F4 /* MainMenu.xib */,
 				6C3FB68C1425498500B296F4 /* Supporting Files */,
 			);
@@ -323,8 +323,8 @@
 			children = (
 				6C3FB6BB142571DC00B296F4 /* D3EmuServer.h */,
 				6C3FB6BC142571DC00B296F4 /* D3EmuServer.mm */,
-				6C3FB6BF14257C6600B296F4 /* D3EmuPacket.h */,
-				6C3FB6C014257C6600B296F4 /* D3EmuPacket.m */,
+				6CB5B106142727C500837D82 /* D3EmuPacket.h */,
+				6CB5B107142727C500837D82 /* D3EmuPacket.m */,
 			);
 			path = D3Emu;
 			sourceTree = "<group>";
@@ -837,9 +837,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C3FB6921425498500B296F4 /* main.m in Sources */,
-				6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.m in Sources */,
+				6C3FB6991425498500B296F4 /* d3emu_cocoaAppDelegate.mm in Sources */,
 				6C3FB6BD142571DC00B296F4 /* D3EmuServer.mm in Sources */,
-				6C3FB6C114257C6600B296F4 /* D3EmuPacket.m in Sources */,
 				6C3FB7C51425BE4400B296F4 /* Client.cc in Sources */,
 				6C3FB7C61425BE4400B296F4 /* AuthenticationService.cc in Sources */,
 				6C3FB7C71425BE4400B296F4 /* BaseService.cc in Sources */,
@@ -905,6 +904,7 @@
 				6C3FB8911425BE6700B296F4 /* Settings.pb.cc in Sources */,
 				6C3FB8921425BE6700B296F4 /* Stats.pb.cc in Sources */,
 				6CDF1AFA1426C34A009AD334 /* Packet.cc in Sources */,
+				6CB5B108142727C500837D82 /* D3EmuPacket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,9 @@
 #include "Services/StorageService.h"
 #include "Services/ToonExternalService.h"
 
+#include "Net/Packet.h"
+
 #import "D3EmuServer.h"
-#import "D3EmuPacket.h"
 
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -143,7 +144,39 @@
                         if (handle) {
                             d3emu::Client client;
                             client.set_socket(client_socket);
-                            service->Request(&client, packet, packet_len);
+                            
+                            d3emu::PacketRequest request_packet(packet, packet_len);
+                            d3emu::PacketResponse *response_packet = service->Request(client, request_packet);
+                            
+                            
+                            
+                            if (response_packet)
+                            {
+                                std::cout << response_packet->message()->GetTypeName() << std::endl
+                                << response_packet->message()->DebugString() << std::endl;
+                                
+                                std::string built_response = response_packet->SerializeAsString();
+                                for (int i = 0; i < built_response.length(); i++)
+                                {
+                                    // Output hex
+                                    printf("%02X ", built_response[i] & 0xff);
+                                }
+                                printf("\n");
+                                
+                                send(client_socket, built_response.c_str(), built_response.length(), 0);
+                                
+                                if ([self.delegate respondsToSelector:@selector(server:didHandlePacketRequest:withPacketResponse:)]) {
+                                    [self.delegate server:self 
+                                   didHandlePacketRequest:&request_packet
+                                       withPacketResponse:response_packet];
+                                }
+                            }
+                            else
+                            {
+                                std::cout << "No handler found for service_id: " <<
+                                    (uint32_t)request_packet.header().service_id() 
+                                    << " method_id: " << (uint32_t)request_packet.header().method_id() << std::endl;
+                            }
                         }
 					}
                     

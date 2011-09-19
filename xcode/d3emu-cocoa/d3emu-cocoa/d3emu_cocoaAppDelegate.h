@@ -1,4 +1,3 @@
-#include "D3EmuPacket.h"
 #include "D3EmuServer.h"
 
 #import <Cocoa/Cocoa.h>
@@ -18,6 +17,7 @@
 @property (nonatomic, retain) D3EmuServer *server;
 @property (nonatomic, retain) NSThread *serverThread;
 
-- (void)logPacket:(D3EmuPacket *)packet;
+- (void)logPacketRequest:(D3EmuPacket *)request;
+- (void)logPacketResponse:(D3EmuPacket *)response;
 
 @end

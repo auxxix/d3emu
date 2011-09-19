@@ -1,6 +1,6 @@
-#import "D3EmuPacket.h"
-
 #import <Foundation/Foundation.h>
+
+#include "Net/Packet.h"
 
 @class D3EmuServer;
 
@@ -9,6 +9,8 @@
 @optional
 
 - (BOOL)server:(D3EmuServer *)server didReceivePacket:(const char *)packet length:(int)length;
+- (void)server:(D3EmuServer *)server didHandlePacketRequest:(d3emu::PacketRequest *)request 
+    withPacketResponse:(d3emu::PacketResponse *)response;
 
 @end
 
