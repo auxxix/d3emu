@@ -27,20 +27,24 @@ namespace d3emu
         return response_packet;
     }
 
-    PacketResponse *FriendsService::Request(const char *packet, int packet_length)
+    PacketResponse *FriendsService::Request(Client &client, PacketRequest &request_packet)
     {
-        this->set_current_packet(packet, packet_length);
-
-        switch ((uint8_t)packet[1])
+        PacketResponse *response_packet = 0;
+        
+        switch (request_packet.header().method_id())
         {
             case 0x01:
             {
-                bnet::protocol::friends::SubscribeToFriendsRequest request;
-                if (request.ParseFromArray(&packet[6], packet[5]))
-                    this->SubscribeToFriendsRequest(request);
+                request_packet.set_message(new bnet::protocol::friends::SubscribeToFriendsRequest());
+                if (request_packet.mutable_message()->ParseFromString(request_packet.message_data()))
+                    response_packet = this->SubscribeToFriendsRequest(client, request_packet);
+                else
+                    request_packet.clear_message();
                 break;
             }
         }
+        
+        return response_packet;
     }
 
     std::string FriendsService::Name() const

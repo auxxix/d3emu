@@ -2,63 +2,51 @@
 
 #include <iostream>
 
-#ifdef _WIN32
-#include <WinSock2.h>
-#else
-#include <sys/socket.h>
-#endif
-
 namespace d3emu
 {
+    GameMasterService::GameMasterService(uint32_t _service_hash, uint8_t _service_id)
+        : Service(_service_hash, _service_id) 
+    {
+    }
 
-GameMasterService::GameMasterService(uint32_t _service_hash, uint8_t _service_id)
-	: Service(_service_hash, _service_id) 
-{
-}
+    PacketResponse *GameMasterService::ListFactoriesRequest(Client &client, PacketRequest &request_packet)
+    {
+        bnet::protocol::game_master::ListFactoriesResponse *response =
+            new bnet::protocol::game_master::ListFactoriesResponse();
 
-void GameMasterService::ListFactoriesRequest(bnet::protocol::game_master::ListFactoriesRequest &request)
-{
-	std::cout << request.GetTypeName() << ":" << std::endl
-		<< request.DebugString() << std::endl;
-	
-	bnet::protocol::game_master::ListFactoriesResponse response;
+        //response.set_total_results(1);
 
-	//response.set_total_results(1);
+        PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
+        
+        return response_packet;
+    }
 
-	unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-	std::string built_response = response.SerializeAsString();
-	built_response.insert(built_response.begin(), header, header + 5);
+    PacketResponse *GameMasterService::Request(Client &client, PacketRequest &request_packet)
+    {
+        PacketResponse *response_packet = 0;
+        
+        switch (request_packet.header().method_id())
+        {
+            case 0x02:
+            {
+                request_packet.set_message(new bnet::protocol::game_master::ListFactoriesRequest());
+                if (request_packet.mutable_message()->ParseFromString(request_packet.message_data()))
+                    response_packet = this->ListFactoriesRequest(client, request_packet);
+                else
+                    request_packet.clear_message();
+                break;
+            }
+        }
+        
+        return response_packet;
+    }
 
-	printf("<-- (Hex): ");
-	for (size_t i = 0; i < built_response.length(); i++)
-	{
-		printf("%02X ", built_response[i] & 0xff);
-	}
-	printf("\n");	
-
-	std::cout << response.GetTypeName() << ":" << std::endl << response.DebugString() << std::endl;
-	//send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-}
-
-void GameMasterService::Request(const char *packet, int packet_length)
-{
-	this->set_current_packet(packet, packet_length);
-
-	switch ((uint8_t)packet[1])
-	{
-		case 0x02:
-		{
-			bnet::protocol::game_master::ListFactoriesRequest request;
-			if (request.ParseFromArray(&packet[6], packet[5]))
-				this->ListFactoriesRequest(request);
-			break;
-		}
-	}
-}
-
-std::string GameMasterService::Name() const
-{
-	return std::string("d3emu::GameMasterService");
-}
-
+    std::string GameMasterService::Name() const
+    {
+        return std::string("d3emu.GameMasterService");
+    }
 }
