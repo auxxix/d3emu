@@ -24,10 +24,8 @@ namespace d3emu
 
 	PacketResponse *StorageService::ExecuteRequest(PacketRequest &request)
 	{
-		std::cout << request.message()->GetTypeName() << ":" << std::endl
-			<< request.message()->DebugString() << std::endl;
-
-		bnet::protocol::storage::ExecuteResponse response;
+		bnet::protocol::storage::ExecuteResponse *response =
+            new bnet::protocol::storage::ExecuteResponse();
 
         bnet::protocol::storage::ExecuteRequest *execute_request =
             dynamic_cast<bnet::protocol::storage::ExecuteRequest *>(request.message());
@@ -37,7 +35,7 @@ namespace d3emu
 			for (int i = 0; i < execute_request->operations_size(); i++)
 			{
 				const bnet::protocol::storage::Operation &request_operation = execute_request->operations(i);
-				bnet::protocol::storage::OperationResult *operation = response.add_results();
+				bnet::protocol::storage::OperationResult *operation = response->add_results();
 
 				operation->mutable_table_id()->set_hash(request_operation.table_id().hash());
 
@@ -69,7 +67,7 @@ namespace d3emu
 			for (int i = 0; i < execute_request->operations_size(); i++)
 			{
 				const bnet::protocol::storage::Operation &request_operation = execute_request->operations(i);
-				bnet::protocol::storage::OperationResult *operation = response.add_results();
+				bnet::protocol::storage::OperationResult *operation = response->add_results();
 
 				operation->mutable_table_id()->set_hash(request_operation.table_id().hash());
 
@@ -122,7 +120,7 @@ namespace d3emu
 			for (int i = 0; i < execute_request->operations_size(); i++)
 			{
 				const bnet::protocol::storage::Operation &request_operation = execute_request->operations(i);
-				bnet::protocol::storage::OperationResult *operation = response.add_results();
+				bnet::protocol::storage::OperationResult *operation = response->add_results();
 
 				operation->mutable_table_id()->set_hash(request_operation.table_id().hash());
 
@@ -135,59 +133,31 @@ namespace d3emu
 			}
 		}
 
-		/*
-		uint8_t header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-		std::string built_response = response.SerializeAsString();
-		built_response.insert(built_response.begin(), header, header + 5);
-		*/
-
-		PacketHeaderResponse header;
-		header.set_service_id(0xFE);
-		header.set_method_id(0x00);
-		header.set_request_id(this->current_packet()[2]);
-		header.set_message_size(response.ByteSize());
-
-		std::string built_response = header.SerializeAsString();
-		response.AppendToString(&built_response);
-
-		for (int i = 0; i < (int)built_response.size(); ++i)
-		{
-			std::cout << std::hex << std::uppercase << ((uint8_t)built_response[i] & 0xff)
-				<< " ";
-		}
-
-		std::cout << std::endl;
-
-		std::cout << response.GetTypeName() << ":"
-			<< std::endl << response.DebugString() << std::endl;
-		send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-        return 0;
+		PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(0x00);
+        response_packet->mutable_header()->set_request_id(request.header().request_id());
+        
+        return response_packet;
 	}
 
 	PacketResponse *StorageService::OpenTableRequest(PacketRequest &request)
 	{
-		std::cout << request.message()->GetTypeName() << ":" << std::endl
-			<< request.message()->DebugString() << std::endl;
+		bnet::protocol::storage::OpenTableResponse *response =
+            new bnet::protocol::storage::OpenTableResponse();
 
-		bnet::protocol::storage::OpenTableResponse response;
-
-		uint8_t header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-		std::string built_response = response.SerializeAsString();
-		built_response.insert(built_response.begin(), header, header + 5);
-
-		std::cout << response.GetTypeName() << ":"
-			<< std::endl << response.DebugString() << std::endl;
-		send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-        return 0;
+        PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(0x00);
+        response_packet->mutable_header()->set_request_id(request.header().request_id());
+        
+        return response_packet;
 	}
 
 	PacketResponse *StorageService::OpenColumnRequest(PacketRequest &request)
 	{
-		std::cout << request.message()->GetTypeName() << ":" << std::endl
-			<< request.message()->DebugString() << std::endl;
-
-        
-        
         bnet::protocol::storage::OpenColumnResponse *response =
             new bnet::protocol::storage::OpenColumnResponse();
         
@@ -197,11 +167,6 @@ namespace d3emu
         response_packet->mutable_header()->set_method_id(0x00);
         response_packet->mutable_header()->set_request_id(request.header().request_id());
 
-		std::cout << response->GetTypeName() << ":"
-			<< std::endl << response->DebugString() << std::endl;
-        
-		//send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-        
         return response_packet;
 	}
 
@@ -252,6 +217,6 @@ namespace d3emu
 
 	std::string StorageService::Name() const
 	{
-		return std::string("d3emu::StorageService");
+		return std::string("d3emu.StorageService");
 	}
 }
