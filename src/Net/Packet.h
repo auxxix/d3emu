@@ -72,7 +72,8 @@ namespace d3emu
 		PacketRequest(const char *packet, size_t length);
 		PacketRequest(const uint8_t *packet, size_t length);
 		PacketRequest(std::string &packet);
-
+        ~PacketRequest();
+        
 		const PacketHeaderRequest &header() const;
 		PacketHeaderRequest *mutable_header();
 
@@ -104,6 +105,7 @@ namespace d3emu
 		PacketResponse(const char *packet, size_t length);
 		PacketResponse(const uint8_t *packet, size_t length);
 		PacketResponse(std::string &packet);
+        ~PacketResponse();
         
 		const PacketHeaderResponse &header() const;
 		PacketHeaderResponse *mutable_header();

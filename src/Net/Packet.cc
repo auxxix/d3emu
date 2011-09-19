@@ -272,6 +272,12 @@ namespace d3emu
 		: header_(packet), message_data_(packet.begin() + 6, packet.begin() + 6 + packet[5])
 	{
 	}
+    
+    PacketRequest::~PacketRequest()
+    {
+        if (this->has_message())
+            this->clear_message();
+    }
 
 	const PacketHeaderRequest &PacketRequest::header() const
 	{
@@ -378,6 +384,12 @@ namespace d3emu
 	{
 		this->clear_has_message();
 	}
+    
+    PacketResponse::~PacketResponse()
+    {
+        if (this->has_message())
+            this->clear_message();
+    }
     
 	const PacketHeaderResponse &PacketResponse::header() const
 	{
