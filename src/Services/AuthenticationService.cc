@@ -49,6 +49,6 @@ namespace d3emu
 
     std::string AuthenticationService::Name() const
     {
-        return std::string("d3emu::AuthenticationService");
+        return std::string("d3emu.AuthenticationService");
     }
 }

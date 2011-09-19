@@ -18,32 +18,41 @@ ChannelInvitationService::ChannelInvitationService(uint32_t _service_hash, uint8
 
 PacketResponse *ChannelInvitationService::SubscribeRequest(Client &client, PacketRequest &request_packet)
 {
-	bnet::protocol::channel_invitation::SubscribeResponse response =
+	bnet::protocol::channel_invitation::SubscribeResponse *response =
         new bnet::protocol::channel_invitation::SubscribeResponse();
 
-	
-    return 
+	PacketResponse *response_packet = new PacketResponse();
+    response_packet->set_message(response);
+    response_packet->mutable_header()->set_service_id(0xfe);
+    response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
+    response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
+    
+    return response_packet;
 }
 
-void ChannelInvitationService::Request(const char *packet, int packet_length)
+PacketResponse *ChannelInvitationService::Request(Client &client, PacketRequest &request_packet)
 {
-	this->set_current_packet(packet, packet_length);
-
-	switch ((uint8_t)packet[1])
+    PacketResponse *response_packet = 0;
+    
+	switch (request_packet.header().method_id())
 	{
 		case 0x01:
 		{
-			bnet::protocol::channel_invitation::SubscribeRequest request;
-			if (request.ParseFromArray(&packet[6], packet[5]))
-				this->SubscribeRequest(request);
-			break;
+            request_packet.set_message(new bnet::protocol::channel_invitation::SubscribeRequest());
+            if (request_packet.mutable_message()->ParseFromString(request_packet.message_data()))
+                response_packet = this->SubscribeRequest(client, request_packet);
+            else
+                request_packet.clear_message();
+            break;
 		}
 	}
+    
+    return response_packet;
 }
 
 std::string ChannelInvitationService::Name() const
 {
-	return std::string("d3emu::ChannelInvitationService");
+	return std::string("d3emu.ChannelInvitationService");
 }
 
 }

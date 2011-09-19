@@ -1,29 +1,22 @@
 #ifndef D3EMU_FOLLOWERSSERVICE_H
 #define D3EMU_FOLLOWERSSERVICE_H
 
-#include "service/followers/definition/followers.pb.h"
-
 #include "Service.h"
-
-#include <stdint.h>
+#include "service/followers/definition/followers.pb.h"
 
 namespace d3emu
 {
+    class FollowersService : public Service
+    {
+    public:
+        FollowersService(uint32_t _service_hash, uint8_t _service_id);
+        PacketResponse *Request(Client &client, PacketRequest &request_packet);
+        std::string Name() const;
 
-// 0xE5A11099 bnet.protocol.followers.SubscribeToFollowersRequest
-
-class FollowersService : public Service
-{
-public:
-	FollowersService(uint32_t _service_hash, uint8_t _service_id);
-	void Request(const char *packet, int packet_length);
-	std::string Name() const;
-
-private:
-	// 0x01
-	void SubscribeToFollowersRequest(bnet::protocol::followers::SubscribeToFollowersRequest &request);
-};
-
+    private:
+        // 0x01
+        PacketResponse *SubscribeToFollowersRequest(Client &client, PacketRequest &request_packet);
+    };
 }
 
 #endif

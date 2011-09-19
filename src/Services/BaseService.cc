@@ -30,7 +30,7 @@ namespace d3emu
                 
             case 0x02:
             {
-                bnet::protocol::connection::BindRequest request;
+                request_packet.set_message(new bnet::protocol::connection::BindRequest());
                 if (request_packet.mutable_message()->ParseFromString(request_packet.message_data()))
                     response_packet = this->BindRequest(client, request_packet);
                 else
