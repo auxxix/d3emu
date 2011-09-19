@@ -6,82 +6,71 @@
 #include <string>
 
 #include "Client.h"
+#include "../Net/Packet.h"
 
-namespace d3emu {
-
-class Service;
-
-typedef std::pair<uint32_t, uint8_t> BoundServiceHashPair;
-typedef std::pair<uint8_t, d3emu::Service *> BoundServicePair;
-
-typedef std::map<uint32_t, uint8_t> BoundServicesHashMap;
-typedef std::map<uint8_t, d3emu::Service *> BoundServicesMap;
-
-class BoundServicesManager
+namespace d3emu
 {
-public:
-	BoundServicesManager();
-	~BoundServicesManager();
+    class Service;
 
-	/**
-	 * Returns service id on success, 0 on failure.
-	 * Do NOT manually bind a BaseService!!!
-	 */
-	uint8_t Bind(Service *service);
-	int Size() const;
+    typedef std::pair<uint32_t, uint8_t> BoundServiceHashPair;
+    typedef std::pair<uint8_t, d3emu::Service *> BoundServicePair;
 
-	uint8_t bound_service_id(uint32_t service_hash);
-	Service *bound_service(uint8_t service_id);
+    typedef std::map<uint32_t, uint8_t> BoundServicesHashMap;
+    typedef std::map<uint8_t, d3emu::Service *> BoundServicesMap;
 
-	BoundServicesMap *mutable_bound_services();
-	BoundServicesHashMap *mutable_bound_services_hashes();
+    class BoundServicesManager
+    {
+    public:
+        BoundServicesManager();
+        ~BoundServicesManager();
 
-private:
-	BoundServicesMap *bound_services_;
-	BoundServicesHashMap *bound_services_hashes_;
-};
+        /**
+         * Returns service id on success, 0 on failure.
+         * Do NOT manually bind a BaseService!!!
+         */
+        uint8_t Bind(Service *service);
+        int Size() const;
 
-class Service
-{
-public:
-	Service(uint32_t _service_hash, uint8_t _service_id);
+        uint8_t bound_service_id(uint32_t service_hash);
+        Service *bound_service(uint8_t service_id);
 
-	void operator()(Client *client, const char *packet, int packet_length);
-	void operator()(const char *packet, int packet_length);
-	
-	virtual void Request(Client *client, const char *packet, int packet_length);
-	virtual void Request(const char *packet, int packet_length);
+        BoundServicesMap *mutable_bound_services();
+        BoundServicesHashMap *mutable_bound_services_hashes();
 
-	uint8_t service_id() const;
-	void set_service_id(uint8_t service_id);
+    private:
+        BoundServicesMap *bound_services_;
+        BoundServicesHashMap *bound_services_hashes_;
+    };
 
-	uint32_t service_hash() const;
-	void set_service_hash(uint32_t hash);
+    class Service
+    {
+    public:
+        Service(uint32_t _service_hash, uint8_t _service_id);
+        
+        virtual void Request(Client &client, PacketRequest &request);
 
-	Client *client() const;
-	Client *mutable_client();
-	void set_client(Client *client);
+        uint8_t service_id() const;
+        void set_service_id(uint8_t service_id);
 
-	void set_manager(BoundServicesManager *manager);
-	BoundServicesManager *manager() const;
-	BoundServicesManager *mutable_manager();
+        uint32_t service_hash() const;
+        void set_service_hash(uint32_t hash);
 
-	const char *current_packet() const;
-	void set_current_packet(const char *packet, int length);
+        void set_manager(BoundServicesManager *manager);
+        BoundServicesManager *manager() const;
+        BoundServicesManager *mutable_manager();
 
-	int current_packet_length() const;
+        const char *current_packet() const;
+        void set_current_packet(const char *packet, int length);
 
-	virtual std::string Name() const;
+        int current_packet_length() const;
 
-private:
-	uint8_t service_id_;
-	uint32_t service_hash_;
-	Client *client_;
-	BoundServicesManager *manager_;
-	const char *current_packet_;
-	int current_packet_length_;
-};
+        virtual std::string Name() const;
 
+    private:
+        uint8_t service_id_;
+        uint32_t service_hash_;
+        BoundServicesManager *manager_;
+    };
 } // d3emu namespace
 
 #endif
