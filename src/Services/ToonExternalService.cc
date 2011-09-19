@@ -3,88 +3,81 @@
 
 #include <iostream>
 
-#ifdef _WIN32
-    #include <winsock2.h>
-#else
-    #include <sys/socket.h>
-#endif
-
 namespace d3emu
 {
-    // 0x4124C31B bnet.protocol.toon.external.*
-    
     ToonExternalService::ToonExternalService(uint32_t _service_hash, uint8_t _service_id)
         : Service(_service_hash, _service_id) 
     {
     }
     
-    void ToonExternalService::ToonListRequest(bnet::protocol::toon::external::ToonListRequest &request)
+    PacketResponse *ToonExternalService::ToonListRequest(Client &client, PacketRequest &request_packet)
     {
-        std::cout << request.GetTypeName() << ":" << std::endl << request.DebugString() << std::endl;
+        bnet::protocol::toon::external::ToonListResponse *response =
+            new bnet::protocol::toon::external::ToonListResponse();
         
-        bnet::protocol::toon::external::ToonListResponse response;
+        PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         
-        unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-        std::string built_response = response.SerializeAsString();
-        built_response.insert(built_response.begin(), header, header + 5);
-        
-        std::cout << response.GetTypeName() << ":" << std::endl << response.DebugString() << std::endl;
-        send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+        return response_packet;
     }
     
-    void ToonExternalService::CreateToonRequest(bnet::protocol::toon::external::CreateToonRequest &request)
+    PacketResponse *ToonExternalService::CreateToonRequest(Client &client, PacketRequest &request_packet)
     {
-        std::cout << request.GetTypeName() << ":" << std::endl << request.DebugString() << std::endl;
+        bnet::protocol::toon::external::CreateToonResponse *response =
+            new bnet::protocol::toon::external::CreateToonResponse();
         
-        bnet::protocol::toon::external::CreateToonResponse response;
-        
+        /*
         // http://pastebin.com/ULfdcMba
         D3::OnlineService::HeroCreateParams params;
         params.ParseFromString(request.attribute(0).value().message_value());
             
         std::cout << params.GetTypeName() << ":" << std::endl
             << params.DebugString() << std::endl;
+        */
         
-        response.mutable_toon()->set_low(2L);
-        response.mutable_toon()->set_high(0x300016200004433L);
-		
-        unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-        std::string built_response = response.SerializeAsString();
-        built_response.insert(built_response.begin(), header, header + 5);
+        response->mutable_toon()->set_low(2L);
+        response->mutable_toon()->set_high(0x300016200004433L);
         
-		for (int i = 0; i < (int)built_response.size(); ++i)
-		{
-			std::cout << std::hex << std::uppercase << ((uint8_t)built_response[i] & 0xff) << " ";
-		}
+		PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         
-		std::cout << std::endl;
-        
-        std::cout << response.GetTypeName() << ":" << std::endl << response.DebugString() << std::endl;
-        send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+        return response_packet;
     }
     
-    void ToonExternalService::Request(const char *packet, int packet_length)
+    PacketResponse *ToonExternalService::Request(Client &client, PacketRequest &request_packet)
     {
-        this->set_current_packet(packet, packet_length);
+        PacketResponse *response_packet = 0;
 
-        switch ((uint8_t)packet[1])
+        switch (request_packet.header().method_id())
         {
             case 0x01:
             {
-                bnet::protocol::toon::external::ToonListRequest request;
-                if (request.ParseFromArray(&packet[6], packet[5]))
-                    this->ToonListRequest(request);
-                break;
+                request_packet.set_message(new bnet::protocol::toon::external::ToonListRequest());
+				if (request_packet.message()->ParseFromString(request_packet.message_data()))
+					response_packet = this->ToonListRequest(client, request_packet);
+                else
+                    request_packet.clear_message();
+				break;
             }
                 
             case 0x03:
             {
-                bnet::protocol::toon::external::CreateToonRequest request;
-                if (request.ParseFromArray(&packet[6], packet[5]))
-                    this->CreateToonRequest(request);
-                break;
+                request_packet.set_message(new bnet::protocol::toon::external::CreateToonRequest());
+				if (request_packet.message()->ParseFromString(request_packet.message_data()))
+					response_packet = this->CreateToonRequest(client, request_packet);
+                else
+                    request_packet.clear_message();
+				break;
             }
         }
+        
+        return response_packet;
     }
     
     std::string ToonExternalService::Name() const

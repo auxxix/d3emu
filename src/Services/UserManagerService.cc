@@ -1,64 +1,49 @@
 #include "UserManagerService.h"
-
 #include <iostream>
-
-#ifdef _WIN32
-    #include <WinSock2.h>
-#else
-    #include <sys/socket.h>
-#endif
 
 namespace d3emu
 {
+    UserManagerService::UserManagerService(uint32_t _service_hash, uint8_t _service_id)
+        : Service(_service_hash, _service_id) 
+    {
+    }
 
-UserManagerService::UserManagerService(uint32_t _service_hash, uint8_t _service_id)
-	: Service(_service_hash, _service_id) 
-{
-}
+    PacketResponse *UserManagerService::SubscribeToUserManagerRequest(Client &client, PacketRequest &request_packet)
+    {
+        bnet::protocol::user_manager::SubscribeToUserManagerResponse *response =
+            new bnet::protocol::user_manager::SubscribeToUserManagerResponse();
+        
+        PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
+        
+        return response_packet;
+    }
 
-void UserManagerService::SubscribeToUserManagerRequest(bnet::protocol::user_manager::SubscribeToUserManagerRequest &request)
-{
-	std::cout << request.GetTypeName() << ":"
-		<< std::endl << request.DebugString() << std::endl;
-	bnet::protocol::user_manager::SubscribeToUserManagerResponse response;
+    PacketResponse *UserManagerService::Request(Client &client, PacketRequest &request_packet)
+    {
+        PacketResponse *response_packet = 0;
+        
+        switch (request_packet.header().method_id())
+        {
+            case 0x01:
+            {
+                request_packet.set_message(new bnet::protocol::user_manager::SubscribeToUserManagerRequest());
+				if (request_packet.message()->ParseFromString(request_packet.message_data()))
+					response_packet = this->SubscribeToUserManagerRequest(client, request_packet);
+                else
+                    request_packet.clear_message();
+				break;
+            }
+        }
+        
+        return response_packet;
+    }
 
-	unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-	std::string built_response = response.SerializeAsString();
-	built_response.insert(built_response.begin(), header, header + 5);
-
-	/*
-	printf("<-- (Hex): ");
-	for (size_t i = 0; i < built_response.length(); i++)
-	{
-		printf("%02X ", built_response[i] & 0xff);
-	}
-	printf("\n");
-	*/
-
-	std::cout << response.GetTypeName() << ":"
-		<< std::endl << response.DebugString() << std::endl;
-	send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-}
-
-void UserManagerService::Request(const char *packet, int packet_length)
-{
-	this->set_current_packet(packet, packet_length);
-
-	switch ((uint8_t)packet[1])
-	{
-		case 0x01:
-		{
-			bnet::protocol::user_manager::SubscribeToUserManagerRequest request;
-			if (request.ParseFromArray(&packet[6], packet[5]))
-				this->SubscribeToUserManagerRequest(request);
-			break;
-		}
-	}
-}
-
-std::string UserManagerService::Name() const
-{
-	return std::string("d3emu.UserManagerService");
-}
-
+    std::string UserManagerService::Name() const
+    {
+        return std::string("d3emu.UserManagerService");
+    }
 }
