@@ -2,17 +2,9 @@
 
 #include <iostream>
 
-#ifdef _WIN32
-	#include <WinSock2.h>
-#else
-    #include <sys/socket.h>
-#endif
-
 #include "../bnet/Account.pb.h"
 #include "../bnet/Hero.pb.h"
-
 #include "../bnet/service/toon/toon.pb.h"
-
 #include "../Net/Packet.h"
 
 namespace d3emu
@@ -22,13 +14,13 @@ namespace d3emu
 	{
 	}
 
-	PacketResponse *StorageService::ExecuteRequest(Client &client, PacketRequest &request)
+	PacketResponse *StorageService::ExecuteRequest(Client &client, PacketRequest &request_packet)
 	{
 		bnet::protocol::storage::ExecuteResponse *response =
             new bnet::protocol::storage::ExecuteResponse();
 
         bnet::protocol::storage::ExecuteRequest *execute_request =
-            dynamic_cast<bnet::protocol::storage::ExecuteRequest *>(request.message());
+            dynamic_cast<bnet::protocol::storage::ExecuteRequest *>(request_packet.message());
         
 		if (!execute_request->query_name().compare("GetGameAccountSettings"))
 		{
@@ -137,12 +129,12 @@ namespace d3emu
         response_packet->set_message(response);
         response_packet->mutable_header()->set_service_id(0xfe);
         response_packet->mutable_header()->set_method_id(0x00);
-        response_packet->mutable_header()->set_request_id(request.header().request_id());
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         
         return response_packet;
 	}
 
-	PacketResponse *StorageService::OpenTableRequest(Client &client, PacketRequest &request)
+	PacketResponse *StorageService::OpenTableRequest(Client &client, PacketRequest &request_packet)
 	{
 		bnet::protocol::storage::OpenTableResponse *response =
             new bnet::protocol::storage::OpenTableResponse();
@@ -151,12 +143,12 @@ namespace d3emu
         response_packet->set_message(response);
         response_packet->mutable_header()->set_service_id(0xfe);
         response_packet->mutable_header()->set_method_id(0x00);
-        response_packet->mutable_header()->set_request_id(request.header().request_id());
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         
         return response_packet;
 	}
 
-	PacketResponse *StorageService::OpenColumnRequest(Client &client, PacketRequest &request)
+	PacketResponse *StorageService::OpenColumnRequest(Client &client, PacketRequest &request_packet)
 	{
         bnet::protocol::storage::OpenColumnResponse *response =
             new bnet::protocol::storage::OpenColumnResponse();
@@ -165,43 +157,43 @@ namespace d3emu
         response_packet->set_message(response);
         response_packet->mutable_header()->set_service_id(0xfe);
         response_packet->mutable_header()->set_method_id(0x00);
-        response_packet->mutable_header()->set_request_id(request.header().request_id());
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
 
         return response_packet;
 	}
 
-	PacketResponse *StorageService::Request(Client &client, PacketRequest &packet)
+	PacketResponse *StorageService::Request(Client &client, PacketRequest &request_packet)
 	{
         PacketResponse *response = 0;
-		switch (packet.header().method_id())
+		switch (request_packet.header().method_id())
 		{
 			case 0x01:
 			{
-                packet.set_message(new bnet::protocol::storage::ExecuteRequest());
-				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->ExecuteRequest(client, packet);
+                request_packet.set_message(new bnet::protocol::storage::ExecuteRequest());
+				if (request_packet.message()->ParseFromString(request_packet.message_data()))
+					response = this->ExecuteRequest(client, request_packet);
                 else
-                    packet.clear_message();
+                    request_packet.clear_message();
 				break;
 			}
 
 			case 0x02:
 			{
-				packet.set_message(new bnet::protocol::storage::OpenTableRequest());
-				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->OpenTableRequest(client, packet);
+				request_packet.set_message(new bnet::protocol::storage::OpenTableRequest());
+				if (request_packet.message()->ParseFromString(request_packet.message_data()))
+					response = this->OpenTableRequest(client, request_packet);
                 else
-                    packet.clear_message();
+                    request_packet.clear_message();
 				break;
 			}
 
 			case 0x03:
 			{
-				packet.set_message(new bnet::protocol::storage::OpenColumnRequest());
-				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->OpenColumnRequest(client, packet);
+				request_packet.set_message(new bnet::protocol::storage::OpenColumnRequest());
+				if (request_packet.message()->ParseFromString(request_packet.message_data()))
+					response = this->OpenColumnRequest(client, request_packet);
                 else
-                    packet.clear_message();
+                    request_packet.clear_message();
 				break;
 			}
 		}

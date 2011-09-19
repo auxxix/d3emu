@@ -1,70 +1,54 @@
 #include "AuthenticationService.h"
-
-#ifdef _WIN32
-	#include <WinSock2.h>
-#else
-    #include <sys/socket.h>
-#endif
-
 #include <iostream>
 
 namespace d3emu
 {
+    AuthenticationService::AuthenticationService(uint32_t _service_hash, uint8_t _service_id)
+        : Service(_service_hash, _service_id) 
+    {
+    }
 
-AuthenticationService::AuthenticationService(uint32_t _service_hash, uint8_t _service_id)
-	: Service(_service_hash, _service_id) 
-{
-}
+    PacketResponse *AuthenticationService::LogonRequest(Client &client, PacketRequest &request_packet)
+    {
+        bnet::protocol::authentication::LogonResponse *response =
+            new bnet::protocol::authentication::LogonResponse();
 
-void AuthenticationService::LogonRequest(bnet::protocol::authentication::LogonRequest &request)
-{
-	std::cout << request.GetTypeName() << ":" << std::endl
-		<< request.DebugString() << std::endl;
+        response->mutable_account()->set_high(0x100000000000000L);
+        response->mutable_account()->set_low(1L);
+        response->mutable_game_account()->set_high(0x200006200004433L);
+        response->mutable_game_account()->set_low(3L);
 
-	bnet::protocol::authentication::LogonResponse response;
+        PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(0x00);
+        response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
+        
+        return response_packet;
+    }
 
-	response.mutable_account()->set_high(0x100000000000000L);
-	response.mutable_account()->set_low(1L);
-	response.mutable_game_account()->set_high(0x200006200004433L);
-	response.mutable_game_account()->set_low(3L);
+    PacketResponse *AuthenticationService::Request(Client &client, PacketRequest &request_packet)
+    {
+        PacketResponse *response_packet = 0;
+        
+        switch (request_packet.header().method_id())
+        {
+            case 0x01:
+            {
+                request_packet.set_message(new bnet::protocol::authentication::LogonRequest());
+				if (request_packet.message()->ParseFromString(request_packet.message_data()))
+					response_packet = this->LogonRequest(client, request_packet);
+                else
+                    request_packet.clear_message();
+				break;
+            }
+        }
+        
+        return response_packet;
+    }
 
-	unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-	std::string built_response = response.SerializeAsString();
-	built_response.insert(built_response.begin(), header, header + 5);
-
-	/*
-	printf("<-- (Hex): ");
-	for (size_t i = 0; i < built_response.length(); i++)
-	{
-		printf("%02X ", built_response[i] & 0xff);
-	}
-	printf("\n");
-	*/
-
-	std::cout << response.GetTypeName() << ":" << std::endl
-		<< response.DebugString() << std::endl;
-	send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-}
-
-void AuthenticationService::Request(const char *packet, int packet_length)
-{
-	this->set_current_packet(packet, packet_length);
-
-	switch ((uint8_t)packet[1])
-	{
-		case 0x01:
-		{
-			bnet::protocol::authentication::LogonRequest request;
-			if (request.ParseFromArray(&packet[6], packet[5]))
-				this->LogonRequest(request);
-			break;
-		}
-	}
-}
-
-std::string AuthenticationService::Name() const
-{
-	return std::string("d3emu::AuthenticationService");
-}
-
+    std::string AuthenticationService::Name() const
+    {
+        return std::string("d3emu::AuthenticationService");
+    }
 }
