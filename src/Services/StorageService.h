@@ -15,7 +15,6 @@ namespace d3emu
 	{
 	public:
 		StorageService(uint32_t _service_hash, uint8_t _service_id);
-		void Request(const char *packet, int packet_length);
         PacketResponse *Request(PacketRequest &packet);
 		std::string Name() const;
         
