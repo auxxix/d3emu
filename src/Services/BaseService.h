@@ -2,13 +2,8 @@
 #define D3EMU_BASESERVICE_H
 
 #include "Service.h"
-
 #include "lib/rpc/connection.pb.h"
-/*
-#include <stdint.h>
 
-#include "../Net/Packet.h"
-*/
 namespace d3emu
 {
     class BaseService : public Service

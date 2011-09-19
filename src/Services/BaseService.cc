@@ -5,12 +5,6 @@
 #include <ctime>
 #include <iomanip>
 
-#ifdef _WIN32
-#include <WinSock2.h>
-#else
-#include <sys/socket.h>
-#endif
-
 namespace d3emu 
 {
     BaseService::BaseService(uint32_t _service_hash, uint8_t _service_id)
@@ -59,8 +53,7 @@ namespace d3emu
         
         PacketResponse *response_packet = new PacketResponse();
         response_packet->set_message(response);
-        // NOTE: Since this is the base service, service_id should always be 0.
-        response_packet->mutable_header()->set_service_id(0x00);
+        response_packet->mutable_header()->set_service_id(0xfe);
         response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
         response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         
@@ -91,8 +84,7 @@ namespace d3emu
         
         PacketResponse *response_packet = new PacketResponse();
         response_packet->set_message(response);
-        // NOTE: Since this is the base service, service_id should always be 0.
-        response_packet->mutable_header()->set_service_id(0x00);
+        response_packet->mutable_header()->set_service_id(0xfe);
         response_packet->mutable_header()->set_method_id(request_packet.header().method_id());
         response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
         

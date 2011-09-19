@@ -16,29 +16,13 @@ ChannelInvitationService::ChannelInvitationService(uint32_t _service_hash, uint8
 {
 }
 
-void ChannelInvitationService::SubscribeRequest(bnet::protocol::channel_invitation::SubscribeRequest &request)
+PacketResponse *ChannelInvitationService::SubscribeRequest(Client &client, PacketRequest &request_packet)
 {
-	std::cout << request.GetTypeName() << ":" << std::endl
-		<< request.DebugString() << std::endl;
+	bnet::protocol::channel_invitation::SubscribeResponse response =
+        new bnet::protocol::channel_invitation::SubscribeResponse();
 
-	bnet::protocol::channel_invitation::SubscribeResponse response;
-
-	unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
-	std::string built_response = response.SerializeAsString();
-	built_response.insert(built_response.begin(), header, header + 5);
-
-	/*
-	printf("<-- (Hex): ");
-	for (size_t i = 0; i < built_response.length(); i++)
-	{
-		printf("%02X ", built_response[i] & 0xff);
-	}
-	printf("\n");
-	*/
-
-	std::cout << response.GetTypeName() << ":" << std::endl
-		<< response.DebugString() << std::endl;
-	send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+	
+    return 
 }
 
 void ChannelInvitationService::Request(const char *packet, int packet_length)
