@@ -193,7 +193,12 @@ namespace d3emu
 		{
 			this->set_has_message();
 			this->message_ = message;
+            this->header_.set_message_size(this->message_->ByteSize());
 		}
+        else
+        {
+            this->clear_message();
+        }
 	}
 
 	bool PacketRequest::has_message() const
@@ -279,7 +284,12 @@ namespace d3emu
 		{
 			this->set_has_message();
 			this->message_ = message;
+            this->header_.set_message_size(this->message_->ByteSize());
 		}
+        else
+        {
+            this->clear_message();
+        }
 	}
     
 	bool PacketResponse::has_message() const

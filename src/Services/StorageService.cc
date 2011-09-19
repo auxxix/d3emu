@@ -186,9 +186,18 @@ namespace d3emu
 		std::cout << request.message()->GetTypeName() << ":" << std::endl
 			<< request.message()->DebugString() << std::endl;
 
-		bnet::protocol::storage::OpenColumnResponse response;
-
-		uint8_t header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
+        
+        
+        bnet::protocol::storage::OpenColumnResponse *response =
+            new bnet::protocol::storage::OpenColumnResponse();
+        
+        PacketResponse *response_packet = new PacketResponse();
+        response_packet->set_message(response);
+        response_packet->mutable_header()->set_service_id(0xfe);
+        response_packet->mutable_header()->set_method_id(0x00);
+        response_packet->mutable_header()->set_request_id(request.header().request_id());
+        
+		uint8_t header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response->ByteSize() };
 		std::string built_response = response.SerializeAsString();
 		built_response.insert(built_response.begin(), header, header + 5);
 
