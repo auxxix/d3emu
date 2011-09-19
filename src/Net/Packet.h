@@ -25,7 +25,8 @@ namespace d3emu
 		uint8_t message_size() const;
 
 		std::string SerializeAsString() const;
-
+        bool AppendToString(std::string *str) const;
+        
 	private:
 		uint8_t service_id_;
 		uint8_t method_id_;
@@ -52,7 +53,8 @@ namespace d3emu
 		uint8_t message_size() const;
 
 		std::string SerializeAsString() const;
-
+        bool AppendToString(std::string *str) const;
+        
 	private:
 		uint8_t service_id_;
 		uint8_t method_id_;
@@ -79,6 +81,9 @@ namespace d3emu
 
 		std::string message_data() const;
 
+        std::string SerializeAsString() const;
+        bool AppendToString(std::string *str) const;
+        
 	private:
 		void clear_has_message();
 		void set_has_message();
@@ -107,6 +112,9 @@ namespace d3emu
 		google::protobuf::Message *mutable_message();
         
 		std::string message_data() const;
+        
+        std::string SerializeAsString() const;
+        bool AppendToString(std::string *str) const;
         
 	private:
 		void clear_has_message();

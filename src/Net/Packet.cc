@@ -72,6 +72,12 @@ namespace d3emu
 			this->request_id_, 0x00, this->message_size_ };
 		return std::string(bytes, bytes + 5);
 	}
+    
+    bool PacketHeaderResponse::AppendToString(std::string *str) const
+    {
+        str->append(this->SerializeAsString());
+        return true;
+    }
 
 	// PacketHeaderRequest
 
@@ -141,6 +147,12 @@ namespace d3emu
 			this->request_id_, 0x00, 0x00, this->message_size_ };
 		return std::string(bytes, bytes + 6);
 	}
+    
+    bool PacketHeaderRequest::AppendToString(std::string *str) const
+    {
+        str->append(this->SerializeAsString());
+        return true;
+    }
 
 	// PacketRequest
 
@@ -232,6 +244,21 @@ namespace d3emu
 		this->has_message_ = true;
 	}
     
+    std::string PacketRequest::SerializeAsString() const
+    {
+        std::string request;
+        request.append(this->header().SerializeAsString());
+        if (this->has_message())
+            this->message()->AppendToString(&request);
+        return request;
+    }
+    
+    bool PacketRequest::AppendToString(std::string *str) const
+    {
+        str->append(this->SerializeAsString());
+        return true;
+    }
+    
     // PacketResponse
     
     PacketResponse::PacketResponse()
@@ -322,4 +349,19 @@ namespace d3emu
 	{
 		this->has_message_ = true;
 	}
+    
+    std::string PacketResponse::SerializeAsString() const
+    {
+        std::string response;
+        response.append(this->header().SerializeAsString());
+        if (this->has_message())
+            this->message()->AppendToString(&response);
+        return response;
+    }
+    
+    bool PacketResponse::AppendToString(std::string *str) const
+    {
+        str->append(this->SerializeAsString());
+        return true;
+    }
 }
