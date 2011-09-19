@@ -14,23 +14,23 @@ namespace d3emu
 		PacketHeaderRequest(const uint8_t *packet, size_t length);
 		PacketHeaderRequest(std::string &packet);
 
-		void set_service_id(uint8_t service_id);
-		void set_method_id(uint8_t method_id);
-		void set_request_id(uint8_t request_id);
-		void set_message_size(uint8_t message_size);
+		void set_service_id(unsigned int service_id);
+		void set_method_id(unsigned int method_id);
+		void set_request_id(unsigned int request_id);
+		void set_message_size(unsigned int message_size);
 
-		uint8_t service_id() const;
-		uint8_t method_id() const;
-		uint8_t request_id() const;
-		uint8_t message_size() const;
+		unsigned int service_id() const;
+		unsigned int method_id() const;
+		unsigned int request_id() const;
+		unsigned int message_size() const;
 
 		std::string SerializeAsString() const;
 
 	private:
-		uint8_t service_id_;
-		uint8_t method_id_;
-		uint8_t request_id_;
-		uint8_t message_size_;
+		unsigned int service_id_;
+		unsigned int method_id_;
+		unsigned int request_id_;
+		unsigned int message_size_;
 	};
 	
 	class PacketHeaderResponse
@@ -71,8 +71,10 @@ namespace d3emu
 		const PacketHeaderRequest &header() const;
 		PacketHeaderRequest *mutable_header();
 
+        void clear_message();
 		void set_message(google::protobuf::Message *message);
 		bool has_message() const;
+        google::protobuf::Message *message() const;
 		google::protobuf::Message *mutable_message();
 
 		std::string message_data() const;

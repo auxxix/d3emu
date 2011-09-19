@@ -4,6 +4,8 @@
 
 #ifdef _WIN32
 #include <WinSock2.h>
+#else
+#include <sys/socket.h>
 #endif
 
 namespace d3emu
@@ -18,10 +20,10 @@ void GameMasterService::ListFactoriesRequest(bnet::protocol::game_master::ListFa
 {
 	std::cout << request.GetTypeName() << ":" << std::endl
 		<< request.DebugString() << std::endl;
-	/*
+	
 	bnet::protocol::game_master::ListFactoriesResponse response;
 
-	response.set_total_results(1);
+	//response.set_total_results(1);
 
 	unsigned char header[5] = { 0xfe, 0x00, this->current_packet()[2], 0x00, response.ByteSize() };
 	std::string built_response = response.SerializeAsString();
@@ -35,8 +37,7 @@ void GameMasterService::ListFactoriesRequest(bnet::protocol::game_master::ListFa
 	printf("\n");	
 
 	std::cout << response.GetTypeName() << ":" << std::endl << response.DebugString() << std::endl;
-	send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
-	*/
+	//send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
 }
 
 void GameMasterService::Request(const char *packet, int packet_length)

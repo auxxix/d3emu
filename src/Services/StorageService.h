@@ -16,17 +16,18 @@ namespace d3emu
 	public:
 		StorageService(uint32_t _service_hash, uint8_t _service_id);
 		void Request(const char *packet, int packet_length);
+        PacketResponse *Request(PacketRequest &packet);
 		std::string Name() const;
-
+        
 	private:
 		// 0x01
-		void ExecuteRequest(bnet::protocol::storage::ExecuteRequest &request);
+		PacketResponse *ExecuteRequest(PacketRequest &packet);
 
 		// 0x02
-		void OpenTableRequest(bnet::protocol::storage::OpenTableRequest &request);
+		PacketResponse *OpenTableRequest(PacketRequest &packet);
 
 		// 0x03
-		void OpenColumnRequest(bnet::protocol::storage::OpenColumnRequest &request);
+		PacketResponse *OpenColumnRequest(PacketRequest &packet);
 	};
 }
 

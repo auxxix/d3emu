@@ -22,18 +22,21 @@ namespace d3emu
 	{
 	}
 
-	void StorageService::ExecuteRequest(bnet::protocol::storage::ExecuteRequest &request)
+	PacketResponse *StorageService::ExecuteRequest(PacketRequest &request)
 	{
-		std::cout << request.GetTypeName() << ":" << std::endl
-			<< request.DebugString() << std::endl;
+		std::cout << request.message()->GetTypeName() << ":" << std::endl
+			<< request.message()->DebugString() << std::endl;
 
 		bnet::protocol::storage::ExecuteResponse response;
 
-		if (!request.query_name().compare("GetGameAccountSettings"))
+        bnet::protocol::storage::ExecuteRequest *execute_request =
+            dynamic_cast<bnet::protocol::storage::ExecuteRequest *>(request.message());
+        
+		if (!execute_request->query_name().compare("GetGameAccountSettings"))
 		{
-			for (int i = 0; i < request.operations_size(); i++)
+			for (int i = 0; i < execute_request->operations_size(); i++)
 			{
-				const bnet::protocol::storage::Operation &request_operation = request.operations(i);
+				const bnet::protocol::storage::Operation &request_operation = execute_request->operations(i);
 				bnet::protocol::storage::OperationResult *operation = response.add_results();
 
 				operation->mutable_table_id()->set_hash(request_operation.table_id().hash());
@@ -44,7 +47,7 @@ namespace d3emu
 				cell->mutable_row_id()->set_hash(request_operation.row_id().hash());
 			}
 		}
-		else if (!request.query_name().compare("LoadAccountDigest"))
+		else if (!execute_request->query_name().compare("LoadAccountDigest"))
 		{
 			D3::Account::Digest digest;
 			digest.set_version(99);
@@ -63,9 +66,9 @@ namespace d3emu
 			banner_configuration->set_sigil_color_index(0);
 			banner_configuration->set_use_sigil_variant(false);
 
-			for (int i = 0; i < request.operations_size(); i++)
+			for (int i = 0; i < execute_request->operations_size(); i++)
 			{
-				const bnet::protocol::storage::Operation &request_operation = request.operations(i);
+				const bnet::protocol::storage::Operation &request_operation = execute_request->operations(i);
 				bnet::protocol::storage::OperationResult *operation = response.add_results();
 
 				operation->mutable_table_id()->set_hash(request_operation.table_id().hash());
@@ -78,7 +81,7 @@ namespace d3emu
 				cell->set_data(digest.SerializeAsString());
 			}
 		}
-		else if (!request.query_name().compare("GetHeroDigests"))
+		else if (!execute_request->query_name().compare("GetHeroDigests"))
 		{
 			D3::Hero::Digest digest;
 
@@ -116,9 +119,9 @@ namespace d3emu
 			item->set_gbid(0);
 			item->set_item_effect_type(0);
 			*/
-			for (int i = 0; i < request.operations_size(); i++)
+			for (int i = 0; i < execute_request->operations_size(); i++)
 			{
-				const bnet::protocol::storage::Operation &request_operation = request.operations(i);
+				const bnet::protocol::storage::Operation &request_operation = execute_request->operations(i);
 				bnet::protocol::storage::OperationResult *operation = response.add_results();
 
 				operation->mutable_table_id()->set_hash(request_operation.table_id().hash());
@@ -158,12 +161,13 @@ namespace d3emu
 		std::cout << response.GetTypeName() << ":"
 			<< std::endl << response.DebugString() << std::endl;
 		send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+        return 0;
 	}
 
-	void StorageService::OpenTableRequest(bnet::protocol::storage::OpenTableRequest &request)
+	PacketResponse *StorageService::OpenTableRequest(PacketRequest &request)
 	{
-		std::cout << request.GetTypeName() << ":" << std::endl
-			<< request.DebugString() << std::endl;
+		std::cout << request.message()->GetTypeName() << ":" << std::endl
+			<< request.message()->DebugString() << std::endl;
 
 		bnet::protocol::storage::OpenTableResponse response;
 
@@ -174,12 +178,13 @@ namespace d3emu
 		std::cout << response.GetTypeName() << ":"
 			<< std::endl << response.DebugString() << std::endl;
 		send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+        return 0;
 	}
 
-	void StorageService::OpenColumnRequest(bnet::protocol::storage::OpenColumnRequest &request)
+	PacketResponse *StorageService::OpenColumnRequest(PacketRequest &request)
 	{
-		std::cout << request.GetTypeName() << ":" << std::endl
-			<< request.DebugString() << std::endl;
+		std::cout << request.message()->GetTypeName() << ":" << std::endl
+			<< request.message()->DebugString() << std::endl;
 
 		bnet::protocol::storage::OpenColumnResponse response;
 
@@ -190,40 +195,52 @@ namespace d3emu
 		std::cout << response.GetTypeName() << ":"
 			<< std::endl << response.DebugString() << std::endl;
 		send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
+        return 0;
 	}
 
-	void StorageService::Request(const char *packet, int packet_length)
+	PacketResponse *StorageService::Request(PacketRequest &packet)
 	{
-		this->set_current_packet(packet, packet_length);
-
-		PacketHeaderRequest request_header(packet, 6);
-
-		switch (request_header.method_id())
+        PacketResponse *response = 0;
+		switch (packet.header().method_id())
 		{
 			case 0x01:
 			{
-				bnet::protocol::storage::ExecuteRequest request;
-				if (request.ParseFromArray(&packet[6], request_header.message_size()))
-					this->ExecuteRequest(request);
+                packet.set_message(new bnet::protocol::storage::ExecuteRequest());
+                packet.message()->ParseFromString(packet.message_data());
+                
+				if (packet.message()->ParseFromString(packet.message_data()))
+					response = this->ExecuteRequest(packet);
+                else
+                    packet.clear_message();
 				break;
 			}
 
 			case 0x02:
 			{
-				bnet::protocol::storage::OpenTableRequest request;
-				if (request.ParseFromArray(&packet[6], request_header.message_size()))
-					this->OpenTableRequest(request);
+				packet.set_message(new bnet::protocol::storage::OpenTableRequest());
+                packet.message()->ParseFromString(packet.message_data());
+                
+				if (packet.message()->ParseFromString(packet.message_data()))
+					response = this->ExecuteRequest(packet);
+                else
+                    packet.clear_message();
 				break;
 			}
 
 			case 0x03:
 			{
-				bnet::protocol::storage::OpenColumnRequest request;
-				if (request.ParseFromArray(&packet[6], request_header.message_size()))
-					this->OpenColumnRequest(request);
+				packet.set_message(new bnet::protocol::storage::OpenColumnRequest());
+                packet.message()->ParseFromString(packet.message_data());
+                
+				if (packet.message()->ParseFromString(packet.message_data()))
+					response = this->ExecuteRequest(packet);
+                else
+                    packet.clear_message();
 				break;
 			}
 		}
+        
+        return response;
 	}
 
 	std::string StorageService::Name() const
