@@ -2,6 +2,9 @@
 
 #include <iostream>
 
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+
 namespace d3emu
 {
 	// PacketHeaderResponse
@@ -12,31 +15,58 @@ namespace d3emu
 	}
 
 	PacketHeaderResponse::PacketHeaderResponse(const char *packet, size_t length)
-        : service_id_(packet[0]), method_id_(packet[1]), request_id_(packet[2]), message_size_(packet[4])
+        : service_id_(0), method_id_(0), request_id_(0), message_size_(0)
 	{
+        google::protobuf::io::CodedInputStream *input_stream =
+            new google::protobuf::io::CodedInputStream((const uint8_t *)packet, (int)length);
+        
+        input_stream->ReadRaw(&this->service_id_, 1);
+        input_stream->ReadVarint32(&this->method_id_);
+        input_stream->ReadRaw(&this->request_id_, 2);
+        input_stream->ReadVarint32(&this->message_size_);
+        
+        delete input_stream;
 	}
 
 	PacketHeaderResponse::PacketHeaderResponse(const uint8_t *packet, size_t length)
-        : service_id_(packet[0]), method_id_(packet[1]), request_id_(packet[2]), message_size_(packet[4])
+        : service_id_(0), method_id_(0), request_id_(0), message_size_(0)
 	{
+        google::protobuf::io::CodedInputStream *input_stream =
+            new google::protobuf::io::CodedInputStream(packet, (int)length);
+        
+        input_stream->ReadRaw(&this->service_id_, 1);
+        input_stream->ReadVarint32(&this->method_id_);
+        input_stream->ReadRaw(&this->request_id_, 2);
+        input_stream->ReadVarint32(&this->message_size_);
+        
+        delete input_stream;
 	}
 
 	PacketHeaderResponse::PacketHeaderResponse(std::string &packet)
-        : service_id_(packet[0]), method_id_(packet[1]), request_id_(packet[2]), message_size_(packet[4])
+        : service_id_(0), method_id_(0), request_id_(0), message_size_(0)
 	{
+        google::protobuf::io::CodedInputStream *input_stream =
+            new google::protobuf::io::CodedInputStream((const uint8_t *)packet.c_str(), (int)packet.length());
+        
+        input_stream->ReadRaw(&this->service_id_, 1);
+        input_stream->ReadVarint32(&this->method_id_);
+        input_stream->ReadRaw(&this->request_id_, 2);
+        input_stream->ReadVarint32(&this->message_size_);
+        
+        delete input_stream;
 	}
 
-	void PacketHeaderResponse::set_request_id(uint8_t request_id)
+	void PacketHeaderResponse::set_request_id(uint16_t request_id)
 	{
 		this->request_id_ = request_id;
 	}
 
-	void PacketHeaderResponse::set_message_size(uint8_t message_size)
+	void PacketHeaderResponse::set_message_size(uint32_t message_size)
 	{
 		this->message_size_ = message_size;
 	}
 
-	void PacketHeaderResponse::set_method_id(uint8_t method_id)
+	void PacketHeaderResponse::set_method_id(uint32_t method_id)
 	{
 		this->method_id_ = method_id;
 	}
@@ -51,26 +81,39 @@ namespace d3emu
 		return this->service_id_;
 	}
 
-	uint8_t PacketHeaderResponse::method_id() const
+	uint32_t PacketHeaderResponse::method_id() const
 	{
 		return this->method_id_;
 	}
 
-	uint8_t PacketHeaderResponse::request_id() const
+	uint16_t PacketHeaderResponse::request_id() const
 	{
 		return this->request_id_;
 	}
 
-	uint8_t PacketHeaderResponse::message_size() const
+	uint32_t PacketHeaderResponse::message_size() const
 	{
 		return this->message_size_;
 	}
 
 	std::string PacketHeaderResponse::SerializeAsString() const
 	{
-		char bytes[5] = { this->service_id_, this->method_id_, 
-			this->request_id_, 0x00, this->message_size_ };
-		return std::string(bytes, bytes + 5);
+        std::string str;
+        
+        google::protobuf::io::ZeroCopyOutputStream *raw_output =
+            new google::protobuf::io::StringOutputStream(&str);
+        google::protobuf::io::CodedOutputStream *output_stream =
+            new google::protobuf::io::CodedOutputStream(raw_output);
+        
+        output_stream->WriteRaw(&this->service_id_, 1);
+        output_stream->WriteVarint32(this->method_id_);
+        output_stream->WriteRaw((uint8_t *)&this->request_id_, 2);
+        output_stream->WriteVarint32(this->message_size_);
+        
+        delete output_stream;
+        delete raw_output;
+        
+        return str;
 	}
     
     bool PacketHeaderResponse::AppendToString(std::string *str) const
@@ -82,38 +125,73 @@ namespace d3emu
 	// PacketHeaderRequest
 
 	PacketHeaderRequest::PacketHeaderRequest()
-        : service_id_(0), method_id_(0), request_id_(0), message_size_(0)
+        : service_id_(0), method_id_(0), request_id_(0), unknown_(0), message_size_(0)
     {
 	}
 
 	PacketHeaderRequest::PacketHeaderRequest(const char *packet, size_t length)
-        : service_id_(packet[0]), method_id_(packet[1]), request_id_(packet[2]), message_size_(packet[5])
+        : service_id_(0), method_id_(0), request_id_(0), unknown_(0), message_size_(0)
 	{
+        google::protobuf::io::CodedInputStream *input_stream =
+            new google::protobuf::io::CodedInputStream((const uint8_t *)packet, (int)length);
+        
+        input_stream->ReadRaw(&this->service_id_, 1);
+        input_stream->ReadVarint32(&this->method_id_);
+        input_stream->ReadRaw(&this->request_id_, 2);
+        input_stream->ReadVarint64(&this->unknown_);
+        input_stream->ReadVarint32(&this->message_size_);
+        
+        delete input_stream;
 	}
 
 	PacketHeaderRequest::PacketHeaderRequest(const uint8_t *packet, size_t length)
-        : service_id_(packet[0]), method_id_(packet[1]), request_id_(packet[2]), message_size_(packet[5])
+        : service_id_(0), method_id_(0), request_id_(0), unknown_(0), message_size_(0)
 	{
+        google::protobuf::io::CodedInputStream *input_stream =
+            new google::protobuf::io::CodedInputStream(packet, (int)length);
+        
+        input_stream->ReadRaw(&this->service_id_, 1);
+        input_stream->ReadVarint32(&this->method_id_);
+        input_stream->ReadRaw(&this->request_id_, 2);
+        input_stream->ReadVarint64(&this->unknown_);
+        input_stream->ReadVarint32(&this->message_size_);
+        
+        delete input_stream;
 	}
 
 	PacketHeaderRequest::PacketHeaderRequest(std::string &packet)
-        : service_id_(packet[0]), method_id_(packet[1]), request_id_(packet[2]), message_size_(packet[5])
+        : service_id_(0), method_id_(0), request_id_(0), unknown_(0), message_size_(0)
 	{
+        google::protobuf::io::CodedInputStream *input_stream =
+            new google::protobuf::io::CodedInputStream((const uint8_t *)packet.c_str(), (int)packet.length());
+        
+        input_stream->ReadRaw(&this->service_id_, 1);
+        input_stream->ReadVarint32(&this->method_id_);
+        input_stream->ReadRaw(&this->request_id_, 2);
+        input_stream->ReadVarint64(&this->unknown_);
+        input_stream->ReadVarint32(&this->message_size_);
+        
+        delete input_stream;
 	}
 
-	void PacketHeaderRequest::set_request_id(uint8_t request_id)
+	void PacketHeaderRequest::set_request_id(uint16_t request_id)
 	{
 		this->request_id_ = request_id;
 	}
+    
+    void PacketHeaderRequest::set_unknown(uint64_t unknown)
+    {
+        this->unknown_ = unknown;
+    }
 
-	void PacketHeaderRequest::set_message_size(uint8_t message_size)
+	void PacketHeaderRequest::set_message_size(uint32_t message_size)
 	{
 		this->message_size_ = message_size;
 	}
 
-	void PacketHeaderRequest::set_method_id(uint8_t _method_id)
+	void PacketHeaderRequest::set_method_id(uint32_t method_id)
 	{
-		this->method_id_ = _method_id;
+		this->method_id_ = method_id;
 	}
 
 	void PacketHeaderRequest::set_service_id(uint8_t service_id)
@@ -126,26 +204,45 @@ namespace d3emu
 		return this->service_id_;
 	}
 
-	uint8_t PacketHeaderRequest::method_id() const
+	uint32_t PacketHeaderRequest::method_id() const
 	{
         return this->method_id_;
 	}
 
-	uint8_t PacketHeaderRequest::request_id() const
+	uint16_t PacketHeaderRequest::request_id() const
 	{
 		return this->request_id_;
 	}
+    
+    uint64_t PacketHeaderRequest::unknown() const
+    {
+        return this->unknown_;
+    }
 
-	uint8_t PacketHeaderRequest::message_size() const
+	uint32_t PacketHeaderRequest::message_size() const
 	{
 		return this->message_size_;
 	}
 
 	std::string PacketHeaderRequest::SerializeAsString() const
 	{
-		char bytes[6] = { this->service_id_, this->method_id_, 
-			this->request_id_, 0x00, 0x00, this->message_size_ };
-		return std::string(bytes, bytes + 6);
+        std::string str;
+        
+        google::protobuf::io::ZeroCopyOutputStream *raw_output =
+            new google::protobuf::io::StringOutputStream(&str);
+        google::protobuf::io::CodedOutputStream *output_stream =
+            new google::protobuf::io::CodedOutputStream(raw_output);
+        
+        output_stream->WriteRaw(&this->service_id_, 1);
+        output_stream->WriteVarint32(this->method_id_);
+        output_stream->WriteRaw((uint8_t *)&this->request_id_, 2);
+        output_stream->WriteVarint64(this->unknown_);
+        output_stream->WriteVarint32(this->message_size_);
+        
+        delete output_stream;
+        delete raw_output;
+        
+        return str;
 	}
     
     bool PacketHeaderRequest::AppendToString(std::string *str) const

@@ -15,23 +15,26 @@ namespace d3emu
 		PacketHeaderRequest(std::string &packet);
 
 		void set_service_id(uint8_t service_id);
-		void set_method_id(uint8_t method_id);
-		void set_request_id(uint8_t request_id);
-		void set_message_size(uint8_t message_size);
+		void set_method_id(uint32_t method_id);
+		void set_request_id(uint16_t request_id);
+        void set_unknown(uint64_t unknown);
+		void set_message_size(uint32_t message_size);
 
 		uint8_t service_id() const;
-		uint8_t method_id() const;
-		uint8_t request_id() const;
-		uint8_t message_size() const;
+		uint32_t method_id() const;
+		uint16_t request_id() const;
+        uint64_t unknown() const;
+		uint32_t message_size() const;
 
 		std::string SerializeAsString() const;
         bool AppendToString(std::string *str) const;
         
 	private:
 		uint8_t service_id_;
-		uint8_t method_id_;
-		uint8_t request_id_;
-		uint8_t message_size_;
+		uint32_t method_id_;
+		uint16_t request_id_;
+        uint64_t unknown_;
+		uint32_t message_size_;
 	};
 	
 	class PacketHeaderResponse
@@ -43,23 +46,23 @@ namespace d3emu
 		PacketHeaderResponse(std::string &packet);
 
 		void set_service_id(uint8_t service_id);
-		void set_method_id(uint8_t method_id);
-		void set_request_id(uint8_t request_id);
-		void set_message_size(uint8_t message_size);
-
+		void set_method_id(uint32_t method_id);
+		void set_request_id(uint16_t request_id);
+		void set_message_size(uint32_t message_size);
+        
 		uint8_t service_id() const;
-		uint8_t method_id() const;
-		uint8_t request_id() const;
-		uint8_t message_size() const;
+		uint32_t method_id() const;
+		uint16_t request_id() const;
+		uint32_t message_size() const;
 
 		std::string SerializeAsString() const;
         bool AppendToString(std::string *str) const;
         
 	private:
 		uint8_t service_id_;
-		uint8_t method_id_;
-		uint8_t request_id_;
-		uint8_t message_size_;
+		uint32_t method_id_;
+		uint16_t request_id_;
+		uint32_t message_size_;
 	};
 
 	class PacketRequest

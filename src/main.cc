@@ -39,6 +39,8 @@
 int StartServer(const char *ip, const char *port);
 void StopServer(int s);
 
+#include <sstream>
+
 int main(int argc, char **argv)
 {
 	srand((unsigned int)time(0));
@@ -70,7 +72,7 @@ int main(int argc, char **argv)
 	service_manager.Bind(new d3emu::FriendsService(0xA3DDB1BD, 0));
 	service_manager.Bind(new d3emu::PresenceService(0xFA0796FF, 0));
 	service_manager.Bind(new d3emu::StorageService(0xDA6E4BB9, 0));
-
+    
 	while (true)
 	{
 		int client_socket = accept(s, NULL, NULL);
