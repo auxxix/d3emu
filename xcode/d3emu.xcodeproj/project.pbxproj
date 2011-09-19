@@ -75,6 +75,7 @@
 		6C3FB65E14245ED700B296F4 /* libprotoc.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */; };
 		6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */; };
 		6C3FB66814253FCC00B296F4 /* ToonExternalService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB66714253FCC00B296F4 /* ToonExternalService.cc */; };
+		6CDF1AFE1426C355009AD334 /* Packet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF1AFC1426C355009AD334 /* Packet.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +238,8 @@
 		6C3FB66714253FCC00B296F4 /* ToonExternalService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToonExternalService.cc; sourceTree = "<group>"; };
 		6C3FB6691425402500B296F4 /* ToonExternalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToonExternalService.h; sourceTree = "<group>"; };
 		6C3FB6A21425498600B296F4 /* d3emu-cocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "d3emu-cocoa.xcodeproj"; path = "d3emu-cocoa/d3emu-cocoa.xcodeproj"; sourceTree = "<group>"; };
+		6CDF1AFC1426C355009AD334 /* Packet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Packet.cc; sourceTree = "<group>"; };
+		6CDF1AFD1426C355009AD334 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -632,6 +635,7 @@
 		6C3FB5E41424542900B296F4 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6CDF1AFB1426C355009AD334 /* Net */,
 				6C3FB5E51424542900B296F4 /* Client.cc */,
 				6C3FB5E61424542900B296F4 /* Client.h */,
 				6C3FB5E71424542900B296F4 /* main.cc */,
@@ -676,6 +680,15 @@
 				6C3FB6A71425498700B296F4 /* d3emu-cocoa.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6CDF1AFB1426C355009AD334 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				6CDF1AFC1426C355009AD334 /* Packet.cc */,
+				6CDF1AFD1426C355009AD334 /* Packet.h */,
+			);
+			path = Net;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -806,6 +819,7 @@
 				6C3FB6401424542900B296F4 /* UserManagerService.cc in Sources */,
 				6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */,
 				6C3FB66814253FCC00B296F4 /* ToonExternalService.cc in Sources */,
+				6CDF1AFE1426C355009AD334 /* Packet.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

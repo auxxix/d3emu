@@ -81,6 +81,7 @@
 		6C3FB8901425BE6700B296F4 /* user_manager.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB8591425BE6700B296F4 /* user_manager.pb.cc */; };
 		6C3FB8911425BE6700B296F4 /* Settings.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB85B1425BE6700B296F4 /* Settings.pb.cc */; };
 		6C3FB8921425BE6700B296F4 /* Stats.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB85D1425BE6700B296F4 /* Stats.pb.cc */; };
+		6CDF1AFA1426C34A009AD334 /* Packet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF1AF81426C34A009AD334 /* Packet.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -231,6 +232,8 @@
 		6C3FB85C1425BE6700B296F4 /* Settings.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.pb.h; sourceTree = "<group>"; };
 		6C3FB85D1425BE6700B296F4 /* Stats.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stats.pb.cc; sourceTree = "<group>"; };
 		6C3FB85E1425BE6700B296F4 /* Stats.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stats.pb.h; sourceTree = "<group>"; };
+		6CDF1AF81426C34A009AD334 /* Packet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Packet.cc; sourceTree = "<group>"; };
+		6CDF1AF91426C34A009AD334 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +293,7 @@
 		6C3FB68B1425498500B296F4 /* d3emu-cocoa */ = {
 			isa = PBXGroup;
 			children = (
+				6CDF1AF71426C34A009AD334 /* Net */,
 				6C3FB7D11425BE6700B296F4 /* bnet */,
 				6C3FB7AC1425BE4400B296F4 /* Client.cc */,
 				6C3FB7AD1425BE4400B296F4 /* Client.h */,
@@ -763,6 +767,16 @@
 			path = user_manager;
 			sourceTree = "<group>";
 		};
+		6CDF1AF71426C34A009AD334 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				6CDF1AF81426C34A009AD334 /* Packet.cc */,
+				6CDF1AF91426C34A009AD334 /* Packet.h */,
+			);
+			name = Net;
+			path = ../../../src/Net;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -890,6 +904,7 @@
 				6C3FB8901425BE6700B296F4 /* user_manager.pb.cc in Sources */,
 				6C3FB8911425BE6700B296F4 /* Settings.pb.cc in Sources */,
 				6C3FB8921425BE6700B296F4 /* Stats.pb.cc in Sources */,
+				6CDF1AFA1426C34A009AD334 /* Packet.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
