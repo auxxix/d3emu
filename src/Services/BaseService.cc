@@ -19,17 +19,19 @@ BaseService::BaseService(uint32_t _service_hash, uint8_t _service_id)
 {
 }
 
-void BaseService::Request(const char *packet, int packet_length)
+PacketResponse *BaseService::Request(Client &client, PacketRequest &request)
 {
-	this->set_current_packet(packet, packet_length);
-
-    switch (packet[1])
+    PacketResponse *response = 0;
+    
+    switch (request.header().method_id())
     {
         case 0x01:
         {
-            bnet::protocol::connection::ConnectRequest request;
+            request.set_message(new bnet::protocol::connection::ConnectRequest());
+            if (request.mutable_message()->ParseFromString(request.message_data()))
+                
             if (request.ParseFromArray(&packet[6], packet_length - 6))
-                this->ConnectRequest(request);
+                response = this->ConnectRequest(request);
             break;
         }
             
@@ -41,6 +43,8 @@ void BaseService::Request(const char *packet, int packet_length)
             break;
         }
     }
+    
+    return response;
 }
 
 void BaseService::ConnectRequest(bnet::protocol::connection::ConnectRequest &request)

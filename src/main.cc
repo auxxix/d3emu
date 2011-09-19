@@ -34,6 +34,8 @@
 #include "Services/StorageService.h"
 #include "Services/ToonExternalService.h"
 
+#include "Net/Packet.h"
+
 int StartServer(const char *ip, const char *port);
 void StopServer(int s);
 
@@ -119,7 +121,10 @@ int main(int argc, char **argv)
 					{
 						d3emu::Client client;
 						client.set_socket(client_socket);
-						service->Request(&client, packet, packet_len);
+                        
+                        PacketRequest request_packet;
+                        
+						service->Request(client, request_packet);
 					}
 
 					delete[] packet;

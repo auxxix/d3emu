@@ -97,10 +97,9 @@ namespace d3emu
     {
     }
 
-    void Service::Request(Client &client, PacketRequest &request)
+    PacketResponse *Service::Request(Client &client, PacketRequest &request)
     {
-        std::cout << "Unknown request for service_id " << std::hex << std::uppercase
-            << ((uint32_t)request.header().service_id() & 0xff) << std::endl;
+        return 0;
     }
 
     uint8_t Service::service_id() const

@@ -22,7 +22,7 @@ namespace d3emu
 	{
 	}
 
-	PacketResponse *StorageService::ExecuteRequest(PacketRequest &request)
+	PacketResponse *StorageService::ExecuteRequest(Client &client, PacketRequest &request)
 	{
 		bnet::protocol::storage::ExecuteResponse *response =
             new bnet::protocol::storage::ExecuteResponse();
@@ -142,7 +142,7 @@ namespace d3emu
         return response_packet;
 	}
 
-	PacketResponse *StorageService::OpenTableRequest(PacketRequest &request)
+	PacketResponse *StorageService::OpenTableRequest(Client &client, PacketRequest &request)
 	{
 		bnet::protocol::storage::OpenTableResponse *response =
             new bnet::protocol::storage::OpenTableResponse();
@@ -156,7 +156,7 @@ namespace d3emu
         return response_packet;
 	}
 
-	PacketResponse *StorageService::OpenColumnRequest(PacketRequest &request)
+	PacketResponse *StorageService::OpenColumnRequest(Client &client, PacketRequest &request)
 	{
         bnet::protocol::storage::OpenColumnResponse *response =
             new bnet::protocol::storage::OpenColumnResponse();
@@ -170,7 +170,7 @@ namespace d3emu
         return response_packet;
 	}
 
-	PacketResponse *StorageService::Request(PacketRequest &packet)
+	PacketResponse *StorageService::Request(Client &client, PacketRequest &packet)
 	{
         PacketResponse *response = 0;
 		switch (packet.header().method_id())
@@ -181,7 +181,7 @@ namespace d3emu
                 packet.message()->ParseFromString(packet.message_data());
                 
 				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->ExecuteRequest(packet);
+					response = this->ExecuteRequest(client, packet);
                 else
                     packet.clear_message();
 				break;
@@ -193,7 +193,7 @@ namespace d3emu
                 packet.message()->ParseFromString(packet.message_data());
                 
 				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->ExecuteRequest(packet);
+					response = this->ExecuteRequest(client, packet);
                 else
                     packet.clear_message();
 				break;
@@ -205,7 +205,7 @@ namespace d3emu
                 packet.message()->ParseFromString(packet.message_data());
                 
 				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->ExecuteRequest(packet);
+					response = this->ExecuteRequest(client, packet);
                 else
                     packet.clear_message();
 				break;
