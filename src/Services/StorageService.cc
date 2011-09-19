@@ -178,8 +178,6 @@ namespace d3emu
 			case 0x01:
 			{
                 packet.set_message(new bnet::protocol::storage::ExecuteRequest());
-                packet.message()->ParseFromString(packet.message_data());
-                
 				if (packet.message()->ParseFromString(packet.message_data()))
 					response = this->ExecuteRequest(client, packet);
                 else
@@ -190,10 +188,8 @@ namespace d3emu
 			case 0x02:
 			{
 				packet.set_message(new bnet::protocol::storage::OpenTableRequest());
-                packet.message()->ParseFromString(packet.message_data());
-                
 				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->ExecuteRequest(client, packet);
+					response = this->OpenTableRequest(client, packet);
                 else
                     packet.clear_message();
 				break;
@@ -202,10 +198,8 @@ namespace d3emu
 			case 0x03:
 			{
 				packet.set_message(new bnet::protocol::storage::OpenColumnRequest());
-                packet.message()->ParseFromString(packet.message_data());
-                
 				if (packet.message()->ParseFromString(packet.message_data()))
-					response = this->ExecuteRequest(client, packet);
+					response = this->OpenColumnRequest(client, packet);
                 else
                     packet.clear_message();
 				break;

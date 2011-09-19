@@ -22,8 +22,8 @@ public:
 	std::string Name() const;
 
 private:
-    PacketResponse *ConnectRequest(PacketRequest &request);
-    PacketResponse *BindRequest(PacketRequest &request);
+    PacketResponse *ConnectRequest(Client &client, PacketRequest &request);
+    PacketResponse *BindRequest(Client &client, PacketRequest &request);
 };
 
 }

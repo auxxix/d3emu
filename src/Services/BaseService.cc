@@ -19,35 +19,37 @@ BaseService::BaseService(uint32_t _service_hash, uint8_t _service_id)
 {
 }
 
-PacketResponse *BaseService::Request(Client &client, PacketRequest &request)
+PacketResponse *BaseService::Request(Client &client, PacketRequest &request_packet)
 {
-    PacketResponse *response = 0;
+    PacketResponse *response_packet = 0;
     
-    switch (request.header().method_id())
+    switch (request_packet.header().method_id())
     {
         case 0x01:
         {
-            request.set_message(new bnet::protocol::connection::ConnectRequest());
-            if (request.mutable_message()->ParseFromString(request.message_data()))
-                
-            if (request.ParseFromArray(&packet[6], packet_length - 6))
-                response = this->ConnectRequest(request);
+            request_packet.set_message(new bnet::protocol::connection::ConnectRequest());
+            if (request_packet.mutable_message()->ParseFromString(request_packet.message_data()))
+                response_packet = this->ConnectRequest(client, request_packet);
+            else
+                request_packet.clear_message();
             break;
         }
             
         case 0x02:
         {
             bnet::protocol::connection::BindRequest request;
-            if (request.ParseFromArray(&packet[6], packet_length - 6))
-                this->BindRequest(request);
+            if (request_packet.mutable_message()->ParseFromString(request_packet.message_data()))
+                response_packet = this->BindRequest(client, request_packet);
+            else
+                request_packet.clear_message();
             break;
         }
     }
     
-    return response;
+    return response_packet;
 }
 
-void BaseService::ConnectRequest(bnet::protocol::connection::ConnectRequest &request)
+void BaseService::ConnectRequest(Client &client, bnet::protocol::connection::ConnectRequest &request)
 {
     std::cout << request.GetTypeName() << ":" << std::endl
 		<< request.DebugString() << std::endl;
@@ -68,7 +70,7 @@ void BaseService::ConnectRequest(bnet::protocol::connection::ConnectRequest &req
     send(this->client()->socket(), built_response.c_str(), built_response.length(), 0);
 }
 
-void BaseService::BindRequest(bnet::protocol::connection::BindRequest request)
+void BaseService::BindRequest(Client &client, bnet::protocol::connection::BindRequest request)
 {
     std::cout << request.GetTypeName() << ":" << std::endl
 		<< request.DebugString() << std::endl;
