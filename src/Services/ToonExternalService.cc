@@ -89,7 +89,7 @@ namespace d3emu
     
     std::string ToonExternalService::Name() const
     {
-        return std::string("d3emu::ToonListService");
+        return std::string("d3emu.ToonListService");
     }
     
 }

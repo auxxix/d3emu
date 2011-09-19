@@ -58,7 +58,7 @@ void UserManagerService::Request(const char *packet, int packet_length)
 
 std::string UserManagerService::Name() const
 {
-	return std::string("d3emu::UserManagerService");
+	return std::string("d3emu.UserManagerService");
 }
 
 }
