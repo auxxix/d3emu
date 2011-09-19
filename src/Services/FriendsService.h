@@ -1,27 +1,21 @@
 #ifndef D3EMU_FRIENDSSERVICE
 #define D3EMU_FRIENDSSERVICE
 
+#include "Service.h"
 #include "service/friends/definition/friends.pb.h"
 
-#include "Service.h"
-
-#include <stdint.h>
-
-// 0xA3DDB1BD bnet.protocol.friends.SubscribeToFriendsRequest
 namespace d3emu
 {
+    class FriendsService : public Service
+    {
+    public:
+        FriendsService(uint32_t _service_hash, uint8_t _service_id);
+        PacketResponse *Request(Client &client, PacketRequest &request_packet);
+        std::string Name() const;
 
-class FriendsService : public Service
-{
-public:
-	FriendsService(uint32_t _service_hash, uint8_t _service_id);
-	void Request(const char *packet, int packet_length);
-	std::string Name() const;
-
-private:
-	void SubscribeToFriendsRequest(bnet::protocol::friends::SubscribeToFriendsRequest &request);
-};
-
+    private:
+        PacketResponse *SubscribeToFriendsRequest(Client &client, PacketRequest &request_packet);
+    };
 }
 
 #endif
