@@ -91,7 +91,7 @@ namespace d3emu
     {
     }
     
-    void Server::Start()
+    bool Server::Init()
     {
         // Initialize services
         this->services_manager_.Bind(new d3emu::AuthenticationService(0x0DECFC01, 0));
@@ -113,6 +113,8 @@ namespace d3emu
         ServerClient *pending_client = new ServerClient(this->io_service_, *this);
         this->acceptor_.async_accept(pending_client->socket(),
             boost::bind(&Server::Accept, this, _1, pending_client));
+        
+        return true;
     }
     
     void Server::Accept(const boost::system::error_code &error, ServerClient *pending_client)

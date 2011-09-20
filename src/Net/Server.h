@@ -35,7 +35,7 @@ namespace d3emu
     {
     public:
         Server(boost::asio::io_service &io_service, const char *host, short port);
-        void Start();
+        bool Init();
         void Accept(const boost::system::error_code &error, ServerClient *pending_client);
         boost::asio::io_service &io_service();
         BoundServicesManager &services_manager();
