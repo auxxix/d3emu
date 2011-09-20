@@ -68,6 +68,13 @@ namespace d3emu
                 boost::bind(&ServerClient::Receive, this, boost::asio::placeholders::error,
                     boost::asio::placeholders::bytes_transferred));
         }
+        else
+        {
+            std::cout << "Client: " << error.message() << std::endl;
+            
+            // Remove ourselves
+            this->io_service_.post(boost::bind(&Server::RemoveServerClient, &this->server_, this));
+        }
     }
     
     boost::asio::io_service &ServerClient::io_service()
@@ -122,7 +129,7 @@ namespace d3emu
         if (!error)
         {
             pending_client->Start();
-            this->server_clients_.push_back(pending_client);
+            this->server_clients_.insert(pending_client);
             ServerClient *new_pending_client = new ServerClient(this->io_service_, *this);
             this->acceptor_.async_accept(new_pending_client->socket(),
                 boost::bind(&Server::Accept, this, _1, new_pending_client));
@@ -134,9 +141,26 @@ namespace d3emu
         return this->io_service_;
     }
     
+    std::set<ServerClient *> &Server::server_clients()
+    {
+        return this->server_clients_;
+    }
+    
     BoundServicesManager &Server::services_manager()
     {
         return this->services_manager_;
+    }
+    
+    void Server::RemoveServerClient(ServerClient *server_client)
+    {
+        std::set<ServerClient *>::iterator iter = this->server_clients_.find(server_client);
+        if (iter != this->server_clients_.end())
+        {
+            (*iter)->socket().close();
+            
+            delete *iter;
+            this->server_clients_.erase(iter);
+        }
     }
 }
 

@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     {
         boost::system::error_code ec;
         do {
-            io_service.run();
+            io_service.run(ec);
         } while (!ec);
     }
     
