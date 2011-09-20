@@ -10,6 +10,8 @@
 #else
     #include <sys/types.h>
     #include <sys/socket.h>
+    #include <sys/select.h>
+    #include <sys/time.h>
     #include <netdb.h>
 #endif
 
@@ -39,8 +41,6 @@
 int StartServer(const char *ip, const char *port);
 void StopServer(int s);
 
-#include <sstream>
-
 int main(int argc, char **argv)
 {
 	srand((unsigned int)time(0));
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 	WSAStartup(MAKEWORD(2,0), &WSAData);
 #endif
     
-	int s = StartServer("127.0.0.1", "6543");
+	int s = StartServer("0.0.0.0", "6543");
 	if (s <= 0)
 	{
 		std::cout << "Invalid socket." << std::endl;
@@ -142,14 +142,18 @@ int main(int argc, char **argv)
                                 << response_packet->message()->DebugString() << std::endl;
                             
                             std::string built_response = response_packet->SerializeAsString();
+                            /*
                             for (int i = 0; i < built_response.length(); i++)
                             {
                                 // Output hex
                                 printf("%02X ", built_response[i] & 0xff);
                             }
                             printf("\n");
-                            
+                            */
                             send(client_socket, built_response.c_str(), built_response.length(), 0);
+                            
+                            delete response_packet;
+                            response_packet = 0;
                         }
                         else
                         {
@@ -176,7 +180,7 @@ int main(int argc, char **argv)
 
 		close(client_socket);
 	}
-
+    
 #ifdef _WIN32
 	WSACleanup();
 #endif
