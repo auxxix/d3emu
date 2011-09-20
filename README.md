@@ -1,8 +1,8 @@
 D3Emu is a multi-platform Diablo III server emulator written in a mix of languages. The core portion of the server is written in C++, but there is a new GUI-based server (in xcode/d3emu-cocoa) written using Objective-C++ and Cocoa libraries.
 
 D3Emu depends on the following packages:
-- [protobuf 2.3](http://code.google.com/p/protobuf/downloads/list)
-- [boost 1.47.0](http://boost.org)
+-	[protobuf 2.3](http://code.google.com/p/protobuf/downloads/list)
+-	[boost 1.47.0](http://boost.org)
 
 If you're using the Xcode project, the header paths are all relative, and it assumes you installed the protobuf library to /usr/local/lib and /usr/local/include.
 
