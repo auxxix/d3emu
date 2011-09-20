@@ -1,6 +1,11 @@
 #ifndef D3EMU_SERVER_H
 #define D3EMU_SERVER_H
 
+// Minimum of Windows XP for boost.
+#if defined(_WIN32) && !defined(_WIN_32_WINNT) 
+# define _WIN32_WINNT 0x502
+#endif
+
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>

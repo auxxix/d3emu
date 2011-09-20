@@ -213,6 +213,9 @@
     <ClCompile Include="..\src\Net\Packet.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Net\Server.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\bnet\Account.pb.h">
@@ -408,6 +411,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Net\Packet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Net\Server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
