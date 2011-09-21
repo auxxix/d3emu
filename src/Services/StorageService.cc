@@ -11,8 +11,21 @@ namespace d3emu
 {
 	namespace Services
 	{
-		StorageService::StorageService(uint32_t _service_hash, uint8_t _service_id)
-			: Service(_service_hash, _service_id) 
+		bool StorageDatabaseEngine::GetGameAccountSettings(Client &client, bnet::protocol::storage::ExecuteResponse &response)
+		{
+			// User should subclass this in order to customize
+
+			// Default action is to do nothing
+			return false;
+		}
+
+		StorageService::StorageService(uint32_t service_hash, uint8_t service_id)
+			: Service(service_hash, service_id), has_database_engine_(false)
+		{
+		}
+
+		StorageService::StorageService(uint32_t service_hash, uint8_t service_id, StorageDatabaseEngine *engine)
+			: Service(service_hash, service_id) 
 		{
 		}
 
@@ -203,6 +216,42 @@ namespace d3emu
 		std::string StorageService::Name() const
 		{
 			return std::string("d3emu.StorageService");
+		}
+
+		void StorageService::set_database_engine(StorageDatabaseEngine *database_engine)
+		{
+			this->clear_has_database_engine();
+
+			if (database_engine)
+				this->set_has_database_engine();
+
+			this->database_engine_ = database_engine;
+		}
+
+		StorageDatabaseEngine *StorageService::database_engine()
+		{
+			return this->database_engine_;
+		}
+
+		bool StorageService::has_database_engine()
+		{
+			return this->has_database_engine_;
+		}
+
+		void StorageService::set_has_database_engine()
+		{
+			this->has_database_engine_ = true;
+		}
+
+		void StorageService::clear_has_database_engine()
+		{
+			this->has_database_engine_ = false;
+
+			if (this->database_engine_)
+			{
+				delete this->database_engine_;
+				this->database_engine_ = 0;
+			}
 		}
 	}
 }
