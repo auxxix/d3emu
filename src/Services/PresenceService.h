@@ -6,16 +6,19 @@
 
 namespace d3emu
 {
-    class PresenceService : public Service
-    {
-    public:
-        PresenceService(uint32_t _service_hash, uint8_t _service_id);
-        PacketResponse *Request(Client &client, PacketRequest &request_packet);
-        std::string Name() const;
+	namespace Services
+	{
+		class PresenceService : public Service
+		{
+		public:
+			PresenceService(uint32_t _service_hash, uint8_t _service_id);
+			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			std::string Name() const;
 
-    private:
-        PacketResponse *SubscribeRequest(Client &client, PacketRequest &request_packet);
-    };
+		private:
+			PacketResponse *SubscribeRequest(Client &client, PacketRequest &request_packet);
+		};
+	}
 }
 
 #endif

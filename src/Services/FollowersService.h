@@ -6,17 +6,20 @@
 
 namespace d3emu
 {
-    class FollowersService : public Service
-    {
-    public:
-        FollowersService(uint32_t _service_hash, uint8_t _service_id);
-        PacketResponse *Request(Client &client, PacketRequest &request_packet);
-        std::string Name() const;
+	namespace Services
+	{
+		class FollowersService : public Service
+		{
+		public:
+			FollowersService(uint32_t _service_hash, uint8_t _service_id);
+			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			std::string Name() const;
 
-    private:
-        // 0x01
-        PacketResponse *SubscribeToFollowersRequest(Client &client, PacketRequest &request_packet);
-    };
+		private:
+			// 0x01
+			PacketResponse *SubscribeToFollowersRequest(Client &client, PacketRequest &request_packet);
+		};
+	}
 }
 
 #endif

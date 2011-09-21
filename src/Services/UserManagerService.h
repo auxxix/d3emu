@@ -6,16 +6,19 @@
 
 namespace d3emu
 {
-    class UserManagerService : public Service
-    {
-    public:
-        UserManagerService(uint32_t _service_hash, uint8_t _service_id);
-        PacketResponse *Request(Client &client, PacketRequest &request_packet);
-        std::string Name() const;
+	namespace Services
+	{
+		class UserManagerService : public Service
+		{
+		public:
+			UserManagerService(uint32_t _service_hash, uint8_t _service_id);
+			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			std::string Name() const;
 
-    private:
-        PacketResponse *SubscribeToUserManagerRequest(Client &client, PacketRequest &request_packet);
-    };
+		private:
+			PacketResponse *SubscribeToUserManagerRequest(Client &client, PacketRequest &request_packet);
+		};
+	}
 }
 
 #endif

@@ -46,7 +46,7 @@ namespace d3emu
         void Accept(const boost::system::error_code &error, ServerClient *pending_client);
         boost::asio::io_service &io_service();
         std::set<ServerClient *> &server_clients();
-        BoundServicesManager &services_manager();
+        Services::BoundServicesManager &services_manager();
         void RemoveServerClient(ServerClient *server_client);
         
     private:
@@ -54,7 +54,7 @@ namespace d3emu
         boost::asio::ip::tcp::acceptor acceptor_;
         boost::asio::io_service &io_service_;
         std::set<ServerClient *> server_clients_;
-        BoundServicesManager services_manager_;
+        Services::BoundServicesManager services_manager_;
     };
 }
 #endif

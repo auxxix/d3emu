@@ -23,15 +23,15 @@ int main(int argc, char **argv)
     if (server.Init())
     {
 		// Initialize services
-        server.services_manager().Bind(new d3emu::AuthenticationService(0x0DECFC01, 0));
-        server.services_manager().Bind(new d3emu::ChannelInvitationService(0x83040608, 0));
-        server.services_manager().Bind(new d3emu::UserManagerService(0x3E19268A, 0));
-        server.services_manager().Bind(new d3emu::GameMasterService(0x810CB195, 0));
-        server.services_manager().Bind(new d3emu::ToonExternalService(0x4124C31B, 0));
-        server.services_manager().Bind(new d3emu::FollowersService(0xE5A11099, 0));
-        server.services_manager().Bind(new d3emu::FriendsService(0xA3DDB1BD, 0));
-        server.services_manager().Bind(new d3emu::PresenceService(0xFA0796FF, 0));
-        server.services_manager().Bind(new d3emu::StorageService(0xDA6E4BB9, 0));
+        server.services_manager().Bind(new d3emu::Services::AuthenticationService(0x0DECFC01, 0));
+        server.services_manager().Bind(new d3emu::Services::ChannelInvitationService(0x83040608, 0));
+        server.services_manager().Bind(new d3emu::Services::UserManagerService(0x3E19268A, 0));
+        server.services_manager().Bind(new d3emu::Services::GameMasterService(0x810CB195, 0));
+        server.services_manager().Bind(new d3emu::Services::ToonExternalService(0x4124C31B, 0));
+        server.services_manager().Bind(new d3emu::Services::FollowersService(0xE5A11099, 0));
+        server.services_manager().Bind(new d3emu::Services::FriendsService(0xA3DDB1BD, 0));
+        server.services_manager().Bind(new d3emu::Services::PresenceService(0xFA0796FF, 0));
+        server.services_manager().Bind(new d3emu::Services::StorageService(0xDA6E4BB9, 0));
 
         boost::system::error_code ec;
         do {

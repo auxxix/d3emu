@@ -19,7 +19,7 @@ namespace d3emu
     {
         if (!error)
         {
-            d3emu::Service *service = this->server_.services_manager().bound_service(this->buffer_[0]);
+            d3emu::Services::Service *service = this->server_.services_manager().bound_service(this->buffer_[0]);
             
             if (!service)
             {
@@ -122,7 +122,7 @@ namespace d3emu
         return this->server_clients_;
     }
     
-    BoundServicesManager &Server::services_manager()
+    Services::BoundServicesManager &Server::services_manager()
     {
         return this->services_manager_;
     }

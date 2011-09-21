@@ -6,17 +6,19 @@
 
 namespace d3emu
 {
-    class GameMasterService : public Service
-    {
-    public:
-        GameMasterService(uint32_t _service_hash, uint8_t _service_id);
-        PacketResponse *Request(Client &client, PacketRequest &request_packet);
-        std::string Name() const;
+	namespace Services
+	{
+		class GameMasterService : public Service
+		{
+		public:
+			GameMasterService(uint32_t _service_hash, uint8_t _service_id);
+			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			std::string Name() const;
 
-    private:
-        // 0x02
-        PacketResponse *ListFactoriesRequest(Client &client, PacketRequest &request_packet);
-    };
+		private:
+			// 0x02
+			PacketResponse *ListFactoriesRequest(Client &client, PacketRequest &request_packet);
+		};
+	}
 }
-
 #endif
