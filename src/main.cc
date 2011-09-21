@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	srand((unsigned int)time(0));
     
     boost::asio::io_service io_service;
-    d3emu::Server server(io_service, "127.0.0.1", 6543);
+    d3emu::Net::Server server(io_service, "127.0.0.1", 6543);
 
     if (server.Init())
     {
