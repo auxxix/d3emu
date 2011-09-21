@@ -49,7 +49,7 @@ namespace d3emu
 		public:
 			Service(uint32_t _service_hash, uint8_t _service_id);
         
-			virtual PacketResponse *Request(Client &client, PacketRequest &request);
+			virtual Net::PacketResponse *Request(Client &client, Net::PacketRequest &request);
 
 			uint8_t service_id() const;
 			void set_service_id(uint8_t service_id);

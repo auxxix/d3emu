@@ -13,18 +13,18 @@ namespace d3emu
 		{
 		public:
 			StorageService(uint32_t _service_hash, uint8_t _service_id);
-			PacketResponse *Request(Client &client, PacketRequest &packet);
+			Net::PacketResponse *Request(Client &client, Net::PacketRequest &packet);
 			std::string Name() const;
         
 		private:
 			// 0x01
-			PacketResponse *ExecuteRequest(Client &client, PacketRequest &packet);
+			Net::PacketResponse *ExecuteRequest(Client &client, Net::PacketRequest &packet);
 
 			// 0x02
-			PacketResponse *OpenTableRequest(Client &client, PacketRequest &packet);
+			Net::PacketResponse *OpenTableRequest(Client &client, Net::PacketRequest &packet);
 
 			// 0x03
-			PacketResponse *OpenColumnRequest(Client &client, PacketRequest &packet);
+			Net::PacketResponse *OpenColumnRequest(Client &client, Net::PacketRequest &packet);
 		};
 	}
 }

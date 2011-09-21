@@ -11,7 +11,7 @@ namespace d3emu
 		{
 		}
 
-		PacketResponse *FriendsService::SubscribeToFriendsRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *FriendsService::SubscribeToFriendsRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::friends::SubscribeToFriendsResponse *response =
 				new bnet::protocol::friends::SubscribeToFriendsResponse();
@@ -20,7 +20,7 @@ namespace d3emu
 			response->set_max_received_invitations(100);
 			response->set_max_sent_invitations(100);
 
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -28,9 +28,9 @@ namespace d3emu
 			return response_packet;
 		}
 
-		PacketResponse *FriendsService::Request(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *FriendsService::Request(Client &client, Net::PacketRequest &request_packet)
 		{
-			PacketResponse *response_packet = 0;
+			Net::PacketResponse *response_packet = 0;
         
 			switch (request_packet.header().method_id())
 			{

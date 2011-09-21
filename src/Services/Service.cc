@@ -99,7 +99,7 @@ namespace d3emu
 		{
 		}
 
-		PacketResponse *Service::Request(Client &client, PacketRequest &request)
+		Net::PacketResponse *Service::Request(Client &client, Net::PacketRequest &request)
 		{
 			return 0;
 		}

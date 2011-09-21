@@ -12,11 +12,11 @@ namespace d3emu
 		{
 		public:
 			UserManagerService(uint32_t _service_hash, uint8_t _service_id);
-			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
 			std::string Name() const;
 
 		private:
-			PacketResponse *SubscribeToUserManagerRequest(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *SubscribeToUserManagerRequest(Client &client, Net::PacketRequest &request_packet);
 		};
 	}
 }

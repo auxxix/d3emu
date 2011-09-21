@@ -16,7 +16,7 @@ namespace d3emu
 		{
 		}
 
-		PacketResponse *StorageService::ExecuteRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *StorageService::ExecuteRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::storage::ExecuteResponse *response =
 				new bnet::protocol::storage::ExecuteResponse();
@@ -127,7 +127,7 @@ namespace d3emu
 				}
 			}
 
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -135,12 +135,12 @@ namespace d3emu
 			return response_packet;
 		}
 
-		PacketResponse *StorageService::OpenTableRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *StorageService::OpenTableRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::storage::OpenTableResponse *response =
 				new bnet::protocol::storage::OpenTableResponse();
 
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -148,12 +148,12 @@ namespace d3emu
 			return response_packet;
 		}
 
-		PacketResponse *StorageService::OpenColumnRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *StorageService::OpenColumnRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::storage::OpenColumnResponse *response =
 				new bnet::protocol::storage::OpenColumnResponse();
         
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -161,9 +161,9 @@ namespace d3emu
 			return response_packet;
 		}
 
-		PacketResponse *StorageService::Request(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *StorageService::Request(Client &client, Net::PacketRequest &request_packet)
 		{
-			PacketResponse *response = 0;
+			Net::PacketResponse *response = 0;
 			switch (request_packet.header().method_id())
 			{
 				case 0x01:

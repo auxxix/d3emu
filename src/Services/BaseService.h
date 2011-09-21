@@ -13,13 +13,13 @@ namespace d3emu
 		public:
 			BaseService(uint32_t _service_hash, uint8_t _service_id);
         
-			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
         
 			std::string Name() const;
 
 		private:
-			PacketResponse *ConnectRequest(Client &client, PacketRequest &request_packet);
-			PacketResponse *BindRequest(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *ConnectRequest(Client &client, Net::PacketRequest &request_packet);
+			Net::PacketResponse *BindRequest(Client &client, Net::PacketRequest &request_packet);
 		};
 	}
 }

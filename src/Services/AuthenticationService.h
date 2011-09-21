@@ -12,12 +12,12 @@ namespace d3emu
 		{
 		public:
 			AuthenticationService(uint32_t _service_hash, uint8_t _service_id);
-			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
 			std::string Name() const;
 
 		private:
 			// 0x01
-			PacketResponse *LogonRequest(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *LogonRequest(Client &client, Net::PacketRequest &request_packet);
 		};
 	}
 }

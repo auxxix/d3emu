@@ -12,12 +12,12 @@ namespace d3emu
 		{
 		}
     
-		PacketResponse *ToonExternalService::ToonListRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *ToonExternalService::ToonListRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::toon::external::ToonListResponse *response =
 				new bnet::protocol::toon::external::ToonListResponse();
         
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -25,7 +25,7 @@ namespace d3emu
 			return response_packet;
 		}
     
-		PacketResponse *ToonExternalService::CreateToonRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *ToonExternalService::CreateToonRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::toon::external::CreateToonResponse *response =
 				new bnet::protocol::toon::external::CreateToonResponse();
@@ -42,7 +42,7 @@ namespace d3emu
 			response->mutable_toon()->set_low(2L);
 			response->mutable_toon()->set_high(0x300016200004433L);
         
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -50,9 +50,9 @@ namespace d3emu
 			return response_packet;
 		}
     
-		PacketResponse *ToonExternalService::Request(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *ToonExternalService::Request(Client &client, Net::PacketRequest &request_packet)
 		{
-			PacketResponse *response_packet = 0;
+			Net::PacketResponse *response_packet = 0;
 
 			switch (request_packet.header().method_id())
 			{

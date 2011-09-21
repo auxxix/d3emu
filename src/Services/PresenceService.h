@@ -12,11 +12,11 @@ namespace d3emu
 		{
 		public:
 			PresenceService(uint32_t _service_hash, uint8_t _service_id);
-			PacketResponse *Request(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
 			std::string Name() const;
 
 		private:
-			PacketResponse *SubscribeRequest(Client &client, PacketRequest &request_packet);
+			Net::PacketResponse *SubscribeRequest(Client &client, Net::PacketRequest &request_packet);
 		};
 	}
 }

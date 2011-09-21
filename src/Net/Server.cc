@@ -21,7 +21,7 @@ namespace d3emu
 		{
 			if (!error)
 			{
-				d3emu::Services::Service *service = this->server_.services_manager().bound_service(this->buffer_[0]);
+				Services::Service *service = this->server_.services_manager().bound_service(this->buffer_[0]);
             
 				if (!service)
 				{
@@ -31,8 +31,8 @@ namespace d3emu
 				else
 				{
 					Client client;
-					d3emu::PacketRequest request_packet(this->buffer_, bytes_transferred);
-					d3emu::PacketResponse *response_packet = service->Request(client, request_packet);
+					Net::PacketRequest request_packet(this->buffer_, bytes_transferred);
+					Net::PacketResponse *response_packet = service->Request(client, request_packet);
                 
 					if (response_packet)
 					{

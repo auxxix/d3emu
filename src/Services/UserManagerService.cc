@@ -10,12 +10,12 @@ namespace d3emu
 		{
 		}
 
-		PacketResponse *UserManagerService::SubscribeToUserManagerRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *UserManagerService::SubscribeToUserManagerRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::user_manager::SubscribeToUserManagerResponse *response =
 				new bnet::protocol::user_manager::SubscribeToUserManagerResponse();
         
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -23,9 +23,9 @@ namespace d3emu
 			return response_packet;
 		}
 
-		PacketResponse *UserManagerService::Request(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *UserManagerService::Request(Client &client, Net::PacketRequest &request_packet)
 		{
-			PacketResponse *response_packet = 0;
+			Net::PacketResponse *response_packet = 0;
         
 			switch (request_packet.header().method_id())
 			{

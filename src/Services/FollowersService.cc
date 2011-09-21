@@ -11,7 +11,7 @@ namespace d3emu
 		{
 		}
 
-		PacketResponse *FollowersService::SubscribeToFollowersRequest(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *FollowersService::SubscribeToFollowersRequest(Client &client, Net::PacketRequest &request_packet)
 		{
 			bnet::protocol::followers::SubscribeToFollowersResponse *response =
 				new bnet::protocol::followers::SubscribeToFollowersResponse();
@@ -21,7 +21,7 @@ namespace d3emu
 			followed_user->mutable_id()->set_high(24903242);
 			followed_user->mutable_id()->set_low(239292);
 			*/
-			PacketResponse *response_packet = new PacketResponse();
+			Net::PacketResponse *response_packet = new Net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -29,9 +29,9 @@ namespace d3emu
 			return response_packet;
 		}
 
-		PacketResponse *FollowersService::Request(Client &client, PacketRequest &request_packet)
+		Net::PacketResponse *FollowersService::Request(Client &client, Net::PacketRequest &request_packet)
 		{
-			PacketResponse *response_packet = 0;
+			Net::PacketResponse *response_packet = 0;
         
 			switch (request_packet.header().method_id())
 			{
