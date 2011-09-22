@@ -60,23 +60,23 @@
 		6C3FB6341424542900B296F4 /* Stats.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E21424542900B296F4 /* Stats.pb.cc */; };
 		6C3FB6351424542900B296F4 /* Client.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E51424542900B296F4 /* Client.cc */; };
 		6C3FB6361424542900B296F4 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E71424542900B296F4 /* main.cc */; };
-		6C3FB6371424542900B296F4 /* AuthenticationService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5E91424542900B296F4 /* AuthenticationService.cc */; };
-		6C3FB6381424542900B296F4 /* BaseService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5EB1424542900B296F4 /* BaseService.cc */; };
-		6C3FB6391424542900B296F4 /* ChannelInvitationService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5ED1424542900B296F4 /* ChannelInvitationService.cc */; };
-		6C3FB63A1424542900B296F4 /* FollowersService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5EF1424542900B296F4 /* FollowersService.cc */; };
-		6C3FB63B1424542900B296F4 /* FriendsService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F11424542900B296F4 /* FriendsService.cc */; };
-		6C3FB63C1424542900B296F4 /* GameMasterService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F31424542900B296F4 /* GameMasterService.cc */; };
-		6C3FB63D1424542900B296F4 /* PresenceService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F51424542900B296F4 /* PresenceService.cc */; };
-		6C3FB63E1424542900B296F4 /* Service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F71424542900B296F4 /* Service.cc */; };
-		6C3FB63F1424542900B296F4 /* StorageService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5F91424542900B296F4 /* StorageService.cc */; };
-		6C3FB6401424542900B296F4 /* UserManagerService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB5FB1424542900B296F4 /* UserManagerService.cc */; };
 		6C3FB65C14245ED700B296F4 /* libprotobuf-lite.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */; };
 		6C3FB65D14245ED700B296F4 /* libprotobuf.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */; };
 		6C3FB65E14245ED700B296F4 /* libprotoc.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */; };
 		6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */; };
-		6C3FB66814253FCC00B296F4 /* ToonExternalService.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB66714253FCC00B296F4 /* ToonExternalService.cc */; };
-		6CDF1AFE1426C355009AD334 /* Packet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF1AFC1426C355009AD334 /* Packet.cc */; };
-		6CFDD28F142831AA00336B72 /* Server.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CFDD28E142831AA00336B72 /* Server.cc */; };
+		6CE7A4B6142AEB85004B4B59 /* Packet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A49B142AEB85004B4B59 /* Packet.cc */; };
+		6CE7A4B7142AEB85004B4B59 /* Server.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A49D142AEB85004B4B59 /* Server.cc */; };
+		6CE7A4B8142AEB85004B4B59 /* authentication_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4A0142AEB85004B4B59 /* authentication_service.cc */; };
+		6CE7A4B9142AEB85004B4B59 /* base_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4A2142AEB85004B4B59 /* base_service.cc */; };
+		6CE7A4BA142AEB85004B4B59 /* channel_invitation_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4A4142AEB85004B4B59 /* channel_invitation_service.cc */; };
+		6CE7A4BB142AEB85004B4B59 /* followers_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4A6142AEB85004B4B59 /* followers_service.cc */; };
+		6CE7A4BC142AEB85004B4B59 /* friends_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4A8142AEB85004B4B59 /* friends_service.cc */; };
+		6CE7A4BD142AEB85004B4B59 /* game_master_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4AA142AEB85004B4B59 /* game_master_service.cc */; };
+		6CE7A4BE142AEB85004B4B59 /* presence_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4AC142AEB85004B4B59 /* presence_service.cc */; };
+		6CE7A4BF142AEB85004B4B59 /* service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4AE142AEB85004B4B59 /* service.cc */; };
+		6CE7A4C0142AEB85004B4B59 /* storage_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4B0142AEB85004B4B59 /* storage_service.cc */; };
+		6CE7A4C1142AEB85004B4B59 /* toon_external_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4B2142AEB85004B4B59 /* toon_external_service.cc */; };
+		6CE7A4C2142AEB85004B4B59 /* user_manager_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE7A4B4142AEB85004B4B59 /* user_manager_service.cc */; };
 		6CFDD2931428369300336B72 /* libboost_date_time.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFDD2911428369300336B72 /* libboost_date_time.dylib */; };
 		6CFDD2941428369300336B72 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFDD2921428369300336B72 /* libboost_system.dylib */; };
 /* End PBXBuildFile section */
@@ -213,38 +213,38 @@
 		6C3FB5E51424542900B296F4 /* Client.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cc; sourceTree = "<group>"; };
 		6C3FB5E61424542900B296F4 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		6C3FB5E71424542900B296F4 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
-		6C3FB5E91424542900B296F4 /* AuthenticationService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuthenticationService.cc; sourceTree = "<group>"; };
-		6C3FB5EA1424542900B296F4 /* AuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationService.h; sourceTree = "<group>"; };
-		6C3FB5EB1424542900B296F4 /* BaseService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseService.cc; sourceTree = "<group>"; };
-		6C3FB5EC1424542900B296F4 /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
-		6C3FB5ED1424542900B296F4 /* ChannelInvitationService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChannelInvitationService.cc; sourceTree = "<group>"; };
-		6C3FB5EE1424542900B296F4 /* ChannelInvitationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInvitationService.h; sourceTree = "<group>"; };
-		6C3FB5EF1424542900B296F4 /* FollowersService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FollowersService.cc; sourceTree = "<group>"; };
-		6C3FB5F01424542900B296F4 /* FollowersService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowersService.h; sourceTree = "<group>"; };
-		6C3FB5F11424542900B296F4 /* FriendsService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendsService.cc; sourceTree = "<group>"; };
-		6C3FB5F21424542900B296F4 /* FriendsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsService.h; sourceTree = "<group>"; };
-		6C3FB5F31424542900B296F4 /* GameMasterService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMasterService.cc; sourceTree = "<group>"; };
-		6C3FB5F41424542900B296F4 /* GameMasterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMasterService.h; sourceTree = "<group>"; };
-		6C3FB5F51424542900B296F4 /* PresenceService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PresenceService.cc; sourceTree = "<group>"; };
-		6C3FB5F61424542900B296F4 /* PresenceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenceService.h; sourceTree = "<group>"; };
-		6C3FB5F71424542900B296F4 /* Service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Service.cc; sourceTree = "<group>"; };
-		6C3FB5F81424542900B296F4 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
-		6C3FB5F91424542900B296F4 /* StorageService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StorageService.cc; sourceTree = "<group>"; };
-		6C3FB5FA1424542900B296F4 /* StorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
-		6C3FB5FB1424542900B296F4 /* UserManagerService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserManagerService.cc; sourceTree = "<group>"; };
-		6C3FB5FC1424542900B296F4 /* UserManagerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManagerService.h; sourceTree = "<group>"; };
 		6C3FB65914245ED600B296F4 /* libprotobuf-lite.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libprotobuf-lite.6.dylib"; path = "../../../../../../usr/local/lib/libprotobuf-lite.6.dylib"; sourceTree = "<group>"; };
 		6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotobuf.6.dylib; path = ../../../../../../usr/local/lib/libprotobuf.6.dylib; sourceTree = "<group>"; };
 		6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotoc.6.dylib; path = ../../../../../../usr/local/lib/libprotoc.6.dylib; sourceTree = "<group>"; };
 		6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange_base.pb.cc; sourceTree = "<group>"; };
 		6C3FB66514253E0100B296F4 /* exchange_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange_base.pb.h; sourceTree = "<group>"; };
-		6C3FB66714253FCC00B296F4 /* ToonExternalService.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToonExternalService.cc; sourceTree = "<group>"; };
-		6C3FB6691425402500B296F4 /* ToonExternalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToonExternalService.h; sourceTree = "<group>"; };
 		6C3FB6A21425498600B296F4 /* d3emu-cocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "d3emu-cocoa.xcodeproj"; path = "d3emu-cocoa/d3emu-cocoa.xcodeproj"; sourceTree = "<group>"; };
-		6CDF1AFC1426C355009AD334 /* Packet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Packet.cc; sourceTree = "<group>"; };
-		6CDF1AFD1426C355009AD334 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
-		6CFDD28E142831AA00336B72 /* Server.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cc; sourceTree = "<group>"; };
-		6CFDD290142831BC00336B72 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		6CE7A49B142AEB85004B4B59 /* Packet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Packet.cc; sourceTree = "<group>"; };
+		6CE7A49C142AEB85004B4B59 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
+		6CE7A49D142AEB85004B4B59 /* Server.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cc; sourceTree = "<group>"; };
+		6CE7A49E142AEB85004B4B59 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		6CE7A4A0142AEB85004B4B59 /* authentication_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = authentication_service.cc; sourceTree = "<group>"; };
+		6CE7A4A1142AEB85004B4B59 /* authentication_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authentication_service.h; sourceTree = "<group>"; };
+		6CE7A4A2142AEB85004B4B59 /* base_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base_service.cc; sourceTree = "<group>"; };
+		6CE7A4A3142AEB85004B4B59 /* base_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_service.h; sourceTree = "<group>"; };
+		6CE7A4A4142AEB85004B4B59 /* channel_invitation_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = channel_invitation_service.cc; sourceTree = "<group>"; };
+		6CE7A4A5142AEB85004B4B59 /* channel_invitation_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = channel_invitation_service.h; sourceTree = "<group>"; };
+		6CE7A4A6142AEB85004B4B59 /* followers_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = followers_service.cc; sourceTree = "<group>"; };
+		6CE7A4A7142AEB85004B4B59 /* followers_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = followers_service.h; sourceTree = "<group>"; };
+		6CE7A4A8142AEB85004B4B59 /* friends_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = friends_service.cc; sourceTree = "<group>"; };
+		6CE7A4A9142AEB85004B4B59 /* friends_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = friends_service.h; sourceTree = "<group>"; };
+		6CE7A4AA142AEB85004B4B59 /* game_master_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_master_service.cc; sourceTree = "<group>"; };
+		6CE7A4AB142AEB85004B4B59 /* game_master_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_master_service.h; sourceTree = "<group>"; };
+		6CE7A4AC142AEB85004B4B59 /* presence_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = presence_service.cc; sourceTree = "<group>"; };
+		6CE7A4AD142AEB85004B4B59 /* presence_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presence_service.h; sourceTree = "<group>"; };
+		6CE7A4AE142AEB85004B4B59 /* service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = service.cc; sourceTree = "<group>"; };
+		6CE7A4AF142AEB85004B4B59 /* service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = service.h; sourceTree = "<group>"; };
+		6CE7A4B0142AEB85004B4B59 /* storage_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = storage_service.cc; sourceTree = "<group>"; };
+		6CE7A4B1142AEB85004B4B59 /* storage_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storage_service.h; sourceTree = "<group>"; };
+		6CE7A4B2142AEB85004B4B59 /* toon_external_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toon_external_service.cc; sourceTree = "<group>"; };
+		6CE7A4B3142AEB85004B4B59 /* toon_external_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toon_external_service.h; sourceTree = "<group>"; };
+		6CE7A4B4142AEB85004B4B59 /* user_manager_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user_manager_service.cc; sourceTree = "<group>"; };
+		6CE7A4B5142AEB85004B4B59 /* user_manager_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user_manager_service.h; sourceTree = "<group>"; };
 		6CFDD2911428369300336B72 /* libboost_date_time.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_date_time.dylib; path = ../../../../../../usr/local/lib/libboost_date_time.dylib; sourceTree = "<group>"; };
 		6CFDD2921428369300336B72 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../../usr/local/lib/libboost_system.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -646,43 +646,14 @@
 		6C3FB5E41424542900B296F4 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				6CDF1AFB1426C355009AD334 /* Net */,
+				6CE7A49A142AEB85004B4B59 /* net */,
+				6CE7A49F142AEB85004B4B59 /* services */,
 				6C3FB5E51424542900B296F4 /* Client.cc */,
 				6C3FB5E61424542900B296F4 /* Client.h */,
 				6C3FB5E71424542900B296F4 /* main.cc */,
-				6C3FB5E81424542900B296F4 /* Services */,
 			);
 			name = src;
 			path = ../src;
-			sourceTree = "<group>";
-		};
-		6C3FB5E81424542900B296F4 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				6C3FB5E91424542900B296F4 /* AuthenticationService.cc */,
-				6C3FB5EA1424542900B296F4 /* AuthenticationService.h */,
-				6C3FB5EB1424542900B296F4 /* BaseService.cc */,
-				6C3FB5EC1424542900B296F4 /* BaseService.h */,
-				6C3FB5ED1424542900B296F4 /* ChannelInvitationService.cc */,
-				6C3FB5EE1424542900B296F4 /* ChannelInvitationService.h */,
-				6C3FB5EF1424542900B296F4 /* FollowersService.cc */,
-				6C3FB5F01424542900B296F4 /* FollowersService.h */,
-				6C3FB5F11424542900B296F4 /* FriendsService.cc */,
-				6C3FB5F21424542900B296F4 /* FriendsService.h */,
-				6C3FB5F31424542900B296F4 /* GameMasterService.cc */,
-				6C3FB5F41424542900B296F4 /* GameMasterService.h */,
-				6C3FB5F51424542900B296F4 /* PresenceService.cc */,
-				6C3FB5F61424542900B296F4 /* PresenceService.h */,
-				6C3FB5F71424542900B296F4 /* Service.cc */,
-				6C3FB5F81424542900B296F4 /* Service.h */,
-				6C3FB5F91424542900B296F4 /* StorageService.cc */,
-				6C3FB5FA1424542900B296F4 /* StorageService.h */,
-				6C3FB5FB1424542900B296F4 /* UserManagerService.cc */,
-				6C3FB5FC1424542900B296F4 /* UserManagerService.h */,
-				6C3FB66714253FCC00B296F4 /* ToonExternalService.cc */,
-				6C3FB6691425402500B296F4 /* ToonExternalService.h */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		6C3FB6A31425498600B296F4 /* Products */ = {
@@ -693,15 +664,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6CDF1AFB1426C355009AD334 /* Net */ = {
+		6CE7A49A142AEB85004B4B59 /* net */ = {
 			isa = PBXGroup;
 			children = (
-				6CDF1AFC1426C355009AD334 /* Packet.cc */,
-				6CDF1AFD1426C355009AD334 /* Packet.h */,
-				6CFDD28E142831AA00336B72 /* Server.cc */,
-				6CFDD290142831BC00336B72 /* Server.h */,
+				6CE7A49B142AEB85004B4B59 /* Packet.cc */,
+				6CE7A49C142AEB85004B4B59 /* Packet.h */,
+				6CE7A49D142AEB85004B4B59 /* Server.cc */,
+				6CE7A49E142AEB85004B4B59 /* Server.h */,
 			);
-			path = Net;
+			path = net;
+			sourceTree = "<group>";
+		};
+		6CE7A49F142AEB85004B4B59 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				6CE7A4A0142AEB85004B4B59 /* authentication_service.cc */,
+				6CE7A4A1142AEB85004B4B59 /* authentication_service.h */,
+				6CE7A4A2142AEB85004B4B59 /* base_service.cc */,
+				6CE7A4A3142AEB85004B4B59 /* base_service.h */,
+				6CE7A4A4142AEB85004B4B59 /* channel_invitation_service.cc */,
+				6CE7A4A5142AEB85004B4B59 /* channel_invitation_service.h */,
+				6CE7A4A6142AEB85004B4B59 /* followers_service.cc */,
+				6CE7A4A7142AEB85004B4B59 /* followers_service.h */,
+				6CE7A4A8142AEB85004B4B59 /* friends_service.cc */,
+				6CE7A4A9142AEB85004B4B59 /* friends_service.h */,
+				6CE7A4AA142AEB85004B4B59 /* game_master_service.cc */,
+				6CE7A4AB142AEB85004B4B59 /* game_master_service.h */,
+				6CE7A4AC142AEB85004B4B59 /* presence_service.cc */,
+				6CE7A4AD142AEB85004B4B59 /* presence_service.h */,
+				6CE7A4AE142AEB85004B4B59 /* service.cc */,
+				6CE7A4AF142AEB85004B4B59 /* service.h */,
+				6CE7A4B0142AEB85004B4B59 /* storage_service.cc */,
+				6CE7A4B1142AEB85004B4B59 /* storage_service.h */,
+				6CE7A4B2142AEB85004B4B59 /* toon_external_service.cc */,
+				6CE7A4B3142AEB85004B4B59 /* toon_external_service.h */,
+				6CE7A4B4142AEB85004B4B59 /* user_manager_service.cc */,
+				6CE7A4B5142AEB85004B4B59 /* user_manager_service.h */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -820,20 +820,20 @@
 				6C3FB6341424542900B296F4 /* Stats.pb.cc in Sources */,
 				6C3FB6351424542900B296F4 /* Client.cc in Sources */,
 				6C3FB6361424542900B296F4 /* main.cc in Sources */,
-				6C3FB6371424542900B296F4 /* AuthenticationService.cc in Sources */,
-				6C3FB6381424542900B296F4 /* BaseService.cc in Sources */,
-				6C3FB6391424542900B296F4 /* ChannelInvitationService.cc in Sources */,
-				6C3FB63A1424542900B296F4 /* FollowersService.cc in Sources */,
-				6C3FB63B1424542900B296F4 /* FriendsService.cc in Sources */,
-				6C3FB63C1424542900B296F4 /* GameMasterService.cc in Sources */,
-				6C3FB63D1424542900B296F4 /* PresenceService.cc in Sources */,
-				6C3FB63E1424542900B296F4 /* Service.cc in Sources */,
-				6C3FB63F1424542900B296F4 /* StorageService.cc in Sources */,
-				6C3FB6401424542900B296F4 /* UserManagerService.cc in Sources */,
 				6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */,
-				6C3FB66814253FCC00B296F4 /* ToonExternalService.cc in Sources */,
-				6CDF1AFE1426C355009AD334 /* Packet.cc in Sources */,
-				6CFDD28F142831AA00336B72 /* Server.cc in Sources */,
+				6CE7A4B6142AEB85004B4B59 /* Packet.cc in Sources */,
+				6CE7A4B7142AEB85004B4B59 /* Server.cc in Sources */,
+				6CE7A4B8142AEB85004B4B59 /* authentication_service.cc in Sources */,
+				6CE7A4B9142AEB85004B4B59 /* base_service.cc in Sources */,
+				6CE7A4BA142AEB85004B4B59 /* channel_invitation_service.cc in Sources */,
+				6CE7A4BB142AEB85004B4B59 /* followers_service.cc in Sources */,
+				6CE7A4BC142AEB85004B4B59 /* friends_service.cc in Sources */,
+				6CE7A4BD142AEB85004B4B59 /* game_master_service.cc in Sources */,
+				6CE7A4BE142AEB85004B4B59 /* presence_service.cc in Sources */,
+				6CE7A4BF142AEB85004B4B59 /* service.cc in Sources */,
+				6CE7A4C0142AEB85004B4B59 /* storage_service.cc in Sources */,
+				6CE7A4C1142AEB85004B4B59 /* toon_external_service.cc in Sources */,
+				6CE7A4C2142AEB85004B4B59 /* user_manager_service.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
