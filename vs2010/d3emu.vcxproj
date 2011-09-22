@@ -67,7 +67,7 @@
     <ClCompile Include="..\src\main.cc" />
     <ClCompile Include="..\src\Net\Packet.cc" />
     <ClCompile Include="..\src\Net\Server.cc" />
-    <ClCompile Include="..\src\Services\AuthenticationService.cc" />
+    <ClCompile Include="..\src\Services\authentication_service.cc" />
     <ClCompile Include="..\src\Services\BaseService.cc" />
     <ClCompile Include="..\src\Services\ChannelInvitationService.cc" />
     <ClCompile Include="..\src\Services\FollowersService.cc" />

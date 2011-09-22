@@ -3,7 +3,7 @@
 #include "net/Server.h"
 
 #include "services/BaseService.h"
-#include "services/AuthenticationService.h"
+#include "services/authentication_service.h"
 #include "services/ChannelInvitationService.h"
 #include "services/UserManagerService.h"
 #include "services/GameMasterService.h"

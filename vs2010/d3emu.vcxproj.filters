@@ -174,9 +174,6 @@
     <ClCompile Include="..\src\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Services\AuthenticationService.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Services\BaseService.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -214,6 +211,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Net\Server.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Services\authentication_service.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
