@@ -7,7 +7,7 @@
 #include "services/channel_invitation_service.h"
 #include "services/UserManagerService.h"
 #include "services/GameMasterService.h"
-#include "services/FollowersService.h"
+#include "services/followers_service.h"
 #include "services/FriendsService.h"
 #include "services/PresenceService.h"
 #include "services/StorageService.h"
