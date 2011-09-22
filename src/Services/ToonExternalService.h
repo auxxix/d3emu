@@ -1,7 +1,7 @@
 #ifndef d3emu_ToonExternalService_h
 #define d3emu_ToonExternalService_h
 
-#include "Service.h"
+#include "service.h"
 #include "service/toon/toon.pb.h"
 #include "service/toon/toon_external.pb.h"
 

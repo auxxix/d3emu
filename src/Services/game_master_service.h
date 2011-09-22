@@ -1,7 +1,7 @@
 #ifndef D3EMU_GAMEMASTERSERVICE_H
 #define D3EMU_GAMEMASTERSERVICE_H
 
-#include "Service.h"
+#include "service.h"
 #include "service/game_master/game_master.pb.h"
 
 namespace d3emu

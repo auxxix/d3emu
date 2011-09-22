@@ -1,7 +1,7 @@
 #ifndef D3EMU_USERMANAGERSERVICE_H
 #define D3EMU_USERMANAGERSERVICE_H
 
-#include "Service.h"
+#include "service.h"
 #include "service/user_manager/user_manager.pb.h"
 
 namespace d3emu

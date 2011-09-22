@@ -1,7 +1,7 @@
 #ifndef D3EMU_FOLLOWERSSERVICE_H
 #define D3EMU_FOLLOWERSSERVICE_H
 
-#include "Service.h"
+#include "service.h"
 #include "service/followers/definition/followers.pb.h"
 
 namespace d3emu

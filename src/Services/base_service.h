@@ -1,7 +1,7 @@
 #ifndef D3EMU_BASESERVICE_H
 #define D3EMU_BASESERVICE_H
 
-#include "Service.h"
+#include "service.h"
 #include "lib/rpc/connection.pb.h"
 
 namespace d3emu

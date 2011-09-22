@@ -1,7 +1,7 @@
 #ifndef D3EMU_AUTHENTICATIONSERVICE_H
 #define D3EMU_AUTHENTICATIONSERVICE_H
 
-#include "Service.h"
+#include "service.h"
 #include "service/authentication/authentication.pb.h"
 
 namespace d3emu

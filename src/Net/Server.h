@@ -11,7 +11,7 @@
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/thread/thread.hpp>
 
-#include "../services/Service.h"
+#include "../services/service.h"
 #include "../Client.h"
 
 #include <set>

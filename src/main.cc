@@ -6,7 +6,7 @@
 #include "services/authentication_service.h"
 #include "services/channel_invitation_service.h"
 #include "services/UserManagerService.h"
-#include "services/GameMasterService.h"
+#include "services/game_master_service.h"
 #include "services/followers_service.h"
 #include "services/friends_service.h"
 #include "services/PresenceService.h"

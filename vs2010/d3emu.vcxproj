@@ -72,7 +72,7 @@
     <ClCompile Include="..\src\Services\channel_invitation_service.cc" />
     <ClCompile Include="..\src\Services\followers_service.cc" />
     <ClCompile Include="..\src\Services\friends_service.cc" />
-    <ClCompile Include="..\src\Services\GameMasterService.cc" />
+    <ClCompile Include="..\src\Services\game_master_service.cc" />
     <ClCompile Include="..\src\Services\PresenceService.cc" />
     <ClCompile Include="..\src\Services\Service.cc" />
     <ClCompile Include="..\src\Services\StorageService.cc" />
@@ -140,7 +140,7 @@
     <ClInclude Include="..\src\Services\channel_invitation_service.h" />
     <ClInclude Include="..\src\Services\followers_service.h" />
     <ClInclude Include="..\src\Services\friends_service.h" />
-    <ClInclude Include="..\src\Services\GameMasterService.h" />
+    <ClInclude Include="..\src\Services\game_master_service.h" />
     <ClInclude Include="..\src\Services\PresenceService.h" />
     <ClInclude Include="..\src\Services\Service.h" />
     <ClInclude Include="..\src\Services\StorageService.h" />

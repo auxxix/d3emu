@@ -1,7 +1,7 @@
 #ifndef D3EMU_PRESENCESERVICE_H
 #define D3EMU_PRESENCESERVICE_H
 
-#include "Service.h"
+#include "service.h"
 #include "service/presence/presence.pb.h"
 
 namespace d3emu

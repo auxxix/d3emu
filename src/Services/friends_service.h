@@ -1,7 +1,7 @@
 #ifndef D3EMU_FRIENDSSERVICE
 #define D3EMU_FRIENDSSERVICE
 
-#include "Service.h"
+#include "service.h"
 #include "service/friends/definition/friends.pb.h"
 
 namespace d3emu

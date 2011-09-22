@@ -1,7 +1,7 @@
 #ifndef D3EMU_CHANNELINVITATIONSERVICE_H
 #define D3EMU_CHANNELINVITATIONSERVICE_H
 
-#include "Service.h"
+#include "service.h"
 #include "service/channel_invitation/definition/channel_invitation.pb.h"
 
 namespace d3emu
