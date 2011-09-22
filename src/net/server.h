@@ -12,7 +12,7 @@
 #include <boost/thread/thread.hpp>
 
 #include "../services/service.h"
-#include "../Client.h"
+#include "../client.h"
 
 #include <set>
 
