@@ -2,13 +2,13 @@
 
 #include "net/Server.h"
 
-#include "services/BaseService.h"
+#include "services/base_service.h"
 #include "services/authentication_service.h"
 #include "services/channel_invitation_service.h"
 #include "services/UserManagerService.h"
 #include "services/GameMasterService.h"
 #include "services/followers_service.h"
-#include "services/FriendsService.h"
+#include "services/friends_service.h"
 #include "services/PresenceService.h"
 #include "services/StorageService.h"
 #include "services/ToonExternalService.h"
