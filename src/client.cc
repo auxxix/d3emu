@@ -1,4 +1,4 @@
-#include "Client.h"
+#include "client.h"
 
 namespace d3emu
 {
