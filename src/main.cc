@@ -5,13 +5,13 @@
 #include "services/base_service.h"
 #include "services/authentication_service.h"
 #include "services/channel_invitation_service.h"
-#include "services/UserManagerService.h"
+#include "services/user_manager_service.h"
 #include "services/game_master_service.h"
 #include "services/followers_service.h"
 #include "services/friends_service.h"
-#include "services/PresenceService.h"
+#include "services/presence_service.h"
 #include "services/StorageService.h"
-#include "services/ToonExternalService.h"
+#include "services/toon_external_service.h"
 
 int main(int argc, char **argv)
 {

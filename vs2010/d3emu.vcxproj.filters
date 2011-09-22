@@ -174,22 +174,10 @@
     <ClCompile Include="..\src\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Services\PresenceService.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Services\Service.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Services\StorageService.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Services\UserManagerService.cc">
+    <ClCompile Include="..\src\Services\service.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\bnet\lib\protocol\exchange_base.pb.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Services\ToonExternalService.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Net\Packet.cc">
@@ -214,6 +202,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Services\game_master_service.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Services\presence_service.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Services\storage_service.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Services\toon_external_service.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Services\user_manager_service.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -374,22 +374,10 @@
     <ClInclude Include="..\src\Client.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Services\PresenceService.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Services\Service.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Services\StorageService.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Services\UserManagerService.h">
+    <ClInclude Include="..\src\Services\service.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\bnet\lib\protocol\exchange_base.pb.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Services\ToonExternalService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Net\Packet.h">
@@ -414,6 +402,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Services\game_master_service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Services\presence_service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Services\storage_service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Services\toon_external_service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Services\user_manager_service.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

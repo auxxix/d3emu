@@ -73,11 +73,11 @@
     <ClCompile Include="..\src\Services\followers_service.cc" />
     <ClCompile Include="..\src\Services\friends_service.cc" />
     <ClCompile Include="..\src\Services\game_master_service.cc" />
-    <ClCompile Include="..\src\Services\PresenceService.cc" />
+    <ClCompile Include="..\src\Services\presence_service.cc" />
     <ClCompile Include="..\src\Services\Service.cc" />
-    <ClCompile Include="..\src\Services\StorageService.cc" />
-    <ClCompile Include="..\src\Services\ToonExternalService.cc" />
-    <ClCompile Include="..\src\Services\UserManagerService.cc" />
+    <ClCompile Include="..\src\Services\storage_service.cc" />
+    <ClCompile Include="..\src\Services\toon_external_service.cc" />
+    <ClCompile Include="..\src\Services\user_manager_service.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\bnet\Account.pb.h" />
@@ -141,11 +141,11 @@
     <ClInclude Include="..\src\Services\followers_service.h" />
     <ClInclude Include="..\src\Services\friends_service.h" />
     <ClInclude Include="..\src\Services\game_master_service.h" />
-    <ClInclude Include="..\src\Services\PresenceService.h" />
+    <ClInclude Include="..\src\Services\presence_service.h" />
     <ClInclude Include="..\src\Services\Service.h" />
-    <ClInclude Include="..\src\Services\StorageService.h" />
-    <ClInclude Include="..\src\Services\ToonExternalService.h" />
-    <ClInclude Include="..\src\Services\UserManagerService.h" />
+    <ClInclude Include="..\src\Services\storage_service.h" />
+    <ClInclude Include="..\src\Services\toon_external_service.h" />
+    <ClInclude Include="..\src\Services\user_manager_service.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3BFF6C6E-C0FF-440F-8267-B4F89A9F30AF}</ProjectGuid>

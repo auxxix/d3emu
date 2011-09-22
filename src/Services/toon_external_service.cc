@@ -1,4 +1,4 @@
-#include "ToonExternalService.h"
+#include "toon_external_service.h"
 #include "../bnet/OnlineService.pb.h"
 
 #include <iostream>
