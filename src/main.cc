@@ -4,7 +4,7 @@
 
 #include "services/BaseService.h"
 #include "services/authentication_service.h"
-#include "services/ChannelInvitationService.h"
+#include "services/channel_invitation_service.h"
 #include "services/UserManagerService.h"
 #include "services/GameMasterService.h"
 #include "services/FollowersService.h"
