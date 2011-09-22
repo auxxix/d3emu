@@ -69,7 +69,7 @@
     <ClCompile Include="..\src\Net\Server.cc" />
     <ClCompile Include="..\src\Services\authentication_service.cc" />
     <ClCompile Include="..\src\Services\BaseService.cc" />
-    <ClCompile Include="..\src\Services\ChannelInvitationService.cc" />
+    <ClCompile Include="..\src\Services\channel_invitation_service.cc" />
     <ClCompile Include="..\src\Services\FollowersService.cc" />
     <ClCompile Include="..\src\Services\FriendsService.cc" />
     <ClCompile Include="..\src\Services\GameMasterService.cc" />
@@ -137,7 +137,7 @@
     <ClInclude Include="..\src\Net\Server.h" />
     <ClInclude Include="..\src\Services\AuthenticationService.h" />
     <ClInclude Include="..\src\Services\BaseService.h" />
-    <ClInclude Include="..\src\Services\ChannelInvitationService.h" />
+    <ClInclude Include="..\src\Services\channel_invitation_service.h" />
     <ClInclude Include="..\src\Services\FollowersService.h" />
     <ClInclude Include="..\src\Services\FriendsService.h" />
     <ClInclude Include="..\src\Services\GameMasterService.h" />

@@ -177,9 +177,6 @@
     <ClCompile Include="..\src\Services\BaseService.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Services\ChannelInvitationService.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Services\FollowersService.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -214,6 +211,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Services\authentication_service.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Services\channel_invitation_service.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -380,9 +380,6 @@
     <ClInclude Include="..\src\Services\BaseService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Services\ChannelInvitationService.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Services\FollowersService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -414,6 +411,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Net\Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Services\channel_invitation_service.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
