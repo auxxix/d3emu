@@ -2,7 +2,7 @@
 
 namespace d3emu
 {
-	namespace Net
+	namespace net
 	{
 		ServerClient::ServerClient(boost::asio::io_service &io_service, Server &server)
 			: io_service_(io_service), socket_(io_service), server_(server)
@@ -21,7 +21,7 @@ namespace d3emu
 		{
 			if (!error)
 			{
-				Services::Service *service = this->server_.services_manager().bound_service(this->buffer_[0]);
+				services::Service *service = this->server_.services_manager().bound_service(this->buffer_[0]);
             
 				if (!service)
 				{
@@ -31,8 +31,8 @@ namespace d3emu
 				else
 				{
 					Client client;
-					Net::PacketRequest request_packet(this->buffer_, bytes_transferred);
-					Net::PacketResponse *response_packet = service->Request(client, request_packet);
+					net::PacketRequest request_packet(this->buffer_, bytes_transferred);
+					net::PacketResponse *response_packet = service->Request(client, request_packet);
                 
 					if (response_packet)
 					{
@@ -124,7 +124,7 @@ namespace d3emu
 			return this->server_clients_;
 		}
     
-		Services::BoundServicesManager &Server::services_manager()
+		services::BoundServicesManager &Server::services_manager()
 		{
 			return this->services_manager_;
 		}

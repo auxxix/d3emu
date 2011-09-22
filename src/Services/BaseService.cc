@@ -7,16 +7,16 @@
 
 namespace d3emu 
 {
-	namespace Services
+	namespace services
 	{
 		BaseService::BaseService(uint32_t _service_hash, uint8_t _service_id)
 			: Service(_service_hash, _service_id) 
 		{
 		}
 
-		Net::PacketResponse *BaseService::Request(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *BaseService::Request(Client &client, net::PacketRequest &request_packet)
 		{
-			Net::PacketResponse *response_packet = 0;
+			net::PacketResponse *response_packet = 0;
         
 			switch (request_packet.header().method_id())
 			{
@@ -44,7 +44,7 @@ namespace d3emu
 			return response_packet;
 		}
 
-		Net::PacketResponse *BaseService::ConnectRequest(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *BaseService::ConnectRequest(Client &client, net::PacketRequest &request_packet)
 		{
 			bnet::protocol::connection::ConnectResponse *response =
 				new bnet::protocol::connection::ConnectResponse();
@@ -53,7 +53,7 @@ namespace d3emu
 			response->mutable_client_id()->set_label(2342342);
 			response->mutable_client_id()->set_epoch((uint32_t)time(0));
         
-			Net::PacketResponse *response_packet = new Net::PacketResponse();
+			net::PacketResponse *response_packet = new net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -61,7 +61,7 @@ namespace d3emu
 			return response_packet;
 		}
 
-		Net::PacketResponse *BaseService::BindRequest(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *BaseService::BindRequest(Client &client, net::PacketRequest &request_packet)
 		{
 			bnet::protocol::connection::BindResponse *response =
 				new bnet::protocol::connection::BindResponse();
@@ -83,7 +83,7 @@ namespace d3emu
 				}
 			}
         
-			Net::PacketResponse *response_packet = new Net::PacketResponse();
+			net::PacketResponse *response_packet = new net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());

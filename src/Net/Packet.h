@@ -6,7 +6,7 @@
 
 namespace d3emu
 {
-	namespace Net
+	namespace net
 	{
 		class PacketHeaderRequest
 		{

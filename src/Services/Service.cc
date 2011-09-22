@@ -5,7 +5,7 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		BoundServicesManager::BoundServicesManager()
 		{
@@ -99,7 +99,7 @@ namespace d3emu
 		{
 		}
 
-		Net::PacketResponse *Service::Request(Client &client, Net::PacketRequest &request)
+		net::PacketResponse *Service::Request(Client &client, net::PacketRequest &request)
 		{
 			return 0;
 		}

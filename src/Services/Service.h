@@ -6,11 +6,11 @@
 #include <string>
 
 #include "Client.h"
-#include "../Net/Packet.h"
+#include "../net/Packet.h"
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		class Service;
 
@@ -49,7 +49,7 @@ namespace d3emu
 		public:
 			Service(uint32_t _service_hash, uint8_t _service_id);
         
-			virtual Net::PacketResponse *Request(Client &client, Net::PacketRequest &request);
+			virtual net::PacketResponse *Request(Client &client, net::PacketRequest &request);
 
 			uint8_t service_id() const;
 			void set_service_id(uint8_t service_id);
@@ -73,7 +73,7 @@ namespace d3emu
 			uint32_t service_hash_;
 			BoundServicesManager *manager_;
 		};
-	} // Services namespace
+	} // services namespace
 } // d3emu namespace
 
 #endif

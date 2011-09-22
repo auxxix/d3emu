@@ -11,14 +11,14 @@
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/thread/thread.hpp>
 
-#include "../Services/Service.h"
+#include "../services/Service.h"
 #include "../Client.h"
 
 #include <set>
 
 namespace d3emu 
 {
-	namespace Net
+	namespace net
 	{
 		class Server;
     
@@ -48,7 +48,7 @@ namespace d3emu
 			void Accept(const boost::system::error_code &error, ServerClient *pending_client);
 			boost::asio::io_service &io_service();
 			std::set<ServerClient *> &server_clients();
-			Services::BoundServicesManager &services_manager();
+			services::BoundServicesManager &services_manager();
 			void RemoveServerClient(ServerClient *server_client);
         
 		private:
@@ -56,7 +56,7 @@ namespace d3emu
 			boost::asio::ip::tcp::acceptor acceptor_;
 			boost::asio::io_service &io_service_;
 			std::set<ServerClient *> server_clients_;
-			Services::BoundServicesManager services_manager_;
+			services::BoundServicesManager services_manager_;
 		};
 	}
 }

@@ -7,24 +7,24 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		class ToonExternalService : public Service
 		{
 		public:
 			ToonExternalService(uint32_t _service_hash, uint8_t _service_id);
-			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *Request(Client &client, net::PacketRequest &request_packet);
 			std::string Name() const;
         
 		private:
 			// 0x01
-			Net::PacketResponse *ToonListRequest(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *ToonListRequest(Client &client, net::PacketRequest &request_packet);
         
 			// 0x02
-			Net::PacketResponse *SelectToonRequest(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *SelectToonRequest(Client &client, net::PacketRequest &request_packet);
         
 			// 0x03
-			Net::PacketResponse *CreateToonRequest(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *CreateToonRequest(Client &client, net::PacketRequest &request_packet);
 		};
 	}
 }

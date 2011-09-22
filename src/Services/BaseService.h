@@ -6,20 +6,20 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		class BaseService : public Service
 		{
 		public:
 			BaseService(uint32_t _service_hash, uint8_t _service_id);
         
-			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *Request(Client &client, net::PacketRequest &request_packet);
         
 			std::string Name() const;
 
 		private:
-			Net::PacketResponse *ConnectRequest(Client &client, Net::PacketRequest &request_packet);
-			Net::PacketResponse *BindRequest(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *ConnectRequest(Client &client, net::PacketRequest &request_packet);
+			net::PacketResponse *BindRequest(Client &client, net::PacketRequest &request_packet);
 		};
 	}
 }

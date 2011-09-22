@@ -4,21 +4,21 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		GameMasterService::GameMasterService(uint32_t _service_hash, uint8_t _service_id)
 			: Service(_service_hash, _service_id) 
 		{
 		}
 
-		Net::PacketResponse *GameMasterService::ListFactoriesRequest(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *GameMasterService::ListFactoriesRequest(Client &client, net::PacketRequest &request_packet)
 		{
 			bnet::protocol::game_master::ListFactoriesResponse *response =
 				new bnet::protocol::game_master::ListFactoriesResponse();
 
 			//response.set_total_results(1);
 
-			Net::PacketResponse *response_packet = new Net::PacketResponse();
+			net::PacketResponse *response_packet = new net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -26,9 +26,9 @@ namespace d3emu
 			return response_packet;
 		}
 
-		Net::PacketResponse *GameMasterService::Request(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *GameMasterService::Request(Client &client, net::PacketRequest &request_packet)
 		{
-			Net::PacketResponse *response_packet = 0;
+			net::PacketResponse *response_packet = 0;
         
 			switch (request_packet.header().method_id())
 			{

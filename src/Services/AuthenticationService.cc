@@ -3,14 +3,14 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		AuthenticationService::AuthenticationService(uint32_t _service_hash, uint8_t _service_id)
 			: Service(_service_hash, _service_id) 
 		{
 		}
 
-		Net::PacketResponse *AuthenticationService::LogonRequest(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *AuthenticationService::LogonRequest(Client &client, net::PacketRequest &request_packet)
 		{
 			bnet::protocol::authentication::LogonResponse *response =
 				new bnet::protocol::authentication::LogonResponse();
@@ -20,7 +20,7 @@ namespace d3emu
 			response->mutable_game_account()->set_high(0x200006200004433L);
 			response->mutable_game_account()->set_low(3L);
 
-			Net::PacketResponse *response_packet = new Net::PacketResponse();
+			net::PacketResponse *response_packet = new net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -28,9 +28,9 @@ namespace d3emu
 			return response_packet;
 		}
 
-		Net::PacketResponse *AuthenticationService::Request(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *AuthenticationService::Request(Client &client, net::PacketRequest &request_packet)
 		{
-			Net::PacketResponse *response_packet = 0;
+			net::PacketResponse *response_packet = 0;
         
 			switch (request_packet.header().method_id())
 			{

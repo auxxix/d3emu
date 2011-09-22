@@ -5,11 +5,11 @@
 #include "../bnet/Account.pb.h"
 #include "../bnet/Hero.pb.h"
 #include "../bnet/service/toon/toon.pb.h"
-#include "../Net/Packet.h"
+#include "../net/Packet.h"
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		bool StorageDatabaseEngine::GetGameAccountSettings(Client &client, bnet::protocol::storage::ExecuteResponse &response)
 		{
@@ -29,7 +29,7 @@ namespace d3emu
 		{
 		}
 
-		Net::PacketResponse *StorageService::ExecuteRequest(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *StorageService::ExecuteRequest(Client &client, net::PacketRequest &request_packet)
 		{
 			bnet::protocol::storage::ExecuteResponse *response =
 				new bnet::protocol::storage::ExecuteResponse();
@@ -140,7 +140,7 @@ namespace d3emu
 				}
 			}
 
-			Net::PacketResponse *response_packet = new Net::PacketResponse();
+			net::PacketResponse *response_packet = new net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -148,12 +148,12 @@ namespace d3emu
 			return response_packet;
 		}
 
-		Net::PacketResponse *StorageService::OpenTableRequest(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *StorageService::OpenTableRequest(Client &client, net::PacketRequest &request_packet)
 		{
 			bnet::protocol::storage::OpenTableResponse *response =
 				new bnet::protocol::storage::OpenTableResponse();
 
-			Net::PacketResponse *response_packet = new Net::PacketResponse();
+			net::PacketResponse *response_packet = new net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -161,12 +161,12 @@ namespace d3emu
 			return response_packet;
 		}
 
-		Net::PacketResponse *StorageService::OpenColumnRequest(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *StorageService::OpenColumnRequest(Client &client, net::PacketRequest &request_packet)
 		{
 			bnet::protocol::storage::OpenColumnResponse *response =
 				new bnet::protocol::storage::OpenColumnResponse();
         
-			Net::PacketResponse *response_packet = new Net::PacketResponse();
+			net::PacketResponse *response_packet = new net::PacketResponse();
 			response_packet->set_message(response);
 			response_packet->mutable_header()->set_service_id(0xfe);
 			response_packet->mutable_header()->set_request_id(request_packet.header().request_id());
@@ -174,9 +174,9 @@ namespace d3emu
 			return response_packet;
 		}
 
-		Net::PacketResponse *StorageService::Request(Client &client, Net::PacketRequest &request_packet)
+		net::PacketResponse *StorageService::Request(Client &client, net::PacketRequest &request_packet)
 		{
-			Net::PacketResponse *response = 0;
+			net::PacketResponse *response = 0;
 			switch (request_packet.header().method_id())
 			{
 				case 0x01:

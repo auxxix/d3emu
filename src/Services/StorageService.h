@@ -7,7 +7,7 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		// TODO: Create base class that is agnostic between underlying database engines. This will
 		//		allow developers to use any type of database engine.
@@ -28,7 +28,7 @@ namespace d3emu
 			StorageService(uint32_t service_hash, uint8_t service_id, StorageDatabaseEngine *database_engine);
 			~StorageService();
 
-			Net::PacketResponse *Request(Client &client, Net::PacketRequest &packet);
+			net::PacketResponse *Request(Client &client, net::PacketRequest &packet);
 			std::string Name() const;
 
 			bool has_database_engine();
@@ -43,13 +43,13 @@ namespace d3emu
 			void clear_has_database_engine();
 
 			// 0x01
-			Net::PacketResponse *ExecuteRequest(Client &client, Net::PacketRequest &packet);
+			net::PacketResponse *ExecuteRequest(Client &client, net::PacketRequest &packet);
 
 			// 0x02
-			Net::PacketResponse *OpenTableRequest(Client &client, Net::PacketRequest &packet);
+			net::PacketResponse *OpenTableRequest(Client &client, net::PacketRequest &packet);
 
 			// 0x03
-			Net::PacketResponse *OpenColumnRequest(Client &client, Net::PacketRequest &packet);
+			net::PacketResponse *OpenColumnRequest(Client &client, net::PacketRequest &packet);
 		};
 	}
 }

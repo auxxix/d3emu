@@ -6,18 +6,18 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		class AuthenticationService : public Service
 		{
 		public:
 			AuthenticationService(uint32_t _service_hash, uint8_t _service_id);
-			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *Request(Client &client, net::PacketRequest &request_packet);
 			std::string Name() const;
 
 		private:
 			// 0x01
-			Net::PacketResponse *LogonRequest(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *LogonRequest(Client &client, net::PacketRequest &request_packet);
 		};
 	}
 }

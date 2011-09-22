@@ -6,17 +6,17 @@
 
 namespace d3emu
 {
-	namespace Services
+	namespace services
 	{
 		class FriendsService : public Service
 		{
 		public:
 			FriendsService(uint32_t _service_hash, uint8_t _service_id);
-			Net::PacketResponse *Request(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *Request(Client &client, net::PacketRequest &request_packet);
 			std::string Name() const;
 
 		private:
-			Net::PacketResponse *SubscribeToFriendsRequest(Client &client, Net::PacketRequest &request_packet);
+			net::PacketResponse *SubscribeToFriendsRequest(Client &client, net::PacketRequest &request_packet);
 		};
 	}
 }

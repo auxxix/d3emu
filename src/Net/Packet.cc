@@ -7,7 +7,7 @@
 
 namespace d3emu
 {
-	namespace Net
+	namespace net
 	{
 		// PacketHeaderResponse
 
