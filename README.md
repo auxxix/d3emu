@@ -7,3 +7,5 @@ D3Emu depends on the following packages:
 If you're using the Xcode project, the header paths are all relative, and it assumes you installed the protobuf library to /usr/local/lib and /usr/local/include.
 
 I am currently working on a GUI-based implementation of d3emu for Mac using Cocoa. It's currently in an infant stage, but I expect to make some headway soon. I am more or less creating it to help aid in understanding communication between the client and server.
+
+If you're going to make any changes, please remember to follow the Google Style Guide for C++: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml

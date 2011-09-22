@@ -215,7 +215,7 @@ namespace d3emu
 
 		std::string StorageService::Name() const
 		{
-			return std::string("d3emu.StorageService");
+			return std::string("d3emu.net.StorageService");
 		}
 
 		void StorageService::set_database_engine(StorageDatabaseEngine *database_engine)
