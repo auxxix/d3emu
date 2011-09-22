@@ -1,6 +1,6 @@
 #include <time.h>
 
-#include "net/Server.h"
+#include "net/server.h"
 
 #include "services/base_service.h"
 #include "services/authentication_service.h"
@@ -10,7 +10,7 @@
 #include "services/followers_service.h"
 #include "services/friends_service.h"
 #include "services/presence_service.h"
-#include "services/StorageService.h"
+#include "services/storage_service.h"
 #include "services/toon_external_service.h"
 
 int main(int argc, char **argv)

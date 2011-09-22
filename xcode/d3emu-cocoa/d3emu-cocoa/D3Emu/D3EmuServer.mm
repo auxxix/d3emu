@@ -1,16 +1,16 @@
-#include "Services/Service.h"
-#include "Services/BaseService.h"
-#include "Services/AuthenticationService.h"
-#include "Services/ChannelInvitationService.h"
-#include "Services/UserManagerService.h"
-#include "Services/GameMasterService.h"
-#include "Services/FollowersService.h"
-#include "Services/FriendsService.h"
-#include "Services/PresenceService.h"
-#include "Services/StorageService.h"
-#include "Services/ToonExternalService.h"
+#include "services/service.h"
+#include "services/base_service.h"
+#include "services/authentication_service.h"
+#include "services/channel_invitation_service.h"
+#include "services/user_manager_service.h"
+#include "services/game_master_service.h"
+#include "services/followers_service.h"
+#include "services/friends_service.h"
+#include "services/presence_service.h"
+#include "services/storage_service.h"
+#include "services/toon_external_service.h"
 
-#include "Net/Packet.h"
+#include "net/packet.h"
 
 #import "D3EmuServer.h"
 
@@ -80,17 +80,17 @@
     
 	freeaddrinfo(res);
     
-    d3emu::BoundServicesManager service_manager;
+    d3emu::services::BoundServicesManager service_manager;
     
-	service_manager.Bind(new d3emu::AuthenticationService(0x0DECFC01, 0));
-	service_manager.Bind(new d3emu::ChannelInvitationService(0x83040608, 0));
-	service_manager.Bind(new d3emu::UserManagerService(0x3E19268A, 0));
-	service_manager.Bind(new d3emu::GameMasterService(0x810CB195, 0));
-	service_manager.Bind(new d3emu::ToonExternalService(0x4124C31B, 0));
-	service_manager.Bind(new d3emu::FollowersService(0xE5A11099, 0));
-	service_manager.Bind(new d3emu::FriendsService(0xA3DDB1BD, 0));
-	service_manager.Bind(new d3emu::PresenceService(0xFA0796FF, 0));
-	service_manager.Bind(new d3emu::StorageService(0xDA6E4BB9, 0));
+	service_manager.Bind(new d3emu::services::AuthenticationService(0x0DECFC01, 0));
+	service_manager.Bind(new d3emu::services::ChannelInvitationService(0x83040608, 0));
+	service_manager.Bind(new d3emu::services::UserManagerService(0x3E19268A, 0));
+	service_manager.Bind(new d3emu::services::GameMasterService(0x810CB195, 0));
+	service_manager.Bind(new d3emu::services::ToonExternalService(0x4124C31B, 0));
+	service_manager.Bind(new d3emu::services::FollowersService(0xE5A11099, 0));
+	service_manager.Bind(new d3emu::services::FriendsService(0xA3DDB1BD, 0));
+	service_manager.Bind(new d3emu::services::PresenceService(0xFA0796FF, 0));
+	service_manager.Bind(new d3emu::services::StorageService(0xDA6E4BB9, 0));
     
     while (_alive) {
 		int client_socket = accept(s, NULL, NULL);

@@ -1,11 +1,11 @@
-#include "StorageService.h"
+#include "storage_service.h"
 
 #include <iostream>
 
 #include "../bnet/Account.pb.h"
 #include "../bnet/Hero.pb.h"
 #include "../bnet/service/toon/toon.pb.h"
-#include "../net/Packet.h"
+#include "../net/packet.h"
 
 namespace d3emu
 {

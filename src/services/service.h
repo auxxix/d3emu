@@ -5,8 +5,8 @@
 #include <map>
 #include <string>
 
-#include "Client.h"
-#include "../net/Packet.h"
+#include "client.h"
+#include "../net/packet.h"
 
 namespace d3emu
 {
