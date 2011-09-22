@@ -63,6 +63,20 @@
 		6C3FB65D14245ED700B296F4 /* libprotobuf.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65A14245ED600B296F4 /* libprotobuf.6.dylib */; };
 		6C3FB65E14245ED700B296F4 /* libprotoc.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3FB65B14245ED600B296F4 /* libprotoc.6.dylib */; };
 		6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */; };
+		6CE8CA52142AF06300F588F5 /* client.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA34142AF06300F588F5 /* client.cc */; };
+		6CE8CA53142AF06300F588F5 /* packet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA37142AF06300F588F5 /* packet.cc */; };
+		6CE8CA54142AF06300F588F5 /* server.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA39142AF06300F588F5 /* server.cc */; };
+		6CE8CA55142AF06300F588F5 /* authentication_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA3C142AF06300F588F5 /* authentication_service.cc */; };
+		6CE8CA56142AF06300F588F5 /* base_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA3E142AF06300F588F5 /* base_service.cc */; };
+		6CE8CA57142AF06300F588F5 /* channel_invitation_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA40142AF06300F588F5 /* channel_invitation_service.cc */; };
+		6CE8CA58142AF06300F588F5 /* followers_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA42142AF06300F588F5 /* followers_service.cc */; };
+		6CE8CA59142AF06300F588F5 /* friends_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA44142AF06300F588F5 /* friends_service.cc */; };
+		6CE8CA5A142AF06300F588F5 /* game_master_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA46142AF06300F588F5 /* game_master_service.cc */; };
+		6CE8CA5B142AF06300F588F5 /* presence_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA48142AF06300F588F5 /* presence_service.cc */; };
+		6CE8CA5C142AF06300F588F5 /* service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA4A142AF06300F588F5 /* service.cc */; };
+		6CE8CA5D142AF06300F588F5 /* storage_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA4C142AF06300F588F5 /* storage_service.cc */; };
+		6CE8CA5E142AF06300F588F5 /* toon_external_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA4E142AF06300F588F5 /* toon_external_service.cc */; };
+		6CE8CA5F142AF06300F588F5 /* user_manager_service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8CA50142AF06300F588F5 /* user_manager_service.cc */; };
 		6CFDD2931428369300336B72 /* libboost_date_time.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFDD2911428369300336B72 /* libboost_date_time.dylib */; };
 		6CFDD2941428369300336B72 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFDD2921428369300336B72 /* libboost_system.dylib */; };
 /* End PBXBuildFile section */
@@ -203,6 +217,34 @@
 		6C3FB66414253E0100B296F4 /* exchange_base.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exchange_base.pb.cc; sourceTree = "<group>"; };
 		6C3FB66514253E0100B296F4 /* exchange_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exchange_base.pb.h; sourceTree = "<group>"; };
 		6C3FB6A21425498600B296F4 /* d3emu-cocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "d3emu-cocoa.xcodeproj"; path = "d3emu-cocoa/d3emu-cocoa.xcodeproj"; sourceTree = "<group>"; };
+		6CE8CA34142AF06300F588F5 /* client.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = client.cc; sourceTree = "<group>"; };
+		6CE8CA35142AF06300F588F5 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
+		6CE8CA37142AF06300F588F5 /* packet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = packet.cc; sourceTree = "<group>"; };
+		6CE8CA38142AF06300F588F5 /* packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packet.h; sourceTree = "<group>"; };
+		6CE8CA39142AF06300F588F5 /* server.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = server.cc; sourceTree = "<group>"; };
+		6CE8CA3A142AF06300F588F5 /* server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = server.h; sourceTree = "<group>"; };
+		6CE8CA3C142AF06300F588F5 /* authentication_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = authentication_service.cc; sourceTree = "<group>"; };
+		6CE8CA3D142AF06300F588F5 /* authentication_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authentication_service.h; sourceTree = "<group>"; };
+		6CE8CA3E142AF06300F588F5 /* base_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base_service.cc; sourceTree = "<group>"; };
+		6CE8CA3F142AF06300F588F5 /* base_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_service.h; sourceTree = "<group>"; };
+		6CE8CA40142AF06300F588F5 /* channel_invitation_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = channel_invitation_service.cc; sourceTree = "<group>"; };
+		6CE8CA41142AF06300F588F5 /* channel_invitation_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = channel_invitation_service.h; sourceTree = "<group>"; };
+		6CE8CA42142AF06300F588F5 /* followers_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = followers_service.cc; sourceTree = "<group>"; };
+		6CE8CA43142AF06300F588F5 /* followers_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = followers_service.h; sourceTree = "<group>"; };
+		6CE8CA44142AF06300F588F5 /* friends_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = friends_service.cc; sourceTree = "<group>"; };
+		6CE8CA45142AF06300F588F5 /* friends_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = friends_service.h; sourceTree = "<group>"; };
+		6CE8CA46142AF06300F588F5 /* game_master_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_master_service.cc; sourceTree = "<group>"; };
+		6CE8CA47142AF06300F588F5 /* game_master_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_master_service.h; sourceTree = "<group>"; };
+		6CE8CA48142AF06300F588F5 /* presence_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = presence_service.cc; sourceTree = "<group>"; };
+		6CE8CA49142AF06300F588F5 /* presence_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presence_service.h; sourceTree = "<group>"; };
+		6CE8CA4A142AF06300F588F5 /* service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = service.cc; sourceTree = "<group>"; };
+		6CE8CA4B142AF06300F588F5 /* service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = service.h; sourceTree = "<group>"; };
+		6CE8CA4C142AF06300F588F5 /* storage_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = storage_service.cc; sourceTree = "<group>"; };
+		6CE8CA4D142AF06300F588F5 /* storage_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storage_service.h; sourceTree = "<group>"; };
+		6CE8CA4E142AF06300F588F5 /* toon_external_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toon_external_service.cc; sourceTree = "<group>"; };
+		6CE8CA4F142AF06300F588F5 /* toon_external_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toon_external_service.h; sourceTree = "<group>"; };
+		6CE8CA50142AF06300F588F5 /* user_manager_service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user_manager_service.cc; sourceTree = "<group>"; };
+		6CE8CA51142AF06300F588F5 /* user_manager_service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user_manager_service.h; sourceTree = "<group>"; };
 		6CFDD2911428369300336B72 /* libboost_date_time.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_date_time.dylib; path = ../../../../../../usr/local/lib/libboost_date_time.dylib; sourceTree = "<group>"; };
 		6CFDD2921428369300336B72 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../../usr/local/lib/libboost_system.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -604,6 +646,10 @@
 		6C3FB5E41424542900B296F4 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6CE8CA36142AF06300F588F5 /* net */,
+				6CE8CA3B142AF06300F588F5 /* services */,
+				6CE8CA34142AF06300F588F5 /* client.cc */,
+				6CE8CA35142AF06300F588F5 /* client.h */,
 				6C3FB5E71424542900B296F4 /* main.cc */,
 			);
 			name = src;
@@ -616,6 +662,46 @@
 				6C3FB6A71425498700B296F4 /* d3emu-cocoa.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6CE8CA36142AF06300F588F5 /* net */ = {
+			isa = PBXGroup;
+			children = (
+				6CE8CA37142AF06300F588F5 /* packet.cc */,
+				6CE8CA38142AF06300F588F5 /* packet.h */,
+				6CE8CA39142AF06300F588F5 /* server.cc */,
+				6CE8CA3A142AF06300F588F5 /* server.h */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
+		6CE8CA3B142AF06300F588F5 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				6CE8CA3C142AF06300F588F5 /* authentication_service.cc */,
+				6CE8CA3D142AF06300F588F5 /* authentication_service.h */,
+				6CE8CA3E142AF06300F588F5 /* base_service.cc */,
+				6CE8CA3F142AF06300F588F5 /* base_service.h */,
+				6CE8CA40142AF06300F588F5 /* channel_invitation_service.cc */,
+				6CE8CA41142AF06300F588F5 /* channel_invitation_service.h */,
+				6CE8CA42142AF06300F588F5 /* followers_service.cc */,
+				6CE8CA43142AF06300F588F5 /* followers_service.h */,
+				6CE8CA44142AF06300F588F5 /* friends_service.cc */,
+				6CE8CA45142AF06300F588F5 /* friends_service.h */,
+				6CE8CA46142AF06300F588F5 /* game_master_service.cc */,
+				6CE8CA47142AF06300F588F5 /* game_master_service.h */,
+				6CE8CA48142AF06300F588F5 /* presence_service.cc */,
+				6CE8CA49142AF06300F588F5 /* presence_service.h */,
+				6CE8CA4A142AF06300F588F5 /* service.cc */,
+				6CE8CA4B142AF06300F588F5 /* service.h */,
+				6CE8CA4C142AF06300F588F5 /* storage_service.cc */,
+				6CE8CA4D142AF06300F588F5 /* storage_service.h */,
+				6CE8CA4E142AF06300F588F5 /* toon_external_service.cc */,
+				6CE8CA4F142AF06300F588F5 /* toon_external_service.h */,
+				6CE8CA50142AF06300F588F5 /* user_manager_service.cc */,
+				6CE8CA51142AF06300F588F5 /* user_manager_service.h */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -734,6 +820,20 @@
 				6C3FB6341424542900B296F4 /* Stats.pb.cc in Sources */,
 				6C3FB6361424542900B296F4 /* main.cc in Sources */,
 				6C3FB66614253E0100B296F4 /* exchange_base.pb.cc in Sources */,
+				6CE8CA52142AF06300F588F5 /* client.cc in Sources */,
+				6CE8CA53142AF06300F588F5 /* packet.cc in Sources */,
+				6CE8CA54142AF06300F588F5 /* server.cc in Sources */,
+				6CE8CA55142AF06300F588F5 /* authentication_service.cc in Sources */,
+				6CE8CA56142AF06300F588F5 /* base_service.cc in Sources */,
+				6CE8CA57142AF06300F588F5 /* channel_invitation_service.cc in Sources */,
+				6CE8CA58142AF06300F588F5 /* followers_service.cc in Sources */,
+				6CE8CA59142AF06300F588F5 /* friends_service.cc in Sources */,
+				6CE8CA5A142AF06300F588F5 /* game_master_service.cc in Sources */,
+				6CE8CA5B142AF06300F588F5 /* presence_service.cc in Sources */,
+				6CE8CA5C142AF06300F588F5 /* service.cc in Sources */,
+				6CE8CA5D142AF06300F588F5 /* storage_service.cc in Sources */,
+				6CE8CA5E142AF06300F588F5 /* toon_external_service.cc in Sources */,
+				6CE8CA5F142AF06300F588F5 /* user_manager_service.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
