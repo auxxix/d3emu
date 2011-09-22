@@ -31,7 +31,8 @@ int main(int argc, char **argv)
         server.services_manager().Bind(new d3emu::Services::FollowersService(0xE5A11099, 0));
         server.services_manager().Bind(new d3emu::Services::FriendsService(0xA3DDB1BD, 0));
         server.services_manager().Bind(new d3emu::Services::PresenceService(0xFA0796FF, 0));
-        server.services_manager().Bind(new d3emu::Services::StorageService(0xDA6E4BB9, 0));
+        server.services_manager().Bind(new d3emu::Services::StorageService(0xDA6E4BB9, 0,
+			new d3emu::Services::StorageDatabaseEngine()));
 
         boost::system::error_code ec;
         do {

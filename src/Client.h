@@ -8,12 +8,13 @@ namespace d3emu
 	class Client
 	{
 	public:
-		virtual bool Send(std::string &header, google::protobuf::Message &message);
-		void set_socket(int socket);
-		int socket() const;
+		void set_email(const char *email);
+		void set_email(std::string &email);
+		const std::string &email() const;
+		std::string *mutable_email();
 
 	private:
-		int socket_;
+		std::string email_;
 	};
 } // d3emu service
 

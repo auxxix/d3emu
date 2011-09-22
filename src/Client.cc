@@ -2,25 +2,23 @@
 
 namespace d3emu
 {
-	bool Client::Send(std::string &header, google::protobuf::Message &message)
+	void Client::set_email(const char *email)
 	{
-		int sent = 0;
-
-		std::string built_response;
-		built_response.append(header);
-		built_response.append(message.SerializeAsString());
-
-		return (sent == built_response.length());
+		this->email_ = email;
 	}
 
-	void Client::set_socket(int socket)
+	void Client::set_email(std::string &email)
 	{
-		this->socket_ = socket;
+		this->email_ = email;
 	}
 
-	int Client::socket() const
+	const std::string &Client::email() const
 	{
-		return this->socket_;
+		return this->email_;
 	}
 
+	std::string *Client::mutable_email()
+	{
+		return &this->email_;
+	}
 }
